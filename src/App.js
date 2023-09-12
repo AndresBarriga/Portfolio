@@ -4,10 +4,6 @@ import { Route, Routes } from 'react-router-dom';
 import Header from './components/Header/Header';
 import Home from "./pages/Home"
 
-import "./App";
-
-
-
 function App() {
   return (
     <div>

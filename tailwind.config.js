@@ -5,6 +5,9 @@ module.exports = {
 	darkMode: 'class',
 	theme: {
 		extend: {
+			backgroundColor: {
+				'slate-200': 'rgb(226, 232, 240)', 
+			  },
 			colors: {
 				'primary-light': '#F7F8FC',
 				'secondary-light': '#FFFFFF',

@@ -1,12 +1,18 @@
 import React from 'react';
-import "./css/index.css"
-import ReactDOM from 'react-dom';
+import 'tailwindcss/tailwind.css';
+import './css/index.css';
+import ReactDOM from 'react-dom/client';
+import { StrictMode } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import App from './App';
 
-ReactDOM.render(
+const root = document.getElementById('root');
+const rootInstance = ReactDOM.createRoot(root);
+
+rootInstance.render(
+  <StrictMode>
   <BrowserRouter>
     <App />
-  </BrowserRouter>,
-  document.getElementById('root')
+  </BrowserRouter>
+  </ StrictMode>
 );

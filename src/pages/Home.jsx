@@ -7,10 +7,10 @@ import Testimonials from "../components/Testimonials/Testimonials";
 function Home() {
   return (
     <div className="container mx-auto">
-      <AppBanner></AppBanner>
-      <MySkills></MySkills>
-      <Projects></Projects>
-      <Testimonials></Testimonials>
+      <AppBanner  ></AppBanner>
+      <MySkills />
+      {/* <Projects></Projects>
+      <Testimonials></Testimonials> */}
     </div>
   );
 }
