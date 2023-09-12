@@ -1,0 +1,177 @@
+body {
+	font-family: 'PublicSans-Variable';
+}
+
+/* Fonts */
+@font-face {
+	font-family: 'PublicSans-Variable';
+	src: url("../fonts/PublicSans-VariableFont_wght.ttf") format('truetype');
+	font-weight: 200 700;
+	font-display: swap;
+	font-style: normal;
+}
+
+.font-general-variable {
+	font-family: 'PublicSans-Variable';
+}
+
+@font-face {
+	font-family: 'PublicSans-Extralight';
+	src: 
+		url('../fonts/PublicSans-ExtraLight.ttf') format('truetype');
+	font-weight: 200;
+	font-display: swap;
+	font-style: normal;
+}
+
+.font-general-extralight {
+	font-family: 'PublicSans-Extralight';
+}
+
+@font-face {
+	font-family: 'PublicSans-ExtralightItalic';
+	src: 
+		url('../fonts/PublicSans-ExtraLightItalic.ttf') format('truetype');
+	font-weight: 200;
+	font-display: swap;
+	font-style: italic;
+}
+
+.font-general-extralight-italic {
+	font-family: 'PublicSans-ExtralightItalic';
+}
+
+@font-face {
+	font-family: 'PublicSans-Light';
+    src:
+		url('../fonts/PublicSans-Light.ttf') format('truetype');
+	font-weight: 300;
+	font-display: swap;
+	font-style: normal;
+}
+
+.font-general-light {
+	font-family: 'PublicSans-Light';
+}
+
+@font-face {
+	font-family: 'PublicSans-LightItalic';
+	src:
+		url('../fonts/PublicSans-LightItalic.ttf') format('truetype');
+	font-weight: 300;
+	font-display: swap;
+	font-style: italic;
+}
+
+.font-general-light-italic {
+	font-family: 'PublicSans-LightItalic';
+}
+
+@font-face {
+	font-family: 'PublicSans-Regular';
+	src:
+		url('../fonts/PublicSans-Regular.ttf') format('truetype');
+	font-weight: 400;
+	font-display: swap;
+	font-style: normal;
+}
+
+.font-general-regular {
+	font-family: 'PublicSans-Regular';
+}
+
+@font-face {
+	font-family: 'PublicSans-Italic';
+	src: 
+		url('../fonts/PublicSans-Italic.ttf') format('truetype');
+	font-weight: 400;
+	font-display: swap;
+	font-style: italic;
+}
+
+.font-general-italic {
+	font-family: 'PublicSans-Italic';
+}
+
+@font-face {
+	font-family: 'PublicSans-Medium';
+	src:
+		url('../fonts/PublicSans-Medium.ttf') format('truetype');
+	font-weight: 500;
+	font-display: swap;
+	font-style: normal;
+}
+
+.font-general-medium {
+	font-family: 'PublicSans-Medium';
+}
+
+
+@font-face {
+	font-family: 'PublicSans-Semibold';
+	src:
+		url("../fonts/PublicSans-SemiBold.ttf") format('truetype');
+	font-weight: 600;
+	font-display: swap;
+	font-style: normal;
+}
+
+.font-general-semibold {
+	font-family: 'PublicSans-Semibold';
+}
+
+
+@font-face {
+	font-family: 'PublicSans-Bold';
+	src: 
+		url('../fonts/PublicSans-Bold.ttf') format('truetype');
+	font-weight: 700;
+	font-display: swap;
+	font-style: normal;
+}
+
+.font-general-bold {
+	font-family: 'PublicSans-Bold';
+}
+
+@font-face {
+	font-family: 'PublicSans-BoldItalic';
+	src: 
+		url('../fonts/PublicSans-BoldItalic.ttf') format('truetype');
+	font-weight: 700;
+	font-display: swap;
+	font-style: italic;
+}
+
+.font-general-bold-italic {
+	font-family: 'PublicSans-BoldItalic';
+}
+
+/* Scroll to top style */
+.scrollToTop {
+	@apply bg-indigo-600;
+	@apply text-white;
+	position: fixed;
+	width: 100%;
+	align-items: center;
+	height: 20px;
+	justify-content: center;
+	z-index: 999;
+	cursor: pointer;
+	animation: fadeIn 0.3s;
+	transition: opacity 0.4s;
+	opacity: 0.9;
+}
+
+.scrollToTop:hover {
+	opacity: 1;
+}
+
+@keyframes fadeIn {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 0.5;
+	}
+}
