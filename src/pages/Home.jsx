@@ -1,16 +1,16 @@
 import React from 'react';
 import AppBanner from '../components/shared/AppBanner';
 import MySkills from "../components/shared/MySkills";
-import Projects from "../components/Projects/Projects";
-import Testimonials from "../components/Testimonials/Testimonials";
+import Projects from './Projects';
+
 
 function Home() {
   return (
     <div className="container mx-auto">
       <AppBanner  ></AppBanner>
       <MySkills />
-      {/* <Projects></Projects>
-      <Testimonials></Testimonials> */}
+      <Projects />
+      {/* <Testimonials></Testimonials> */}
     </div>
   );
 }
