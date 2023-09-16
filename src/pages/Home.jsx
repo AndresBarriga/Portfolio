@@ -2,6 +2,8 @@ import React from 'react';
 import AppBanner from '../components/shared/AppBanner';
 import MySkills from "../components/shared/MySkills";
 import Projects from './Projects';
+import TestimonialsSlider from '../components/Testimonials/Testimonials';
+
 
 
 function Home() {
@@ -10,7 +12,7 @@ function Home() {
       <AppBanner  ></AppBanner>
       <MySkills />
       <Projects />
-      {/* <Testimonials></Testimonials> */}
+      <TestimonialsSlider />
     </div>
   );
 }
