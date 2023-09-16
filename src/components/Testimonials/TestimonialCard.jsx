@@ -35,6 +35,12 @@ const TestimonialCard = () => {
           </blockquote>
         </div>
 
+        <div className="keen-slider__slide relative overflow-hidden w-full min-h-full">
+          <blockquote className="flex h-full flex-col justify-between bg-white p-6 shadow-sm sm:p-8 lg:p-12">
+            {createTestimonialCard(card3)}
+          </blockquote>
+        </div>
+
         
         
       </div>

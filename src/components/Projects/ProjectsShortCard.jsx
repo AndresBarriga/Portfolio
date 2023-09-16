@@ -6,10 +6,10 @@ function ProjectShortCard(props) {
         /* ------Project 1------- */
         <>      
                 
-                <div class="flex flex-col justify-center flex-1 p-6 dark:bg-gray-900">
-                    <span class="text-xs uppercase dark:text-gray-400">{props.subtitle}</span>
-                    <h3 class="text-3xl font-bold">{props.title}</h3>
-                    <p class="my-6 dark:text-gray-400">{props.description}</p>
+                <div className="flex flex-col justify-center flex-1 p-6 dark:bg-gray-900">
+                    <span className="text-xs uppercase dark:text-gray-400">{props.subtitle}</span>
+                    <h3 className="text-3xl font-bold">{props.title}</h3>
+                    <p className="my-6 dark:text-gray-400">{props.description}</p>
 
                     <div className="flex">
                         <div className="flex-shrink-0">

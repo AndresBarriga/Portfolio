@@ -164,8 +164,8 @@ const AppHeader = () => {
 						Contact
 					</Link>
 				
-          <div class="w-64 h-16 "></div>
-          <div class="w-64 h-16 "></div>
+          <div className="w-64 h-16 "></div>
+          <div className="w-64 h-16 "></div>
 				{/* Header right section buttons */}
 				
         <div className="hidden sm:flex justify-between items-center flex-col md:flex-row">
