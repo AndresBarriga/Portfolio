@@ -1,13 +1,16 @@
 import React from "react";
 import ProjectShortCard from "../components/Projects/ProjectsShortCard";
 import projectsShortCardData from "../data/projectsShortCardData";
+import doctor from "../images/doctor.jpg";
+import box from "../images/Box.png";
+import radio from "../images/Teleco1.jpg";
 
 function createProjectCard(projectsShortCardData) {
   return (
     <ProjectShortCard
       key={projectsShortCardData.id}
-      subtitle={projectsShortCardData.subtitle}
       title={projectsShortCardData.title}
+      subtitle={projectsShortCardData.subtitle}
       description={projectsShortCardData.description}
       feature1title={projectsShortCardData.feature1title}
       feature1subtitle={projectsShortCardData.feature1subtitle}
@@ -41,9 +44,9 @@ const Projects = () => {
       <div className="container mx-auto space-y-12">
         <div className="flex flex-col overflow-hidden rounded-md shadow-sm lg:flex-row">
           <img
-            src="https://source.unsplash.com/640x480/?1"
+            src={doctor}
             alt=""
-            className="h-80 my-7 dark:bg-gray-500 aspect-video"
+            className="h-80 my-7 dark:bg-gray-500 "
           />
           {createProjectCard(project1)}
         </div>
@@ -51,17 +54,17 @@ const Projects = () => {
         <div className="flex flex-col overflow-hidden rounded-md shadow-sm lg:flex-row">
           {createProjectCard(project2)}
           <img
-            src="https://source.unsplash.com/640x480/?1"
+            src={radio}
             alt=""
-            className="h-80 my-7 dark:bg-gray-500 aspect-video"
+            className="h-80 my-7 dark:bg-gray-500 "
           />
         </div>
 
         <div className="flex flex-col overflow-hidden rounded-md shadow-sm lg:flex-row">
           <img
-            src="https://source.unsplash.com/640x480/?1"
+            src={box}
             alt=""
-            className="h-80 my-7 dark:bg-gray-500 aspect-video"
+            className="h-80 my-7 dark:bg-gray-500 w-600"
           />
           {createProjectCard(project3)}
         </div>

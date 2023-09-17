@@ -10,6 +10,7 @@ function createTestimonialCard(testimonialsData) {
         description={testimonialsData.description}
         person={testimonialsData.person}
         company={testimonialsData.company}
+        img={testimonialsData.img}
         />
     )
 }
