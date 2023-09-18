@@ -15,11 +15,11 @@ const projectsShortCardData =[
         key: 2,
         subtitle: "TELECOMMUNICATIONS - Software",
         title: "The Warehouse of the Future",
-        description: "Customized IoT-Enabled Two-Way Radio Management Software.",
+        description: "Two-Way Radio Management Software.",
         feature1title:"IoT-powered solution",
-        feature1subtitle:"Accessible from a laptop and connected to a repeater, data-driven decision-making and Over-the-Air-Update",
+        feature1subtitle:"Accessible from a laptop and connected to a repeater allowing real time data-driven decision-making",
         feature2title:"Multiple features",
-        feature2subtitle:"User group & area limitations, real-time statistics, and harness the capabilities of IoT technology"
+        feature2subtitle:"Updates Over-the-Air, User group & area limitations, real-time statistics and more"
     },
     {
         id: 3,

@@ -2,6 +2,7 @@ import { FiArrowDownCircle } from 'react-icons/fi';
 import soft from "../../images/soft.jpg";
 import { motion } from "framer-motion";
 
+
 const AppBanner = () => {
     return (
         <div className='bg-hsl-240-33-98'>
@@ -56,6 +57,7 @@ const AppBanner = () => {
                         <span className="text-sm sm:text-lg font-general-medium duration-100">
                             Download CV
                         </span>
+
                     </a>
                 </motion.div>
             </div>
