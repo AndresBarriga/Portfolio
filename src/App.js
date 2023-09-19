@@ -8,6 +8,7 @@ import Projects from './pages/Projects';
 import ProjectsPage from './components/Projects/ProjectsPage';
 import Contact from './pages/Contact';
 import About from "./pages/About";
+import  { DefaultAccordion } from "./components/Projects/Project1/Project1";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="/projects" element={<ProjectsPage />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/about" element={<About />} />
+        <Route path="/projects/project1" element={<DefaultAccordion />} />
       </Routes>
       <AppFooter />
     </div>

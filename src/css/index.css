@@ -694,9 +694,7 @@ Ensure the default browser behavior of the `hidden` attribute.
 .border {
   border-width: 1px;
 }
-.border-b {
-  border-bottom-width: 1px;
-}
+
 .border-t-2 {
   border-top-width: 2px;
 }
