@@ -8,12 +8,12 @@ const contacts = [
 	},
 	{
 		id: 2,
-		name: 'andresbarrigaru@gmail.com',
+		name: '-',
 		icon: <FiMail />,
 	},
 	{
 		id: 3,
-		name: '+34 618 481 392',
+		name: '+34 618 000 392',
 		icon: <FiPhone />,
 	},
 ];
