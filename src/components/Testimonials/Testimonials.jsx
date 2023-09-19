@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import KeenSlider from 'https://cdn.jsdelivr.net/npm/keen-slider@6.8.6/+esm';
+import KeenSlider from "keen-slider";
 import TestimonialCard from './TestimonialCard';
 
 const TestimonialsSlider = () => {
