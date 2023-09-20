@@ -52,7 +52,7 @@ export function DefaultAccordion() {
 
     return (
         <>  <div className="text-center mb-8">
-            <h1 className="text-3xl font-general-bold mt-6 sm:text-4xl">Full-service Telemedical Platform </h1>
+            <h1 className="text-3xl  mt-6 sm:text-4xl">Full-service Telemedical Platform </h1>
             <h2 className="text-2xl font-general mt-6 sm:text-3xl"> Telemonitoring in heart failure</h2>
             <p className="mt-4 text-gray-600 font-general-light">Solution to connect healthcare stakeholders and provide remote telemonitoring to patients <br></br> with chronic diseases through the analysis of vital data from the comfort of their homes</p>
         </div>

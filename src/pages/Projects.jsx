@@ -17,6 +17,7 @@ function createProjectCard(projectsShortCardData) {
       feature1subtitle={projectsShortCardData.feature1subtitle}
       feature2title={projectsShortCardData.feature2title}
       feature2subtitle={projectsShortCardData.feature2subtitle}
+      link={projectsShortCardData.link}
     />
   );
 }

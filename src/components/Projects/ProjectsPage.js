@@ -45,7 +45,7 @@ function createProjectCardLLong(projectLongLData) {
 
 const ProjectsPage = () => {
   const projectR1 = projectLongRData.find(project => project.id === 1);
-  const projectL1 = projectLongLData.find(project => project.id === 1);
+  const projectL1 = projectLongLData.find(project => project.id === 4);
   const projectR2 = projectLongRData.find(project => project.id === 2);
 
 

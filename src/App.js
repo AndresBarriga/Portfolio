@@ -9,6 +9,8 @@ import ProjectsPage from './components/Projects/ProjectsPage';
 import Contact from './pages/Contact';
 import About from "./pages/About";
 import  { DefaultAccordion } from "./components/Projects/Project1/Project1";
+import  { Project2 } from "./components/Projects/Project2/Project2";
+import { Project3 } from "./components/Projects/Project3/Project3"
 
 function App() {
   return (
@@ -21,6 +23,8 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/about" element={<About />} />
         <Route path="/projects/project1" element={<DefaultAccordion />} />
+        <Route path="/projects/project2" element={<Project2 />} />
+        <Route path="/projects/project3" element={<Project3 />} />
       </Routes>
       <AppFooter />
     </div>

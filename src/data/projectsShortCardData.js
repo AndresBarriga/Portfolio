@@ -8,7 +8,8 @@ const projectsShortCardData =[
         feature1title:"Two products",
         feature1subtitle:"Platform for healthcare professionals and Mobile Phone App for patients",
         feature2title:"Patient's Data Remote Monitoring , Analysis and Action",
-        feature2subtitle:"Doctors able to monitor patient's health while patients are at the comfort of their homes"
+        feature2subtitle:"Doctors able to monitor patient's health while patients are at the comfort of their homes",
+        link:"/projects/project1"
     },
      {
         id: 2,
@@ -19,7 +20,8 @@ const projectsShortCardData =[
         feature1title:"IoT-powered solution",
         feature1subtitle:"Accessible from a laptop and connected to a repeater allowing real time data-driven decision-making",
         feature2title:"Multiple features",
-        feature2subtitle:"Updates Over-the-Air, User group & area limitations, real-time statistics and more"
+        feature2subtitle:"Updates Over-the-Air, User group & area limitations, real-time statistics and more",
+        link:"/projects/project2"
     },
     {
         id: 3,
@@ -30,7 +32,8 @@ const projectsShortCardData =[
         feature1title:"Ensure your Server Availability ALWAYS, ANYWHERE",
         feature1subtitle:"With Multipath TCP technology, we combine multiple LTE/5G circuits, creating a fast and robust internet connection, delivering consistent performance.",
         feature2title:"Two versions to suit your needs",
-        feature2subtitle:"The Big One, faster and equipped with a server and backup system. The Small One more portable and fast enough for supporting up to 15 users. "
+        feature2subtitle:"The Big One, faster and equipped with a server and backup system. The Small One more portable and fast enough for supporting up to 15 users. ",
+        link:"/projects/project3"
     }, 
 ]
 

@@ -42,7 +42,7 @@ function ProjectCardLongL(props) {
         </div>
       </div>
       <a
-        href={props}
+        href={props.link}
         className="mx-2 font-general-light flex justify-center items-center w-20 sm:w-36 mt-4 sm:mt-12 mb-2 sm:mb-0 text-base sm:text-lg border border-indigo-200 py-2 sm:py-2.5 shadow-lg rounded-lg bg-indigo-50 focus:ring-1 focus:ring-indigo-900 hover:bg-indigo-500 text-gray-500 hover.text-white duration-500"
         aria-label="Download Resume"
       >
