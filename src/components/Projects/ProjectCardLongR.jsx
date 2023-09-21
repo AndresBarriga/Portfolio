@@ -5,20 +5,21 @@ import { Link } from 'react-router-dom';
 
 function ProjectCardLongR(props) {
     return (
-        <div className="flex flex-col sm:justify-between items-center sm:flex-row mt-12 md:mt-2 mx-40">
+        <div className="flex flex-col sm:justify-between items-center sm:flex-row mt-12 md:mt-2 mx-2">
 
-        <article className="w-full md:w-2/3 relative overflow-hidden rounded-lg shadow transition hover:shadow-lg"  >
+        <article className="bg-gray-300 bg-opacity-75 w-full md:w-2/3 relative overflow-hidden rounded-lg shadow transition hover:shadow-lg "  >
           <img
             alt="Office"
             src={props.img}
-            className="absolute inset-0  h-full  w-full"
+            className="absolute inset-0  h-full w-full "
           />
+          
 
           <div
             className="relative pt-32 bg-opacity-75 sm:pt-48 lg:pt-64 ml-14"
           >
             <div className="p-4 sm:p-6">
-              <time datetime="2022-10-10" className="block text-xs text-white/90">
+              <time dateTime="2022-10-10" className="block text-xs text-white/90">
                 {props.industry}
               </time>
 
@@ -35,6 +36,8 @@ function ProjectCardLongR(props) {
             </div>
           </div>
         </article>
+
+
         <article className="w-10/12 md:w-4/6 relative overflow-hidden rounded-lg shadow transition hover:shadow-lg mt-4 bg-gray-300 bg-opacity-75" style={{ position: 'relative', zIndex: '1', left: '-80px' }}>
           <div
             className="grid grid-cols-4 grid-rows-3 mt-6 mb-6 gap-2 relative pt-0 sm:pt-0 lg:pt-0  "

@@ -3,6 +3,8 @@ import AppBanner from '../components/shared/AppBanner';
 import MySkills from "../components/shared/MySkills";
 import Projects from './Projects';
 import TestimonialsSlider from '../components/Testimonials/Testimonials';
+ 
+
 
 
 
@@ -13,6 +15,7 @@ function Home() {
       <MySkills />
       <Projects />
       <TestimonialsSlider />
+      
     </div>
   );
 }

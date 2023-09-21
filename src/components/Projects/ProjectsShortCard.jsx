@@ -6,10 +6,10 @@ function ProjectShortCard(props) {
         /* ------Project 1------- */
         <>
 
-            <div className="flex flex-col justify-center flex-1 p-6 dark:bg-gray-900">
-                <span className="text-xs uppercase dark:text-gray-400">{props.subtitle}</span>
+            <div className="flex flex-col justify-center flex-1 p-6">
+                <span className="text-xs uppercase dark:text-gray-400 sm:text-sm">{props.subtitle}</span>
                 <h3 className="text-xl font-bold">{props.title}</h3>
-                <p className="my-6 font-general-regular text-sm dark:text-gray-400">{props.description}</p>
+                <p className="my-6 font-general-regular text-sm sm:text-base">{props.description}</p>
 
                 <div className="flex">
                     <div className="flex-shrink-0 mt-2">
@@ -20,8 +20,8 @@ function ProjectShortCard(props) {
                         </div>
                     </div>
                     <div className="ml-4 mt-2">
-                        <h4 className="text-sm font-seconday-light leadi dark:text-gray-50">{props.feature1title}</h4>
-                        <p className="mt-2 text-xs font-seconday-light dark:text-gray-400">{props.feature1subtitle}</p>
+                        <h4 className="text-sm font-seconday-light sm:text-base">{props.feature1title}</h4>
+                        <p className="mt-2 text-xs font-seconday-light sm:text-sm">{props.feature1subtitle}</p>
                     </div>
 
                 </div>
@@ -34,8 +34,8 @@ function ProjectShortCard(props) {
                         </div>
                     </div>
                     <div className="ml-4 mt-2">
-                        <h4 className="text-sm font-seconday-light leadi dark:text-gray-50">{props.feature2title}</h4>
-                        <p className="mt-2 text-xs font-seconday-light dark:text-gray-400">{props.feature2subtitle}</p>
+                        <h4 className="text-sm font-seconday-light  sm:text-base">{props.feature2title}</h4>
+                        <p className="mt-2 text-xs font-seconday-light sm:text-sm">{props.feature2subtitle}</p>
                     </div>
                 </div>
 

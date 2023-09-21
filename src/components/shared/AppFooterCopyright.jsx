@@ -6,7 +6,7 @@ function AppFooterCopyright() {
 				<a
 					href="https://github.com/AndresBarriga/Portfolio"
 					target="__blank"
-					className="hover:underline hover:text-indigo-600 dark:hover:text-indigo-300 ml-1 duration-500"
+					className="font-secondary-medium text-sm uppercase hover:underline hover:text-indigo-600 ml-1 duration-500 sm:text-xl "
 				>
 					React & Tailwind CSS Portfolio
 				</a>
@@ -14,7 +14,7 @@ function AppFooterCopyright() {
 				<a
 					href="https://andresbarriga.me"
 					target="__blank"
-					className="text-secondary-dark dark:text-secondary-light font-medium uppercase hover:underline hover:text-indigo-600 dark:hover:text-indigo-300 ml-1 duration-500"
+					className="font-secondary-medium text-sm uppercase hover:underline hover:text-indigo-600 ml-1 duration-500 sm:text-xl"
 				>
 					Andrés Barriga
 				</a>

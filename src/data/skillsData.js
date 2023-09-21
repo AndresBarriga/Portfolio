@@ -41,7 +41,6 @@ const skillsData = [
         img:"https://img.icons8.com/external-becris-lineal-becris/64/external-flowchart-artificial-intelligence-becris-lineal-becris.png",
         description: ' Process Streamlining, Efficiency Improvements, Automation, Lean Principles',
       },
-      
 ];
 export default skillsData;
 

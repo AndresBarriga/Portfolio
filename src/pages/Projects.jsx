@@ -30,43 +30,42 @@ const Projects = () => {
   return (
     <section className="p-4 lg:p-8 dark:bg-gray-800 dark:text-gray-100">
       <div className="text-center mb-8">
-        <h1 className="text-3xl font-general-bold sm:text-4xl">
+        <h1 className="text-2xl font-general-bold sm:text-4xl">
           Personal Projects 👩🏻‍💻 🚧 🏗
         </h1>
-        <p className="mt-4 text-gray-600 font-general-light">
+        <p className="mt-4 text-gray-600 font-general-light text-base sm:text-lg">
           I hold the following professional certifications, demonstrating my
-          commitment
-        </p>
-        <p className="mt-4 text-gray-600 font-general-light">
-          to enhancing my skills and knowledge in Scrum and IT service
+          commitment to enhancing my skills and knowledge in Scrum and IT service
           management:
         </p>
       </div>
 
       <div className="container mx-auto space-y-12">
-        <div className="flex flex-col overflow-hidden rounded-md shadow-sm lg:flex-row">
+        <div className="flex flex-col overflow-hidden items-center rounded-md shadow-sm lg:flex-row">
           <img
             src={doctor}
             alt=""
-            className="h-80 my-7 dark:bg-gray-500 "
+            className="h-60 w-auto my-7  "
           />
           {createProjectCard(project1)}
         </div>
 
-        <div className="flex flex-col overflow-hidden rounded-md shadow-sm lg:flex-row">
+        <div className="flex flex-col-rev items-center overflow-hidden rounded-md shadow-sm lg:flex-row">
           {createProjectCard(project2)}
+          <div className="flex justify-center items-center h-60 ">
           <img
             src={radio}
             alt=""
-            className="h-80 my-7 dark:bg-gray-500 "
+            className="h-60 my-7 sm:h-80 "
           />
+          </div>
         </div>
 
-        <div className="flex flex-col overflow-hidden rounded-md shadow-sm lg:flex-row">
+        <div className="flex flex-col overflow-hidden items-center rounded-md shadow-sm lg:flex-row">
           <img
             src={box}
             alt=""
-            className="h-80 my-7 dark:bg-gray-500 w-600"
+            className="h-80 my-7 w-600"
           />
           {createProjectCard(project3)}
         </div>

@@ -4,7 +4,7 @@ import { AboutMeProvider } from '../components/Context/AboutMeContext';
 import { motion } from 'framer-motion';
 import Certification from '../components/shared/Certifications';
 import certifData from '../data/certifData';
-
+import Carousel from '../components/Projects/Carousel/Carousel';
 
 function createCertifCard(certifData) {
 	return (
@@ -20,7 +20,7 @@ function createCertifCard(certifData) {
 
 const About = () => {
 	return (
-		<><AboutMeProvider>
+		<><><AboutMeProvider>
 			<motion.div
 				initial={{ opacity: 0 }}
 				animate={{ opacity: 1, delay: 1 }}
@@ -49,7 +49,7 @@ const About = () => {
 						createCertifCard(certif)
 					))}
 				</div>
-			</div></>
+			</div></></>
 		
 
 	);

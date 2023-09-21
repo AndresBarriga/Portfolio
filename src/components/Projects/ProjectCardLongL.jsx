@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 function ProjectCardLongL(props) {
     return (
-        <div className="flex flex-col sm:justify-between items-center sm:flex-row mt-12 md:mt-2 mx-40">
+        <div className="flex flex-col sm:justify-between items-center sm:flex-row mt-12 md:mt-2 mx-2">
 
         <article className="w-10/12 md:w-4/6 relative overflow-hidden rounded-lg shadow transition hover:shadow-lg mt-4 bg-gray-300 bg-opacity-75" style={{ position: 'relative', zIndex: '1', left: '80px' }}>
   <div
@@ -66,7 +66,7 @@ function ProjectCardLongL(props) {
     className="relative bg-gradient-to-t from-gray-900/30 to-gray-900/10 pt-32 sm:pt-48 lg:pt-64"
   >
     <div className="p-4 ml-20 sm:p-6">
-      <time datetime="2022-10-10" className="block text-xs text-white/90">
+      <time dateTime="2022-10-10" className="block text-xs text-white/90">
         {props.industry}
       </time>
 

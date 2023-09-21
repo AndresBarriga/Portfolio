@@ -15,11 +15,11 @@ function Testimonials(props) {
             </div>
 
             <div className="mt-4">
-                <p className="text-3xl font-general-bold text-rose-600 sm:text-3xl">
+                <p className="text-xl font-general-bold text-rose-600 sm:text-3xl">
                     {props.title}
                 </p>
 
-                <p className="mt-4 text-gray-600 font-general-light">
+                <p className="text-sm font-general-light  mt-4 text-gray-600 sm:text-base md:text-lg">
                     {props.description}
                 </p>
             </div>

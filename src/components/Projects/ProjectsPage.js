@@ -6,59 +6,20 @@ import projectLongRData from "../../data/projectLongRData";
 import projectLongLData from "../../data/projectLongLData";
 import ProjectCardLongL from "./ProjectCardLongL";
 import AboutCounter from "../About/AboutCounter";
-
-function createProjectCardRLong(projectLongRData) {
-  return (
-    <ProjectCardLongR
-    id = {projectLongRData.id}
-    key={projectLongRData.key}
-    industry={projectLongRData.industry}
-    title={projectLongRData.title}
-    description={projectLongRData.description}
-    img={projectLongRData.img}
-    title2={projectLongRData.title2}
-    feature1={projectLongRData.feature1}
-    feature2={projectLongRData.feature2}
-    link={projectLongRData.link}
-    />
-  )
-}
-
-function createProjectCardLLong(projectLongLData) {
-  return (
-    <ProjectCardLongL
-    id = {projectLongLData.id}
-    key={projectLongLData.key}
-    industry={projectLongLData.industry}
-    title={projectLongLData.title}
-    description={projectLongLData.description}
-    img={projectLongLData.img}
-    title2={projectLongLData.title2}
-    feature1={projectLongLData.feature1}
-    feature2={projectLongLData.feature2}
-    link={projectLongLData.link}
-    />
-  )
-}
-
-
+import Carousel from "./Carousel/Carousel";
 
 const ProjectsPage = () => {
-  const projectR1 = projectLongRData.find(project => project.id === 1);
-  const projectL1 = projectLongLData.find(project => project.id === 4);
-  const projectR2 = projectLongRData.find(project => project.id === 2);
-
-
   return (
-    <><div className="bg-hsl-240-33-98 ">
+    <>
+    
       <motion.section
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ ease: "easeInOut", duration: 0.9, delay: 0.2 }}
-        className="flex flex-col sm:justify-between items-center sm:flex-row mt-12 md:mt-2 mx-40 relative" // Add relative class to the container
+        className="flex flex-col md:justify-between items-center md:flex-row mt-12 md:mt-2 mx-5 relative sm:mx-10 md:mx-25 lg:mx-35" // Add relative class to the container
       >
         <div
-          className="w-full sm:w-2/3 h-[50vh] bg-cover bg-center bg-opacity-60"
+          className="w-full items-center sm:w-2/3 h-[50vh] bg-cover bg-center bg-opacity-60"
           style={{
             backgroundImage: `url(${laptopdesk})`, // Set the image as a background
           }}
@@ -72,9 +33,9 @@ const ProjectsPage = () => {
               duration: 0.9,
               delay: 0.4,
             }}
-            className="font-general-semibold text-2xl lg:text-3xl xl:text-4xl text-center sm:text-left text-ternary-dark"
+            className="font-general-semibold text-center"
           >
-            Highlighted Projects ✨
+            <div className="text-xl sm:text-2xl md:text-3xl lg:text-4xl">Highlighted Projects ✨</div>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0 }}
@@ -84,12 +45,14 @@ const ProjectsPage = () => {
               duration: 0.9,
               delay: 0.7,
             }}
-            className="font-general-extralight mt-4 text-sec md:text-md lg:text-l xl:text-1xl text-center sm:text-left leading-normal text-gray-500"
+            className="font-general-extralight mt-4 text-center leading-normal text-gray-500"
           >
+          <div className="text-base sm:text-base md:text-lg ">
             Step into my world as a Product Manager, where innovation meets
             strategy. Journey through my portfolio, where we'll explore crafting
             solutions, making impactful decisions, and witnessing product
             successes in an ever-evolving landscape of innovation.
+            </div>
           </motion.p>
           <motion.div
             initial={{ opacity: 0 }}
@@ -112,7 +75,7 @@ const ProjectsPage = () => {
         transition={{ ease: "easeInOut", duration: 0.9, delay: 0.2 }}
         className="flex flex-col sm:justify-between items-center sm:flex-row mt-12 md:mt-2 mx-40 mb-16"s2
       > </motion.section>
-    </div>
+    
     
     <motion.div
 				initial={{ opacity: 0 }}
@@ -121,21 +84,24 @@ const ProjectsPage = () => {
 			>
 				<AboutCounter />
 			</motion.div>
-      <div> 
-     <h1 className="text-center bg-white font-general-bold p-6 rounded-md  text-xl md:text-md lg:text-l xl:text-1xl text-gray-800
-">Learn more </h1></div>
-    <div>
-    <div className="mt-8 ml-8">
-        {createProjectCardRLong(projectR1)}
-        </div>
-        <div className="mt-8 ml-8">
-        {createProjectCardLLong(projectL1)}
-        </div>
-        <div className="mt-8 ml-8">
-        {createProjectCardRLong(projectR2)}
-        </div>
+      <Carousel />
+
+      {/* <div>
+        <h1 className="text-center bg-white font-general-bold p-6 rounded-md md:text-3xl text-xl text-gray-800">
+          Learn more </h1>
       </div>
-      </>
+      <div>
+        <div>
+          {createProjectCardRLong(projectR1)}
+        </div>
+        <div>
+          {createProjectCardLLong(projectL1)}
+        </div>
+        <div>
+          {createProjectCardRLong(projectR2)}
+        </div>
+      </div> */}
+    </>
   );
 };
 

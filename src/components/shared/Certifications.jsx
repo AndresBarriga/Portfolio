@@ -4,22 +4,22 @@ import React from 'react';
 
 const Certification = (props) => {
   return (
-    <div>
+    <div >
       {/* Card */}
-      <article className="group">
+      
         <img
           src={props.img}
-          className="h-40 w-40 ml-5 rounded-xl object-cover shadow-xl "
+          className=" ml-5 rounded-xl h-20 w-auto shadow-xl sm:h-40   "
         />
 
         <div className="p-4">
           <a href="#">
-            <h3 className="text-lg font-secondary-bold text-gray-900">
+            <h3 className="text-base font-secondary-bold text-gray-900 sm:text-xl md:text-2xl">
               {props.title}
             </h3>
           </a>
 
-          <p className="mt-2 line-clamp-6 text-sm text-gray-500 font-secondary-light">
+          <p className="text-sm font-secondary-light mt-2 line-clamp-6 text-gray-500 sm:text-base  ">
             {props.description}
           </p>
           <a
@@ -35,7 +35,7 @@ const Certification = (props) => {
             </span>
           </a>
         </div>
-      </article>
+      
     </div>
     
   );
