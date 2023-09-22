@@ -36,10 +36,12 @@ const About = () => {
 				animate={{ opacity: 1, delay: 1 }}
 				exit={{ opacity: 0 }}
 			>
+				
 				<AboutCounter />
 			</motion.div>
 
 		</AboutMeProvider>
+		<section className='flex flex-cols items-center justify-center'>
 		<div className="max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8 lg:py-16">
                 <div className="text-center mb-8"> 
                     <h1 className="text-3xl font-general-bold sm:text-4xl">Professional Certifications</h1>
@@ -51,6 +53,7 @@ const About = () => {
                     ))}
                 </div>
             </div>
+			</section>
 			
 			</></>
 		

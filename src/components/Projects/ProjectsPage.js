@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { motion } from 'framer-motion';
 import laptopdesk from "../../images/laptopdesk.jpg";
 import desktop1 from "../../images/desktop1.jpg"
+import laptop from "../../images/Laptop3.png"
 import desktop2 from "../../images/desktop2.jpg"
 import AboutCounter from "../About/AboutCounter";
 import Carousel from "./Carousel/Carousel";
@@ -19,7 +20,7 @@ const ProjectsPage = () => {
         <div
           className="w-full items-center sm:w-2/3 h-[40vh] bg-cover bg-center bg-opacity-60"
           style={{
-            backgroundImage: `url(${desktop1})`, // Set the image as a background
+            backgroundImage: `url(${laptop})`, // Set the image as a background
           }}
         ></div>
         <div className="w-full md:w-1/3 text-left bg-white p-6 rounded-md shadow-lg">
@@ -80,9 +81,24 @@ const ProjectsPage = () => {
 				animate={{ opacity: 1, delay: 1 }}
 				exit={{ opacity: 0 }}
 			>
+        <div className="mx-10 bg-gray-50 m-gray-50">
 				<AboutCounter />
+        </div>
 			</motion.div>
+      <div className="max-full bg-indigo-50 text-center">
+              <h2 className="text-xl font-general-bold sm:text-3xl md:text-4xl">
+              Highlighted Projects 👩🏻‍💻 🚧 🏗
+              </h2>
+  
+              <p className="text-base mt-4 text-gray-600 font-general-light sm:text-lg md:text-xl">
+              The projects that stands out.
+              </p>
+  
+             
+            </div>
+            <div className="flex flex-col items-center mx-auto bg-indigo-50">
       <Carousel />
+      </div>
     </>
   );
 };

@@ -44,7 +44,7 @@ const TestimonialsSlider = () => {
         <div className="mx-auto max-w-[1340px] px-4 py-12 sm:px-6 lg:me-0 lg:py-16 lg:pe-0 lg:ps-8 xl:py-24">
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-3 lg:items-center lg:gap-16">
             <div className="max-w-xl text-center ltr:sm:text-left rtl:sm:text-right">
-              <h2 className="text-xl font-general-bold sm:text-3xl md:text-4xl">
+              <h2 className="text-xl font-general-bold text-black-300 sm:text-3xl md:text-4xl">
               Working with me...
               </h2>
   
@@ -64,7 +64,7 @@ const TestimonialsSlider = () => {
             <button
               aria-label="Previous slide"
               onClick={previousSlide}
-              className="rounded-full border border-rose-600 p-4 text-rose-600 transition hover:bg-rose-600 hover:text-white"
+              className="rounded-full border border-indigo-600 p-4 text-indigo-600 transition hover:bg-indigo-600 hover:text-white"
             >
               <svg
                 className="h-5 w-5 -rotate-180 transform"
@@ -85,7 +85,7 @@ const TestimonialsSlider = () => {
             <button
               aria-label="Next slide"
               onClick={nextSlide}
-              className="rounded-full border border-rose-600 p-4 text-rose-600 transition hover:bg-rose-600 hover:text-white"
+              className="rounded-full border border-indigo-600 p-4 text-indigo-600 transition hover:bg-indigo-600 hover:text-white"
             >
               <svg
                 className="h-5 w-5"

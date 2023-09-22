@@ -37,8 +37,8 @@ const MySkills = () => {
               <div className="flex flex-col md:justify-between items-center md:flex-row mt-12 md:mt-2">
                       
                       <div className="flex flex-col justify-center md:w-1/3 ">
-                          <h1 className="text-2xl font-general-bold sm:text-3xl md:text-4xl">Building products for People</h1>
-                          <p className="text-base mt-4 font-general-light text-gray-600 sm:text-lg md:text-xl"> With my startup background, I bring  a lean mindset for building products fast. My psychology background uniquely connects me to building products that understand and enhance user experiences.</p>
+                          <h1 className="text-2xl font-general-bold sm:text-3xl md:text-4xl">Building <span className='text-indigo-500'>products for People</span></h1>
+                          <p className="text-base mt-4 font-general-light text-gray-600 sm:text-lg md:text-xl">With my startup background, I place <span className='text-indigo-500'>customer experience</span> at the forefront of product development. This customer-centric approach drives my passion for crafting products that <span className='text-indigo-500'>truly understand and enhance </span>user experiences. </p>
                       </div>
                       <div className="flex flex-row mt-4 flex-wrap space-evently md:w-2/3 ">
                           {skillsData.map((skill, index) => (

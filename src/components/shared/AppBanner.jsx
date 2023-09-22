@@ -23,7 +23,7 @@ const AppBanner = () => {
                     }}
                     className="font-general-semibold text-2xl mx-7 lg:text-3xl xl:text-4xl text-center sm:text-left text-ternary-dark "
                 >
-                    Hi, I am Andrés
+                    Hi, I am <span className='text-indigo-500 text-general-bold'> Andrés </span>
                 </motion.h1>
                 <motion.p
                     initial={{ opacity: 0 }}
@@ -35,7 +35,7 @@ const AppBanner = () => {
                     }}
                     className="mx-7 font-general-medium mt-4 text-base md:text-l lg:text-1xl xl:text-2xl text-center sm:text-left leading-normal text-gray-500"
                 >
-                    a Product Manager with a passion for turning ideas into successful products. Explore my journey in product development and innovation.
+                    a <span className='text-indigo-500 text-general-bold'>Product Manager</span> with a passion for turning ideas into successful products. <span className='text-indigo-500 text-bold'>Explore my journey</span> in product development and innovation.
                 </motion.p>
                 <motion.div
                     initial={{ opacity: 0 }}

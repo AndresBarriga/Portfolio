@@ -15,7 +15,7 @@ function Testimonials(props) {
             </div>
 
             <div className="mt-4">
-                <p className="text-xl font-general-bold text-rose-600 sm:text-3xl">
+                <p className="text-xl font-general-bold text-indigo-600 sm:text-3xl">
                     {props.title}
                 </p>
 
