@@ -52,18 +52,18 @@ export function Project2() {
 
     return (
         <>  <div className="text-center mb-8 mx-10">
-            <h1 className="text-3xl  mt-6 sm:text-4xl">MOTOTRBO 2-way radios management app </h1>
-            <h2 className="text-2xl font-general mt-6 sm:text-3xl">  In a world where seamless communication is paramount, <br /> our customizable mobile application emerged as a game-changer.</h2>
-            <p className="mt-4 text-gray-600 font-general-light">Introducing the MOTORBO 2-way radios management app, a groundbreaking solution <br /> that revolutionized how our client, a prominent organization in the logitic sector, managed their radio systems</p>
+            <h1 className="text-xl font-general-bold mt-6 sm:text-3xl">MOTOTRBO 2-way radios management app </h1>
+            <h2 className="text-lg font-general mt-6 sm:text-2xl">  In a world where seamless communication is paramount, <br /> our customizable mobile application emerged as a game-changer.</h2>
+            <p className="mt-4 text-gray-600 font-general-light text-sm sm:text-base">Introducing the MOTORBO 2-way radios management app, a groundbreaking solution <br /> that revolutionized how our client, a prominent organization in the logitic sector, managed their radio systems</p>
         </div>
-            <div className="flex justify-center items-center my-10">
-                <div className="w-[calc(100%-320px)] mt-8">
+            <div className="flex">
+            <div className="w-screen mt-8 mx-4">
                     <div className=" rounded-t-lg border border-neutral-200 bg-white dark:border-neutral-600 dark:bg-neutral-800">
                         <AccordionItem
-                            title="Overview"
+                            title={<h1 className="font-general-bold text-sm sm:text-base lg:text-lg xl:text-xl">Overview</h1>}
                             isOpen={openAccordion === 1}
                             onClick={() => handleOpen(1)}
-                            body={<p>Introducing the MOTORBO 2-way radios management app—a dynamic mobile application designed to empower users in effectively managing MOTORBO 2-way radios. These radios are essential devices that facilitate wireless communication over short distances, playing a pivotal role in various industries such as logistics , construction, security or hospitality 
+                            body={<p className="text-xs sm:text-sm lg:text-base xl:text-lg">Introducing the MOTORBO 2-way radios management app—a dynamic mobile application designed to empower users in effectively managing MOTORBO 2-way radios. These radios are essential devices that facilitate wireless communication over short distances, playing a pivotal role in various industries such as logistics , construction, security or hospitality 
                             <div>
                                     <span class="font-bold">Key Features:</span> 
                                     <li><span class="font-bold">Effortless Radio Management: </span> Our app simplifies the complex task of managing MOTORBO 2-way radios, offering users an intuitive interface for efficient control.</li>
@@ -77,10 +77,11 @@ export function Project2() {
                                     </p>}
                         />
                         <AccordionItem
-                            title="Problem Statement"
+                             title={<h1 className="font-general-bold text-sm sm:text-base lg:text-lg xl:text-xl">How it works?</h1>}
+                          
                             isOpen={openAccordion === 2}
                             onClick={() => handleOpen(2)}
-                            body={<p>In the fast-paced world of modern business, effective communication is the lifeblood of success. Now imagine the bigger Logistic company in the world and how useful this for them would be
+                            body={<p className="text-xs sm:text-sm lg:text-base xl:text-lg">In the fast-paced world of modern business, effective communication is the lifeblood of success. Now imagine the bigger Logistic company in the world and how useful this for them would be
                             <div>
                                     <span class="font-bold">Managing the usage of MOTORBO 2-way radios: </span> can be difficult and time-consuming for both the users and the administrators
                                     <li>Users need to manually configure their radios according to their preferences and needs, such as setting up channels, volume, alerts, and encryption.</li>
@@ -94,10 +95,11 @@ export function Project2() {
                                     Using other communication devices or platforms, such as smartphones. These devices are <span class="font-bold">more expensive, less durable, less reliable, and less secure </span>than MOTORBO 2-way radios. They also <span class="font-bold">require internet access or cellular network coverage,</span> which may not be available in some areas or situations.</div>
                                     </p>}/>
                         <AccordionItem
-                            title="Solution"
+                            title={<h1 className="font-general-bold text-sm sm:text-base lg:text-lg xl:text-xl">Solution</h1>}
+                            
                             isOpen={openAccordion === 3}
                             onClick={() => handleOpen(3)}
-                            body={<p>The solution is an app that allows users to manage the usage of MOTORBO 2-way radios in a simple and convenient way. <br />The app has the following features:
+                            body={<p className="text-xs sm:text-sm lg:text-base xl:text-lg">The solution is an app that allows users to manage the usage of MOTORBO 2-way radios in a simple and convenient way. <br />The app has the following features:
                             <div className="mt-2">
                             <li><span class="font-bold">Linking radios to workers via PIN:</span> Users can easily pair their radios with their mobile phones by entering a unique PIN code. Making sure user kept their <span class="font-bold">personal settings</span> and radios are at the same time always <span class="font-bold">related to a worker</span></li>
                             <li><span class="font-bold">Limiting usage of radio:</span> Administrators can set limits on how long or how often users can use their radios. This helps them optimize the battery life and bandwidth of the radios, as well as <span class="font-bold">prevent misuse </span> of the devices.</li>
@@ -110,11 +112,11 @@ export function Project2() {
                             </div></p>}
                         ></AccordionItem>
                         <AccordionItem
-    title="How it works?"
+    title={<h1 className="font-general-bold text-sm sm:text-base lg:text-lg xl:text-xl">How it works?</h1>}
     isOpen={openAccordion === 4}
     onClick={() => handleOpen(4)}
     body={
-        <>
+        <> <div className="text-xs sm:text-sm lg:text-base xl:text-lg">
             <p>The product works as follows:</p>
             <div>
                 1. The laptop contains the app and connects to a repeater via a cable.
@@ -134,40 +136,44 @@ export function Project2() {
             <div>
                 6. The app allows the administrator to enable geofencing features on the radios via the app, which are activated and deactivated by the GPS location of the radios.
             </div>
+            </div>
         </>
     }
 ></AccordionItem>
 
                         
                         <AccordionItem
-                            title="My Role"
+                             title={<h1 className="font-general-bold text-sm sm:text-base lg:text-lg xl:text-xl">My Role</h1>}
+                           
                             isOpen={openAccordion === 5}
                             onClick={() => handleOpen(5)}
-                            body={<><div className="bg-gray-100 p-4">
-                                <h2 className="text-xl font-bold">My Role in the Product</h2>
-                                <p className="mt-2"> My role was the primary contact between the development team and the engineers working at the company that we were building the product for. I was responsible for gathering feedback, going on site and speaking to people to understand how everything was working and challenges or get logs from repeater.. </p>
-                            </div><div className="mt-2">
+                            body={<><div className="bg-gray-100 p-4 ">
+                                <h2 className="text-base sm:text-lg lg:text-xl font-bold">My Role in the Product</h2>
+                                <p className="text-xs sm:text-sm lg:text-base xl:text-lg mt-2"> My role was the primary contact between the development team and the engineers working at the company that we were building the product for. I was responsible for gathering feedback, going on site and speaking to people to understand how everything was working and challenges or get logs from repeater.. </p>
+                            </div><div className="text-xs sm:text-sm lg:text-base xl:text-lg mt-2">
                             <li>Key role in defining the requirements, specifications, and features of the product, based on the needs and preferences of the client and the users. I communicated these to the development team and ensured that they were aligned with the project goals and scope.</li>
                             <li>Testing, debugging, and troubleshooting the product, both on the app and on the radios. I reported any issues or bugs to the development team and helped them resolve them as soon as possible.</li>
                             <li>Contributed to the documentation, presentation, and delivery of the product, both internally and externally. I prepared user manuals, training materials, and demo videos for the product. I also conducted training sessions and workshops for the client and the users on how to use the product effectively and efficiently.</li>
                             <li>Ongoing support and maintenance for the product, after it was launched and deployed. I monitored its performance, usage, and feedback, and suggested improvements or enhancements to the development team.</li>
-                            <div className="mt-4">Some of the skills and tools that I used or learned during the project were:</div>
-                            </div>
+                            <div className="text-xs sm:text-sm lg:text-base xl:text-lg mt-4">Some of the skills and tools that I used or learned during the project were:
+                            
                             <li>Communication skills: I used various communication channels and methods, phone calls, meetings, reports, presentations, etc., to communicate effectively with different stakeholders. I also used clear, concise, and polite language to convey information, feedback, instructions, etc.</li>
                             <li>Technical skills: I used various technical tools and platforms, such as MOTORBO 2-way radios, repeaters, laptops, mobile phones, Bluetooth, Wi-Fi, etc., to work with the product and its components. I also used various software applications and systems, such as app development tools, Product Management tools (Confluence, Jira) , testing tools , documentation tools , presentation tools , etc., to create, test, debug, document, present, and deliver the product.</li>
                             <li>Problem-solving skills: I used various problem-solving techniques and strategies, such as brainstorming, research, analysis, testing, debugging, troubleshooting, etc., to solve any issues or challenges that arose during the product development process.</li>
-                            
+                            </div>
+                            </div>
                                     
                                     
                             </>
                             }
                         />
                         <AccordionItem
-                            title="Building process"
+                             title={<h1 className="font-general-bold text-sm sm:text-base lg:text-lg xl:text-xl">Building Process</h1>}
+                           
                             isOpen={openAccordion === 7}
                             onClick={() => handleOpen(7)}
                             body={
-                                <>
+                                <> <div className="text-xs sm:text-sm lg:text-base xl:text-lg mt-2">
                                     <p>
                                         Our journey to develop the telemedical platform was a strategic process that unfolded in several key phases:
                                     </p>
@@ -195,16 +201,17 @@ export function Project2() {
                                     <div className="mt-2">
                                         <span class="font-bold">We then finalized and launched the product in October 2021</span> , after we completed all the features and tasks that were agreed upon with the client. We also prepared user manuals, training materials, and demo videos for the product. We also conducted training sessions and workshops for the client and the users
                                     </div>
-
+                                    </div>
                                 </>
                             }
                         />
 
                         <AccordionItem
-                            title="Challenges"
+                             title={<h1 className="font-general-bold text-sm sm:text-base lg:text-lg xl:text-xl">Challenges</h1>}
+                           
                             isOpen={openAccordion === 8}
                             onClick={() => handleOpen(8)}
-                            body={<><p>
+                            body={<><p className="text-xs sm:text-sm lg:text-base xl:text-lg mt-2">
                                 Some of the challenges that I faced during the product development process were:
 
 
@@ -229,15 +236,17 @@ export function Project2() {
                         />
 
                         <AccordionItem
-                            title="Results"
+                             title={<h1 className="font-general-bold text-sm sm:text-base lg:text-lg xl:text-xl">Tech & Processes</h1>}
+                           
                             isOpen={openAccordion === 9}
                             onClick={() => handleOpen(9)}
                             body={<><div className="bg-gray-100 p-4 mt-4">
                                 
-                                <p className="mt-2">
+                                <p className="text-xs sm:text-sm lg:text-base xl:text-lg mt-2">
                                     Our collaborative efforts and meticulous approach yielded significant results in the solution we developed. These outcomes reflect the impact of our work and the value it brought.
                                 </p>
                             </div>
+                            <div className="text-xs sm:text-sm lg:text-base xl:text-lg mt-2">
                                     <li className="mt-4">
                                     The product was successfully launched and deployed in October 2021, after nine months of development. The product met all the requirements, specifications, and features that were agreed upon with the client. The product also passed all the tests and evaluations that were conducted by the development team, the client, and the users.</li>
                                     <li>
@@ -248,14 +257,14 @@ export function Project2() {
                                     The product also helped the development team gain recognition and reputation by creating a high-quality and innovative product that solved a real problem or a large client   </li>
                                     <li>
                                     According to a report by the client, the product saved them an estimated $0.7 million per year in operational costs, increased their productivity by 15%. According to a report by the development team, the product earned them an estimated 300k in revenue. </li>
-                                </>
+                                    </div></>
                             }
                         />
 
                     </div>
                 </div>
             </div>
-            <div className="font-general-light-italic mx-20 text-sm"> * Disclaimer:
+            <div className="font-general-light-italic mx-20 text-xs sm:text-sm"> * Disclaimer:
 
 The content presented in this project portfolio is a fictional scenario created for illustrative purposes. Real names, specific product details, and confidential information have been intentionally avoided and omitted to uphold confidentiality agreements and protect sensitive business information. Any resemblance to actual individuals, organizations, or products, living or dead, is purely coincidental. The primary aim of this portfolio is to provide a general overview of a hypothetical project and its various components, challenges, and outcomes. All information and descriptions contained herein are for demonstration and creative purposes only.</div>
         

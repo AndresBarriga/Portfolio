@@ -7,6 +7,7 @@ const projectsCarousel = [
         person:"Remote Healthcare - Software / Platform + Mobile Phone App ",
         img:"https://i.ibb.co/887vM4C/medical-banner-with-doctor-working-laptop.jpg",
         company:"Role: Product Manager",
+        link:"/projects/project1"
     },
   {
         id:2,
@@ -16,6 +17,7 @@ const projectsCarousel = [
         person:"Telecommunications - Mainly Hardware",
         img:"https://i.ibb.co/VVNdqVy/Box.png",
         company:"Role: Product Manager",
+        link:"/projects/project3"
     },
     {
         id:3,
@@ -24,7 +26,8 @@ const projectsCarousel = [
         description:"Developing a customized Application to control Mototrbo 2-way radio in warehouse with +400 users, Features such a a real-time statistics, User group & area limitations and Over The Air Updates",
         person:"Telecommunications - Software/ Laptop App connected to repeater and 2-way radios",
         img:"https://i.ibb.co/9qNxcym/futuristic-smart-city-with-5g-global-network-technology.jpg",
-        company:"Contracts Coordination Manager at MikiTravel",
+        company:"Role: Product Manager",
+        link:"/projects/project2"
     }  
 ]
 

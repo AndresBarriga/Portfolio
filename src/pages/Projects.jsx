@@ -43,21 +43,30 @@ const Projects = () => {
       <div className="container mx-auto space-y-12">
         <div className="flex flex-col overflow-hidden items-center rounded-md shadow-sm lg:flex-row">
           <img
-            src={doctor}
+            src="https://i.ibb.co/887vM4C/medical-banner-with-doctor-working-laptop.jpg"
             alt=""
             className="h-60 w-auto my-7  "
           />
           {createProjectCard(project1)}
         </div>
-
+        <div className=" justify-center items-center md:hidden">
+        <img
+            src="https://i.ibb.co/9qNxcym/futuristic-smart-city-with-5g-global-network-technology.jpg"
+            alt=""
+            className="h-60 w-auto "
+          />
+          </div>
         <div className="flex flex-col-rev items-center overflow-hidden rounded-md shadow-sm lg:flex-row">
+          
           {createProjectCard(project2)}
           <div className="flex justify-center items-center h-60 ">
+          <div className="hidden md:block">
           <img
-            src={radio}
+            src="https://i.ibb.co/9qNxcym/futuristic-smart-city-with-5g-global-network-technology.jpg"
             alt=""
-            className="h-60 my-7 sm:h-80 "
+            className="w-auto my-7 sm:h-80 "
           />
+          </div>
           </div>
         </div>
 

@@ -39,17 +39,20 @@ const About = () => {
 				<AboutCounter />
 			</motion.div>
 
-		</AboutMeProvider><div className="sm:px-6 sm:py-12 lg:px-8 lg:py-16">
-				<div className="text-center mb-8">
-					<h1 className="text-3xl font-general-bold sm:text-4xl">Professional Certifications</h1>
-					<p className="mt-4 text-gray-600 font-general-light">I hold the following professional certifications, demonstrating my commitment to enhancing my skills and knowledge in Scrum and IT service management:</p>
-				</div>
-				<div className="flex justify-items-center space-x-4 mx-8">
-					{certifData.map((certif, index) => (
-						createCertifCard(certif)
-					))}
-				</div>
-			</div></></>
+		</AboutMeProvider>
+		<div className="max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8 lg:py-16">
+                <div className="text-center mb-8"> 
+                    <h1 className="text-3xl font-general-bold sm:text-4xl">Professional Certifications</h1>
+                    <p className="mt-4 text-base text-gray-600 font-general-light sm:text-lg md:text-xl">I hold the following professional certifications, demonstrating my commitment to enhancing my skills and knowledge in Scrum and IT service management:</p>
+                </div>
+                <div className="flex flex-col md:flex-row">
+                    {certifData.map((certif, index) => (
+                        createCertifCard(certif)
+                    ))}
+                </div>
+            </div>
+			
+			</></>
 		
 
 	);

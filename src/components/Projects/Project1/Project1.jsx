@@ -52,37 +52,37 @@ export function DefaultAccordion() {
 
     return (
         <>  <div className="text-center mb-8">
-            <h1 className="text-3xl  mt-6 sm:text-4xl">Full-service Telemedical Platform </h1>
-            <h2 className="text-2xl font-general mt-6 sm:text-3xl"> Telemonitoring in heart failure</h2>
-            <p className="mt-4 text-gray-600 font-general-light">Solution to connect healthcare stakeholders and provide remote telemonitoring to patients <br></br> with chronic diseases through the analysis of vital data from the comfort of their homes</p>
+            <h1 className="text-xl font-general-bold mt-6 sm:text-3xl">Full-service Telemedical Platform </h1>
+            <h2 className="text-lg font-general mt-6 sm:text-2xl"> Telemonitoring in heart failure</h2>
+            <p className="mt-4 text-gray-600 font-general-light text-sm sm:text-base">Solution to connect healthcare stakeholders and provide remote telemonitoring to patients <br></br> with chronic diseases through the analysis of vital data from the comfort of their homes</p>
         </div>
-            <div className="flex justify-center items-center my-10">
-                <div className="w-[calc(100%-320px)] mt-8">
-                    <div className=" rounded-t-lg border border-neutral-200 bg-white dark:border-neutral-600 dark:bg-neutral-800">
+            <div className="flex ">
+                <div className="w-screen mt-8 mx-4">
+                    <div className="rounded-t-lg border border-neutral-200 bg-white dark:border-neutral-600 dark:bg-neutral-800">
                         <AccordionItem
-                            title="Overview"
+                            title={<h1 className="font-general-bold text-sm sm:text-base lg:text-lg xl:text-xl">Overview</h1>}
                             isOpen={openAccordion === 1}
                             onClick={() => handleOpen(1)}
-                            body={<p>At STS Telemedical Solutions, we developed a full-service telemedical platform that enables doctors to monitor patients’ health 24/7 from the comfort of their homes. The product suite included a mobile app for patients and a web-based platform for doctors. </p>}
+                            body={<p className="text-xs sm:text-sm lg:text-base xl:text-lg">At STS Telemedical Solutions, we developed a full-service telemedical platform that enables doctors to monitor patients’ health 24/7 from the comfort of their homes. The product suite included a mobile app for patients and a web-based platform for doctors. </p>}
                         />
                         <AccordionItem
-                            title="Problem Statement"
+                            title={<h1 className="font-general-bold text-sm sm:text-base lg:text-lg xl:text-xl">Problem Statement</h1>}
                             isOpen={openAccordion === 2}
                             onClick={() => handleOpen(2)}
-                            body={<p>The primary challenge was to improve the healthcare of elderly patients with conditions like heart insufficiency, who typically visit the hospital only a few times a month for vital data checks. By enabling daily measurements, we aimed to enhance patient care and detect dangerous trends faster..</p>}
+                            body={<p className="text-xs sm:text-sm lg:text-base xl:text-lg">The primary challenge was to improve the healthcare of elderly patients with conditions like heart insufficiency, who typically visit the hospital only a few times a month for vital data checks. By enabling daily measurements, we aimed to enhance patient care and detect dangerous trends faster..</p>}
                         />
                         <AccordionItem
-                            title="Solution"
+                            title={<h1 className="font-general-bold text-sm sm:text-base lg:text-lg xl:text-xl">Solution </h1>}
                             isOpen={openAccordion === 3}
                             onClick={() => handleOpen(3)}
-                            body={<p>In response to this challenge, our team developed a comprehensive telemedical platform. This platform empowered patients to take daily vital measurements from the comfort of their homes, enabling quicker detection of health issues and improved overall care.
+                            body={<p className="text-xs sm:text-sm lg:text-base xl:text-lg">In response to this challenge, our team developed a comprehensive telemedical platform. This platform empowered patients to take daily vital measurements from the comfort of their homes, enabling quicker detection of health issues and improved overall care.
                             </p>}
                         ></AccordionItem>
                         <AccordionItem
-                            title="How it works?"
+                            title={<h1 className="font-general-bold text-sm sm:text-base lg:text-lg xl:text-xl">How it works?</h1>}
                             isOpen={openAccordion === 4}
                             onClick={() => handleOpen(4)}
-                            body={<><p>
+                            body={<><p className="text-xs sm:text-sm lg:text-base xl:text-lg">
                                 Our telemedical platform empowers patients to take control of their health by allowing them to share vital measurements daily. Here's how it works:
 
 
@@ -100,15 +100,23 @@ export function DefaultAccordion() {
 
                                 <div>
                                     <span class="font-bold">Doctor's Actions:</span> Doctors can take immediate actions based on the alerts generated. They may schedule an appointment with the patient for further evaluation, adjust medication with a valid prescription, or recommend specific interventions to ensure the patient's well-being.
-                                </div></p><div style={{ display: 'flex', justifyContent: 'center' }}><img src={STSProcess} alt="STS PRocess" style={{ width: '50%', maxWidth: '50%', height: 'auto', marginTop: '8px' }}></img></div></>
+                                </div></p>
+                                <div className="flex justify-center sm:hidden">
+                                    <img src={STSProcess} alt="STS PRocess" style={{  height: 'auto', marginTop: '8px' }}>
+                                    </img>
+                                </div>
+                                <div className="hidden sm:block sm:flex justify-center items-center">
+                                    <img  src={STSProcess} alt="STS PRocess" style={{ width: '50%', maxWidth: '50%', height: 'auto', marginTop: '8px' }}>
+                                    </img>
+                                </div></>
                             }
                         ></AccordionItem>
 
                         <AccordionItem
-                            title="Product(s)"
+                            title={<h1 className="font-general-bold text-sm sm:text-base lg:text-lg xl:text-xl">Product(s)</h1>}
                             isOpen={openAccordion === 5}
                             onClick={() => handleOpen(5)}
-                            body={<><p>
+                            body={<p className="text-xs sm:text-sm lg:text-base xl:text-lg">
                                 We developed two core products to revolutionize the healthcare landscape:
 
 
@@ -124,17 +132,18 @@ export function DefaultAccordion() {
                                 <div className="mt-2">
                                     <span class="font-bold">The aim is to create an intuitive user experience with large, easy-to-identify tiles and buttons, ensuring that using the app is as user-friendly and straightforward as possible for the older target audience.</span> </div>
 
-                            </p></>
+                            </p>
                             }
                         ></AccordionItem>
                         <AccordionItem
-                            title="My Role"
+                            title={<h1 className="font-general-bold text-sm sm:text-base lg:text-lg xl:text-xl">My Role</h1>}
                             isOpen={openAccordion === 6}
                             onClick={() => handleOpen(6)}
                             body={<><div className="bg-gray-100 p-4">
                                 <h2 className="text-xl font-bold">My Role in the Product</h2>
-                                <p className="mt-2"> As the Product Manager, I assumed a multifaceted role that encompassed both <span class="font-bold">strategic leadership and hands-on involvement</span> in the development process. At the core of my responsibilities was the shaping of team dynamics, the definition of sprint requirements, and the establishment of workflows critical to the project's success. This role required me to foster collaboration, ensure effective communication, and nurture an agile, adaptive work environment. From defining sprint requirements to meticulously crafting the "Definition of Done," I played an integral role in guiding the project's iterative development process. Additionally, I was deeply involved in defining workflows, including logistics and testing processes, to streamline our operations and enhance project efficiency. </p>
-                            </div><div className="flex mt-4">
+                                <p className="text-xs sm:text-sm lg:text-base xl:text-lg mt"> As the Product Manager, I assumed a multifaceted role that encompassed both <span class="font-bold">strategic leadership and hands-on involvement</span> in the development process. At the core of my responsibilities was the shaping of team dynamics, the definition of sprint requirements, and the establishment of workflows critical to the project's success. This role required me to foster collaboration, ensure effective communication, and nurture an agile, adaptive work environment. From defining sprint requirements to meticulously crafting the "Definition of Done," I played an integral role in guiding the project's iterative development process. Additionally, I was deeply involved in defining workflows, including logistics and testing processes, to streamline our operations and enhance project efficiency. </p>
+                            </div>
+                            <div className="flex mt-4 text-xs sm:text-sm lg:text-base xl:text-lg mt-2">
                                     <div className="w-1/2 pr-4"> <h2 className="text-xl font-bold">Web Platform</h2>
                                         <p className="mt-2">The development of our web-based platform marked a significant milestone in our telemedical solution. As the Product Manager, I played a central role in <span class="font-bold"> shaping the platform's evolution </span> from inception to its readiness for launch. Here are the key aspects of my contributions: </p>
                                         <div className="mt-4">
@@ -179,11 +188,11 @@ export function DefaultAccordion() {
                             }
                         />
                         <AccordionItem
-                            title="Building process"
+                            title={<h1 className="font-general-bold text-sm sm:text-base lg:text-lg xl:text-xl">Building Process</h1>}
                             isOpen={openAccordion === 7}
                             onClick={() => handleOpen(7)}
                             body={
-                                <>
+                                <> <p className="text-xs sm:text-sm lg:text-base xl:text-lg">
                                     <p>
                                         Our journey to develop the telemedical platform was a strategic process that unfolded in several key phases:
                                     </p>
@@ -223,15 +232,16 @@ export function DefaultAccordion() {
                                     <p className="mt-2">
                                         This step-by-step approach enabled us to navigate complex healthcare challenges, incorporate medical expertise, and create a telemedical platform that was not only legally compliant but also user-friendly and effective.
                                     </p>
+                                    </p>
                                 </>
                             }
                         />
 
                         <AccordionItem
-                            title="Challenges"
+                            title={<h1 className="font-general-bold text-sm sm:text-base lg:text-lg xl:text-xl">Challenges</h1>}
                             isOpen={openAccordion === 8}
                             onClick={() => handleOpen(8)}
-                            body={<><p>
+                            body={<><p className="text-xs sm:text-sm lg:text-base xl:text-lg">
                                 Our endeavor to develop the telemedical platform involved navigating several intricate challenges, each requiring meticulous attention and innovative solutions:
 
 
@@ -253,12 +263,12 @@ export function DefaultAccordion() {
                             }
                         />
                         <AccordionItem
-                            title="Tech & Processes used"
+                            title={<h1 className="font-general-bold text-sm sm:text-base lg:text-lg xl:text-xl">Tech & Processes</h1>}
                             isOpen={openAccordion === 9}
                             onClick={() => handleOpen(9)}
                             body={
                                 <>
-                                    <p className="mt-2">Our telemedical platform was built on a robust foundation of technology and efficient processes. Key elements of our technology stack and development processes included:</p>
+                                    <p className="text-xs sm:text-sm lg:text-base xl:text-lg mt-2">Our telemedical platform was built on a robust foundation of technology and efficient processes. Key elements of our technology stack and development processes included:
                                     <div className="flex mt-4">
                                         <div className="w-1/2 pr-4">
                                             <h2 className="text-xl font-bold">Technology Stack</h2>
@@ -300,41 +310,46 @@ export function DefaultAccordion() {
                                             </div>
                                         </div>
                                     </div>
+                                    </p>
                                 </>
                             }
                         />
 
                         <AccordionItem
-                            title="Results"
+                            title={<h1 className="font-general-bold text-sm sm:text-base lg:text-lg xl:text-xl">Results</h1>}
                             isOpen={openAccordion === 10}
                             onClick={() => handleOpen(10)}
-                            body={<><div className="bg-gray-100 p-4 mt-4">
-                                
-                                <p className="mt-2">
-                                    Our collaborative efforts and meticulous approach yielded significant results in the telemedical solution we developed. These outcomes reflect the impact of our work and the value it brought to healthcare providers and patients alike.
-                                </p>
-                            </div><ul className="mt-4">
-                                    <li>
-                                        <span className="font-bold">Enhanced Patient Care:</span> The implementation of our telemedical platform significantly improved patient care. Doctors could monitor patients' health 24/7, leading to early intervention, timely adjustments to treatment plans, and improved overall patient outcomes.
-                                    </li>
-                                    <li>
-                                        <span className="font-bold">Legal Compliance:</span> We successfully navigated the complex legal landscape, ensuring compliance with healthcare regulations and data protection standards. This compliance not only mitigated legal risks but also built trust among healthcare providers and patients.
-                                    </li>
-                                    <li>
-                                        <span className="font-bold">Streamlined Workflows:</span> The carefully defined workflows, from patient onboarding to data analysis, streamlined operations for healthcare providers. This efficiency translated to time savings, reduced administrative burden, and increased capacity to care for more patients.
-                                    </li>
-                                    <li>
-                                        <span className="font-bold">User-Centered Design:</span> Our focus on user experience design led to an intuitive platform that healthcare providers found easy to use. This resulted in high user adoption rates and positive feedback.
-                                    </li>
-                                    <li>
-                                        <span className="font-bold">Scalability:</span> As the project evolved, we ensured that the platform and app were scalable. This readiness for growth allowed us to expand our services, accommodating a larger user base.
-                                    </li>
-                                    <li>
-                                        <span className="font-bold">Data Insights:</span> Our platform's data analysis capabilities provided doctors with valuable insights into patient health trends. This data-driven approach empowered informed decision-making and personalized patient care.
-                                    </li>
-                                </ul></>
+                            body={
+                                <>
+                                    <div className="bg-gray-100 p-4 mt-4">
+                                        <p className="text-xs sm:text-sm lg:text-base xl:text-lg mt-2">
+                                            Our collaborative efforts and meticulous approach yielded significant results in the telemedical solution we developed. These outcomes reflect the impact of our work and the value it brought to healthcare providers and patients alike.
+                                        </p>
+                                    </div>
+                                    <ul className="mt-4 text-xs sm:text-sm lg:text-base xl:text-lg ">
+                                        <li>
+                                            <span className="font-bold">Enhanced Patient Care:</span> The implementation of our telemedical platform significantly improved patient care. Doctors could monitor patients' health 24/7, leading to early intervention, timely adjustments to treatment plans, and improved overall patient outcomes.
+                                        </li>
+                                        <li>
+                                            <span className="font-bold">Legal Compliance:</span> We successfully navigated the complex legal landscape, ensuring compliance with healthcare regulations and data protection standards. This compliance not only mitigated legal risks but also built trust among healthcare providers and patients.
+                                        </li>
+                                        <li>
+                                            <span className="font-bold">Streamlined Workflows:</span> The carefully defined workflows, from patient onboarding to data analysis, streamlined operations for healthcare providers. This efficiency translated to time savings, reduced administrative burden, and increased capacity to care for more patients.
+                                        </li>
+                                        <li>
+                                            <span className="font-bold">User-Centered Design:</span> Our focus on user experience design led to an intuitive platform that healthcare providers found easy to use. This resulted in high user adoption rates and positive feedback.
+                                        </li>
+                                        <li>
+                                            <span className="font-bold">Scalability:</span> As the project evolved, we ensured that the platform and app were scalable. This readiness for growth allowed us to expand our services, accommodating a larger user base.
+                                        </li>
+                                        <li>
+                                            <span className="font-bold">Data Insights:</span> Our platform's data analysis capabilities provided doctors with valuable insights into patient health trends. This data-driven approach empowered informed decision-making and personalized patient care.
+                                        </li>
+                                    </ul>
+                                </>
                             }
                         />
+
 
                     </div>
                 </div>

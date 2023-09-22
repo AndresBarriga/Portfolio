@@ -60,11 +60,11 @@ const Carousel = () => {
             </div>
           </div>
   
-          <div className="mt-8 flex justify-center gap-4 lg:hidden">
+          <div className="mt-2 flex justify-center gap-4 lg:hidden">
             <button
               aria-label="Previous slide"
               onClick={previousSlide}
-              className="rounded-full border border-rose-600 p-4 text-rose-600 transition hover:bg-rose-600 hover:text-white"
+              className="rounded-full border border-indigo-500 p-4 text-indigo-500 transition hover:bg-indigo-600 hover:text-white"
             >
               <svg
                 className="h-5 w-5 -rotate-180 transform"
@@ -85,7 +85,7 @@ const Carousel = () => {
             <button
               aria-label="Next slide"
               onClick={nextSlide}
-              className="rounded-full border border-rose-600 p-4 text-rose-600 transition hover:bg-rose-600 hover:text-white"
+              className="rounded-full border border-indigo-500 p-4 text-indigo-500 transition hover:bg-indigo-600 hover:text-white"
             >
               <svg
                 className="h-5 w-5"

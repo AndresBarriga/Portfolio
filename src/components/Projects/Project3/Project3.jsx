@@ -54,18 +54,18 @@ export function Project3() {
 
     return (
         <>  <div className="text-center mb-8 mx-10">
-            <h1 className="text-3xl  mt-6 sm:text-4xl">Reliable Internet Connection on a Box. </h1>
-            <h2 className="text-2xl font-general mt-6 sm:text-3xl"> In the fast-paced digital age, a reliable internet connection is essential for businesses and <br />organizations. However, there are challenging environments, such as construction sites and remote warehouses, where traditional network connectivity often fails</h2>
-            <p className="mt-4 text-gray-600 font-general-light"> This is where our groundbreaking product, known under the codename "Reliable Internet Connection on a Box," steps in to bridge the gap.</p>
+            <h1 className="text-xl font-general-bold mt-6 sm:text-3xl">Reliable Internet Connection on a Box. </h1>
+            <h2 className="text-lg font-general mt-6 sm:text-2xl">In the fast-paced digital age, a reliable internet connection is essential for businesses and <br />organizations. However, there are challenging environments, such as construction sites and remote warehouses, where traditional network connectivity often fails</h2>
+            <p className="mt-4 text-gray-600 font-general-light text-sm sm:text-base"> This is where our groundbreaking product, known under the codename "Reliable Internet Connection on a Box," steps in to bridge the gap.</p>
         </div>
-            <div className="flex justify-center items-center my-10">
-                <div className="w-[calc(100%-320px)] mt-8">
+            <div className="flex ">
+            <div className="w-screen mt-8 mx-4">
                     <div className=" rounded-t-lg border border-neutral-200 bg-white dark:border-neutral-600 dark:bg-neutral-800">
                         <AccordionItem
-                            title="Overview"
+                            title={<h1 className="font-general-bold text-sm sm:text-base lg:text-lg xl:text-xl">Overview</h1>}
                             isOpen={openAccordion === 1}
                             onClick={() => handleOpen(1)}
-                            body={<p>Introducing  “Reliable Internet Connection on a Box” (RICB), it is a product that provides internet connection in places where it is not available or reliable due to the environment, such as construction sites or warehouses.<div>
+                            body={<p className="text-xs sm:text-sm lg:text-base xl:text-lg">Introducing  “Reliable Internet Connection on a Box” (RICB), it is a product that provides internet connection in places where it is not available or reliable due to the environment, such as construction sites or warehouses.<div>
                                     <span class="font-bold">Key Features:</span> 
                                     <li><span class="font-bold">Two options: </span>
                                      <div class="ml-8" ><li>The big version consists of two servers (normal and backup) that have their own hosting, and each server has up to 10 sim cards from different providers (and modems) that are combined into one signal. The big version also has 5G capabilities.</li>
@@ -80,29 +80,34 @@ export function Project3() {
                                     </p>}
                         />
                         <AccordionItem
-                            title="Problem Statement"
+                             title={<h1 className="font-general-bold text-sm sm:text-base lg:text-lg xl:text-xl">The Challenge</h1>}
+                          
                             isOpen={openAccordion === 2}
                             onClick={() => handleOpen(2)}
-                            body={<><div className="bg-gray-100 p-4">
+                            body={<>
+                            <div className="bg-gray-100 p-4 text-xs sm:text-sm lg:text-base xl:text-lg">
                                 <h2 className="text-xl font-bold">The Challenge</h2>
                                 <p className="mt-2"> The challenge was clear: how do we ensure a stable and secure internet connection in places where it's traditionally hard to come by? Whether it's a bustling construction site or the heart of a massive warehouse, our mission was to provide a dependable solution that keeps businesses connected and minimizes losses due to network downtime. </p>
-                            </div><div className="mt-2">
+                            </div>
+                            <div className="mt-2 text-xs sm:text-sm lg:text-base xl:text-lg">
                             <li>The environment may block or interfere with the mobile network coverage, such as metal structures, concrete walls, underground tunnels, etc. This may result in weak or no signal for devices that rely on mobile network, such as smartphones, tablets, laptops, etc</li>
                             <li>The environment may also require high performance and reliability for internet connection, such as high speed, low latency, high bandwidth, etc. This may result in low quality or availability of internet connection for devices that rely on mobile network, especially if there are many users or devices competing for the same signal.</li>
                             <li>the need of closed networks for companies that work with confidential information is the risk of data leakage or breach due to unauthorized access or exposure.companies that work with confidential information need to have closed networks that can protect their data from external or internal threats, such as hackers, competitors, or malicious insiders.</li>
                             </div>
-                            <div className="bg-gray-100 p-4">
+                            <div className="bg-gray-100 p-4 text-xs sm:text-sm lg:text-base xl:text-lg">
                                 <p className="mt-2"> The existing solutions or alternatives are either too costly, too complicated, or too limited. Some of them are: </p>
-                            </div>
+                            
                            <li>Using fixed-line internet connection, such as cable, fiber optic, DSL, etc. However, these types of internet connection are not available or feasible in some places or situations. They also require installation and maintenance of infrastructure and equipment, which may increase the cost and complexity of the project.</li>
-                            <li>Using satellite internet connection</li>         
+                            <li>Using satellite internet connection</li>   
+                            </div>      
                             </>
                             }/>
                         <AccordionItem
-                            title="Solution"
+                            title={<h1 className="font-general-bold text-sm sm:text-base lg:text-lg xl:text-xl">Solution</h1>}
+                            
                             isOpen={openAccordion === 3}
                             onClick={() => handleOpen(3)}
-                            body={<p>Our solution involves two distinct products: <br /> a robust server setup designed for permanent installations and a portable version tailored for temporary needs.
+                            body={<p className="text-xs sm:text-sm lg:text-base xl:text-lg">Our solution involves two distinct products: <br /> a robust server setup designed for permanent installations and a portable version tailored for temporary needs.
                             <div className="mt-2">
                             <li><span class="font-bold">The main server setup</span>  combines the strengths of multiple internet sources through advanced antenna technology. With up to 10 sim cards from different providers, our product intelligently aggregates signals, ensuring both performance and redundancy.</li>
                             For locations like warehouse server rooms, where mobile networks often struggle to penetrate, we strategically position antennas on the building's roof to capture strong signals. The entire system is housed in racks, reminiscent of those used at concerts and music events, offering a compact yet powerful solution.
@@ -118,14 +123,14 @@ export function Project3() {
                            </div></p>}
                         ></AccordionItem>
                         <AccordionItem
-                            title="How it works"
+                            title={<h1 className="font-general-bold text-sm sm:text-base lg:text-lg xl:text-xl">How it works?</h1>}
                             isOpen={openAccordion === 4}
                             onClick={() => handleOpen(4)}
                             body={<><div className="bg-gray-100 p-4">
-                                <p className="mt-2"> Whether it's a bustling construction site or the confines of a warehouse, our product ensures a stable and secure connection. Here's how it accomplishes this: </p>
+                                <p className="text-xs sm:text-sm lg:text-base xl:text-lg mt-2"> Whether it's a bustling construction site or the confines of a warehouse, our product ensures a stable and secure connection. Here's how it accomplishes this: </p>
                                 </div>
-                                <div className="flex mt-4">
-                                    <div className="w-1/2 pr-4"> <h2 className="text-xl font-bold">Main Server Setup (Permanent Solution):</h2>
+                                <div className="flex mt-2 text-xs sm:text-sm lg:text-base xl:text-lg">
+                                    <div className="w-1/2 pr-4"> <h2 className="text-sm sm:text-base lg:lg xl:text-xl font-bold">Main Server Setup (Permanent Solution):</h2>
                                        
                                         <div className="mt-4">
                                             <span class="font-bold ">Multiple Internet Sources:</span> Our main server setup begins with two servers: a primary and a backup. Each server is equipped with up to 10 SIM cards from different providers, along with modems. This diversity of internet sources is crucial for achieving high performance and redundancy.  </div>
@@ -143,7 +148,7 @@ export function Project3() {
                                         </div>
                                     </div>
                                     <div className="w-1/2 pl-4">
-                                        <h2 className="text-xl font-bold">Portable Version (Temporary Solution):</h2>
+                                    <h2 className="text-sm sm:text-base lg:lg xl:text-xl font-bold">Portable Version (Temporary Solution):</h2>
                                         <div>
                                         
                                             <div className="mt-4">
@@ -162,8 +167,25 @@ export function Project3() {
                                 </div>
                                 
                                 </div>
-                                <div className="flex flex-col-3 justify-center gap-20">
-                                <img src={BigBox} alt="BigBox" style={{ width: '30%', maxWidth: '30%', height: 'auto', marginTop: '8px' }}></img><img src={SmallBox} alt="Small Box" style={{ width: '30%', maxWidth: '30%', height: 'auto', marginTop: '8px' }}></img>
+                                <div className="hidden sm:block">
+                                    <div className="flex flex-col sm:flex-row items-center mt-4">
+                                        <div className="flex flex-col items-center">
+                                            <p className="font-general-bold font-sm">Big Box Squema</p>
+                                            <img src={BigBox} alt="BigBox" className="h-auto my-2" />
+                                        </div>
+                                        <div className="flex flex-col items-center ">
+                                            <p className="font-general-bold font-sm">Small Box Squema</p>
+                                            <img src={SmallBox} alt="Small Box" className="h-auto my-2" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="flex flex-col items-center sm:hidden">
+                                    
+                                        <p className=" font-general-bold font-sm"> Bix Box Squema</p>
+                                        <img src={BigBox} alt="BigBox" className=" h-auto my-2 " />
+                                        <p className=" font-general-bold font-sm"> Small Box Squema</p>
+                                        <img src={SmallBox} alt="Small Box" className="h-auto  my-2" />
+                                    
                                 </div>
                             </>
                             }
@@ -171,12 +193,13 @@ export function Project3() {
 
                         
                         <AccordionItem
-                            title="My Role"
+                             title={<h1 className="font-general-bold text-sm sm:text-base lg:text-lg xl:text-xl">My Role</h1>}
+                           
                             isOpen={openAccordion === 5}
                             onClick={() => handleOpen(5)}
                             body={<><div className="bg-gray-100 p-4">
-                                <p className="mt-2"> As the Product Manager for the "Reliable Internet Connection on a Box" project, I assumed a central role in orchestrating its development, from conceptualization to successful implementation. </p>
-                            </div><div className="mt-2">
+                                <p className="mt-2 text-xs sm:text-sm lg:text-base xl:text-lg"> As the Product Manager for the "Reliable Internet Connection on a Box" project, I assumed a central role in orchestrating its development, from conceptualization to successful implementation. </p>
+                            </div><div className="text-xs sm:text-sm lg:text-base xl:text-lg mt-2">
                             <li>My role was managing the product, from sitting with a designer guy to get the requirements, talk to clients, order the pieces, ensure the product was built, talk to providers to get materials, go with engineer to site to make the installation, etc.</li>
                             <li>I was responsible for overseeing the entire product development process, from ideation to delivery. I coordinated and communicated with different stakeholders, such as the development team, the client, the users, the suppliers, etc. I also ensured that the product met the quality standards and expectations of the client and the users.</li>
                             <li>I also contributed to the design, testing, and troubleshooting of the product, both on the software and hardware aspects.I worked with the engineer to test and debug the product on different devices and platforms, using tools such as network analyzers. I also helped them resolve any issues or challenges that arose during the product development process.</li>
@@ -196,16 +219,17 @@ export function Project3() {
                             }
                         />
                         <AccordionItem
-                            title="Building process"
+                             title={<h1 className="font-general-bold text-sm sm:text-base lg:text-lg xl:text-xl">Building Process</h1>}
+                           
                             isOpen={openAccordion === 7}
                             onClick={() => handleOpen(7)}
                             body={
                                 <>
-                                    <p>
+                                    <p className="text-xs sm:text-sm lg:text-base xl:text-lg">
                                     The journey was marked by iterative development and a deep commitment to solving connectivity challenges in diverse environments. This building process can be divided into distinct phases:
                                     </p>
 
-                                    <div className="mt-2">
+                                    <div className="text-xs sm:text-sm lg:text-base xl:text-lg mt-2">
                                         <span class="font-bold">Phase 1: Big Box Prototype without 5G</span>
                                         <li> <span class="font-bold">Conceptualization and Design: </span>
                                          We started by conceptualizing the initial version of the product, focusing on creating a robust internet connectivity solution for challenging environments. This phase involved designing the hardware components and selecting the appropriate modems and antennas.
@@ -220,14 +244,14 @@ export function Project3() {
                                          The first big box prototype was deployed in selected test environments to assess its performance and gather real-world data.
                                         </li>
                                     </div>
-                                    <div className="mt-2">
+                                    <div className="text-xs sm:text-sm lg:text-base xl:text-lg mt-2">
                                         <span class="font-bold">Phase 2: Integration of 5G Technology</span>
                                         <li> <span class="font-bold">Conceptual Enhancement: </span>
                                         Recognizing the importance of 5G technology, we enhanced our existing design to incorporate 5G capabilities into the product.</li>
                                         <li> <span class="font-bold">Hardware integration, Testing and Performance Validation:</span>
                                         We ensured seamless compatibility with existing components.  We measured the impact on connection speed and reliability.The integrated 5G technology was rigorously tested in various environments to validate its ability to deliver high-speed internet connectivity </li>
                                     </div>
-                                    <div className="mt-2">
+                                    <div className="text-xs sm:text-sm lg:text-base xl:text-lg mt-2">
                                         <span class="font-bold">Phase 3: Development of the Small Prototype</span>
                                         <li> <span class="font-bold">Identification of Need:</span>
                                         Recognizing the demand for a smaller, more portable version of our product, we initiated the development of the small prototype </li>
@@ -249,10 +273,11 @@ export function Project3() {
                         />
 
                         <AccordionItem
-                            title="Challenges"
+                             title={<h1 className="font-general-bold text-sm sm:text-base lg:text-lg xl:text-xl">Challenges</h1>}
+                           
                             isOpen={openAccordion === 8}
                             onClick={() => handleOpen(8)}
-                            body={<><p>
+                            body={<><p className="text-xs sm:text-sm lg:text-base xl:text-lg">
                                 Some of the challenges that I faced during the product development process were:
                                 <div className="mt-4">
                                     <span class="font-bold">Limited 5G Availability: </span>  This necessitated careful selection of deployment locations and coordination with network providers to maximize 5G coverage.</div>
@@ -275,22 +300,23 @@ export function Project3() {
                         />
 
                         <AccordionItem
-                            title="Results"
+                             title={<h1 className="font-general-bold text-sm sm:text-base lg:text-lg xl:text-xl">Tech & Processes</h1>}
+                           
                             isOpen={openAccordion === 9}
                             onClick={() => handleOpen(9)}
-                            body={<><div className="bg-gray-100 p-4 mt-4">
+                            body={<><div className="bg-gray-100 p-4 mt-4 text-xs sm:text-sm lg:text-base xl:text-lg">
                                 
-                                <p className="mt-2">
+                                <p className="mt-2 text-xs sm:text-sm lg:text-base xl:text-lg">
                                 The culmination of our efforts in developing "Reliable Internet Connection on a Box" has yielded impressive results, demonstrating the product's effectiveness and value in addressing connectivity challenges in demanding environments.
                                 </p>
                             </div>
-                            <div className="mt-4">
+                            <div className="text-xs sm:text-sm lg:text-base xl:text-lg mt-4">
                                     <span class="font-bold">Successful Product Launch: </span>The product gained traction and saw widespread adoption in industries and locations where internet connectivity was traditionally unreliable.</div>
-                                <div className="mt-2">
+                                <div className="text-xs sm:text-sm lg:text-base xl:text-lg mt-2">
                                     <span class="font-bold">Installation Success: </span> Installation of our product in diverse environments, including construction sites, warehouses, and remote offices, was met with resounding success.</div>
-                                    <div className="mt-2">
+                                    <div className="text-xs sm:text-sm lg:text-base xl:text-lg mt-2">
                                     <span class="font-bold">Positive Client Feedback: </span> Client feedback has been overwhelmingly positive. Users have praised the product for its performance, ease of use, and adaptability to unique site requirements. Valuable insights from clients have continued to inform product refinements.</div>
-                                <div className="mt-2">
+                                <div className="text-xs sm:text-sm lg:text-base xl:text-lg mt-2">
                                     <span class="font-bold">Proven Reliability: </span>The Product has consistently delivered on its promise of dependable connectivity. Performance metrics, including connection speed, reliability, and reduced downtime, have exceeded expectations</div>
                                     
 </>
@@ -300,7 +326,7 @@ export function Project3() {
                     </div>
                 </div>
             </div>
-            <div className="font-general-light-italic mx-20 text-sm"> * Disclaimer:
+            <div className="font-general-light-italic mx-20 text-xs sm:text-sm"> * Disclaimer:
 
 The content presented in this project portfolio is a fictional scenario created for illustrative purposes. Real names, specific product details, and confidential information have been intentionally avoided and omitted to uphold confidentiality agreements and protect sensitive business information. Any resemblance to actual individuals, organizations, or products, living or dead, is purely coincidental. The primary aim of this portfolio is to provide a general overview of a hypothetical project and its various components, challenges, and outcomes. All information and descriptions contained herein are for demonstration and creative purposes only.</div>
         </>
