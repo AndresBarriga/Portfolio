@@ -34,9 +34,7 @@ const Projects = () => {
           Personal Projects 👩🏻‍💻 🚧 🏗
         </h1>
         <p className="mt-4 text-gray-600 font-general-light text-base sm:text-lg">
-          I hold the following professional certifications, demonstrating my
-          commitment to enhancing my skills and knowledge in Scrum and IT service
-          management:
+          Join me along my journey and discover some of the products that I have been working on
         </p>
       </div>
 
