@@ -9,7 +9,7 @@ const Certification = (props) => {
       
         <img
           src={props.img}
-          className=" ml-5 rounded-xl h-20 w-auto shadow-xl sm:h-40   "
+          className=" ml-5 rounded-xl h-20 w-auto shadow-xl sm:h-25 custom-height-25   "
         />
 
         <div className="p-4">

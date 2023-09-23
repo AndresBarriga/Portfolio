@@ -8,7 +8,7 @@ const AboutCounter = () => {
 	useCountUp({ ref: 'projectsCounter', end: 87, duration: 2 });
 
 	return (
-		<div className="mt-10 my-20 sm:mt-20 bg-primary-light dark:bg-ternary-dark shadow-sm">
+		<div className="mt-10 my-20 sm:mt-20 bg-primary-light bg-ternary-dark ">
 			<div className="font-general-medium font-base items-center  block sm:flex sm:py-10 py-2 sm:justify-between ">
 				<CounterItem
 					title="Years of experience"

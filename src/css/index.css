@@ -523,6 +523,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .mb-2 {
   margin-bottom: 0.5rem;
 }
+.custom-height-25 {
+  height: 100px;
+}
 .mb-7 {
   margin-bottom: 1.75rem;
 }
@@ -961,10 +964,7 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-bg-opacity: 1;
   background-color: rgb(79 70 229 / var(--tw-bg-opacity));
 }
-.hover\:bg-ternary-dark:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(30 56 81 / var(--tw-bg-opacity));
-}
+
 .hover\:bg-indigo-500:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(99 102 241 / var(--tw-bg-opacity));
@@ -977,10 +977,7 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-text-opacity: 1;
   color: rgb(99 102 241 / var(--tw-text-opacity));
 }
-.hover\:text-primary-dark:hover {
-  --tw-text-opacity: 1;
-  color: rgb(13 36 56 / var(--tw-text-opacity));
-}
+
 .hover\:text-white:hover {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
@@ -997,10 +994,7 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-text-opacity: 1;
   color: rgb(249 250 251 / var(--tw-text-opacity));
 }
-.hover\:text-secondary-dark:hover {
-  --tw-text-opacity: 1;
-  color: rgb(16 45 68 / var(--tw-text-opacity));
-}
+
 .hover\:underline:hover {
   text-decoration-line: underline;
 }

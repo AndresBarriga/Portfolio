@@ -17,28 +17,28 @@ function ProjectCardLongL(props) {
       </h3>
       <div className="flex">
         <div className="flex-shrink-0 mt-2">
-          <div className="flex items-center justify-center w-6 h-6 rounded-md dark:bg-violet-400 dark:text-gray-900">
+          <div className="flex items-center justify-center w-6 h-6 rounded-md ">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-7 h-7">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
             </svg>
           </div>
         </div>
         <div className="ml-4 mt-2">
-          <h4 className="font-seconday-light text-sm dark:text-gray-50">{props.feature1}</h4>
-          <p className="mt-2 text-xs font-seconday-light dark:text-gray-400">{props.feature1more}</p>
+          <h4 className="font-seconday-light text-sm ">{props.feature1}</h4>
+          <p className="mt-2 text-xs font-seconday-light ">{props.feature1more}</p>
         </div>
       </div>
       <div className="flex">
         <div className="flex-shrink-0 mt-2">
-          <div className="flex items-center justify-center w-6 h-6 rounded-md dark:bg-violet-400 dark:text-gray-900">
+          <div className="flex items-center justify-center w-6 h-6 rounded-md ">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-7 h-7">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
             </svg>
           </div>
         </div>
         <div className="ml-4 mt-2">
-          <h4 className="text-sm font-seconday-light leadi dark:text-gray-50">{props.feature2}</h4>
-          <p className="mt-2 text-sm font-seconday-light dark:text-gray-400">{props.feature2more}</p>
+          <h4 className="text-sm font-seconday-light leadi ">{props.feature2}</h4>
+          <p className="mt-2 text-sm font-seconday-light ">{props.feature2more}</p>
         </div>
       </div>
       <a

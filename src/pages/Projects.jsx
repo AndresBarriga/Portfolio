@@ -28,7 +28,7 @@ const Projects = () => {
   const project3 = projectsShortCardData.find(project => project.id === 3);
 
   return (
-    <section className="p-4 lg:p-8 dark:bg-gray-800 dark:text-gray-100">
+    <section className="p-4 lg:p-8 ">
       <div className="text-center mb-8">
         <h1 className="text-2xl font-general-bold sm:text-4xl">
           Personal Projects 👩🏻‍💻 🚧 🏗

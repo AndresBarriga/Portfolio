@@ -43,7 +43,7 @@ const AppHeader = () => {
 							<svg
 								xmlns="http://www.w3.org/2000/svg"
 								viewBox="0 0 24 24"
-								className="h-7 w-7 fill-current text-secondary-dark dark:text-ternary-light"
+								className="h-7 w-7 fill-current text-secondary-dark "
 							>
 								{showMenu ? (
 									<FiX className="text-3xl" />
@@ -91,7 +91,7 @@ const AppHeader = () => {
 				>
 					Contact
 				</Link>
-				<div className="border-t-2 pt-3 sm:pt-0 sm:border-t-0 border-primary-light dark:border-secondary-dark">
+				<div className="border-t-2 pt-3 sm:pt-0 sm:border-t-0 border-primary-light ">
 					<Link to="/contact">
 						<span className="font-general-medium sm:hidden block text-left text-md bg-indigo-500 hover:bg-indigo-600 text-white shadow-sm rounded-sm px-4 py-2 mt-2 duration-300 w-24" aria-label="Book a Call">
 							<Button title="Book a Call" />
@@ -104,28 +104,28 @@ const AppHeader = () => {
 			<div className="font-general-medium hidden m-0 sm:ml-4 mt-5 sm:mt-3 sm:flex p-5 sm:p-0 justify-center items-center shadow-lg sm:shadow-none">
 			<Link
 					to="/"
-					className="block text-left text-lg text-primary-dark dark:text-ternary-light hover:text-secondary-dark dark:hover:text-secondary-light  sm:mx-4 mb-2 sm:py-2"
+					className="block text-left text-lg text-primary-dark  hover:text-secondary-dark   sm:mx-4 mb-2 sm:py-2"
 					aria-label="Home"
 				>
 					Home
 				</Link>
 				<Link
 					to="/projects"
-					className="block text-left text-lg text-primary-dark dark:text-ternary-light hover:text-secondary-dark dark:hover:text-secondary-light  sm:mx-4 mb-2 sm:py-2"
+					className="block text-left text-lg text-primary-dark  hover:text-secondary-dark   sm:mx-4 mb-2 sm:py-2"
 					aria-label="Projects"
 				>
 					Projects
 				</Link>
 				<Link
 					to="/about"
-					className="block text-left text-lg text-primary-dark dark:text-ternary-light hover:text-secondary-dark dark:hover:text-secondary-light  sm:mx-4 mb-2 sm:py-2"
+					className="block text-left text-lg text-primary-dark hover:text-secondary-dark   sm:mx-4 mb-2 sm:py-2"
 					aria-label="About Me"
 				>
 					About Me
 				</Link>
 				<Link
 					to="/contact"
-					className="block text-left text-lg text-primary-dark dark:text-ternary-light hover:text-secondary-dark dark:hover:text-secondary-light  sm:mx-4 mb-2 sm:py-2"
+					className="block text-left text-lg text-primary-dark  hover:text-secondary-dark   sm:mx-4 mb-2 sm:py-2"
 					aria-label="Contact"
 				>
 					Contact

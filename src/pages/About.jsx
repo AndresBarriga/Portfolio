@@ -36,7 +36,7 @@ const About = () => {
 				animate={{ opacity: 1, delay: 1 }}
 				exit={{ opacity: 0 }}
 			>
-				
+				s
 				<AboutCounter />
 			</motion.div>
 

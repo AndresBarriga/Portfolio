@@ -1738,10 +1738,6 @@ video {
   color: rgb(79 70 229 / var(--tw-text-opacity));
 }
 
-.hover\:text-secondary-dark:hover {
-  --tw-text-opacity: 1;
-  color: rgb(16 45 68 / var(--tw-text-opacity));
-}
 
 .hover\:text-white:hover {
   --tw-text-opacity: 1;

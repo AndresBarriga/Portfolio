@@ -7,13 +7,13 @@ function ProjectShortCard(props) {
         <>
 
             <div className="flex flex-col justify-center flex-1 p-6">
-                <span className="text-xs uppercase dark:text-gray-400 sm:text-sm">{props.subtitle}</span>
+                <span className="text-xs uppercase  sm:text-sm">{props.subtitle}</span>
                 <h3 className="text-xl font-bold">{props.title}</h3>
                 <p className="my-6 font-general-regular text-sm sm:text-base">{props.description}</p>
 
                 <div className="flex">
                     <div className="flex-shrink-0 mt-2">
-                        <div className="flex items-center justify-center w-6 h-6 rounded-md dark:bg-violet-400 dark:text-gray-900">
+                        <div className="flex items-center justify-center w-6 h-6 rounded-md ">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-7 h-7">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
                             </svg>
@@ -27,7 +27,7 @@ function ProjectShortCard(props) {
                 </div>
                 <div className="flex">
                     <div className="flex-shrink-0 mt-2">
-                        <div className="flex items-center justify-center w-6 h-6 rounded-md dark:bg-violet-400 dark:text-gray-900">
+                        <div className="flex items-center justify-center w-6 h-6 rounded-md ">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-7 h-7">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
                             </svg>
