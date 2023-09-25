@@ -30,11 +30,11 @@ const Projects = () => {
   return (
     <section className="p-4 lg:p-8 ">
       <div className="text-center mb-8">
-        <h1 className="text-2xl font-general-bold sm:text-4xl">
+        <h1 className="text-2xl font-general-bold sm:text-3xl md:text-4xl">
           Personal Projects 👩🏻‍💻 🚧 🏗
         </h1>
-        <p className="mt-4 text-gray-600 font-general-light text-base sm:text-lg">
-          Join me along my journey and discover some of the products that I have been working on
+        <p className="mt-4 text-gray-500 font-general-light text-base sm:text-lg">
+        <span className='text-indigo-500 text-general-bold'>Join me along my journey </span> and discover some of the products that I have been working on
         </p>
       </div>
 

@@ -1,6 +1,6 @@
 import profileImage from '../../images/profile.jpeg';
 import { useContext } from 'react';
-import AboutMeContext from '../Context/AboutMeContext';
+import AboutMeContext from './AboutMeContext';
 import { FiArrowDownCircle } from 'react-icons/fi';
 
 
@@ -29,10 +29,10 @@ const AboutMeBio = () => {
 			</div>
 				
 
-			<div className="font-general-regular w-full sm:w-3/4 text-left">
+			<div className="font-general-regular text-gray-500 w-full sm:w-3/4 text-left">
 				{aboutMe.map((bio) => (
 					<p
-						className="mb-4 text-ternary-dark  text-lg"
+						className="mb-4 text-lg"
 						key={bio.id}
 					>
 						{bio.bio}

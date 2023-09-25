@@ -32,7 +32,7 @@ const ProjectsPage = () => {
               duration: 0.9,
               delay: 0.4,
             }}
-            className="font-general-semibold text-center"
+            className="font-general-bold text-center"
           >
             <div className="text-xl sm:text-2xl md:text-3xl lg:text-4xl">Highlighted Projects ✨</div>
           </motion.h1>
@@ -85,12 +85,12 @@ const ProjectsPage = () => {
 				<AboutCounter />
         </div>
 			</motion.div>
-      <div className="max-full bg-indigo-50 text-center">
-              <h2 className="text-xl font-general-bold sm:text-3xl md:text-4xl">
+      <div className="max-full bg-indigo-50 mt-4 text-center">
+              <h2 className="text-xl pt-6 font-general-bold sm:text-3xl md:text-4xl">
               Highlighted Projects 👩🏻‍💻 🚧 🏗
               </h2>
   
-              <p className="text-base mt-4 text-gray-600 font-general-light sm:text-lg md:text-xl">
+              <p className="text-base mt-4 text-gray-500 font-general-light sm:text-lg md:text-xl">
               The projects that stands out.
               </p>
   
