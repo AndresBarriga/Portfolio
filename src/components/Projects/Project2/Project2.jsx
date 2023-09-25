@@ -4,6 +4,7 @@ import {
     AccordionHeader,
     AccordionBody,
 } from "@material-tailwind/react";
+import SchemaRadio from "../../../images/SchemaRadio.png";
 
 
 const CUSTOM_ANIMATION = {
@@ -52,9 +53,9 @@ export function Project2() {
 
     return (
         <>  <div className="text-center mb-8 mx-10">
-            <h1 className="text-xl font-general-bold mt-6 sm:text-3xl">MOTOTRBO 2-way radios management app </h1>
+            <h1 className="text-xl font-general-bold mt-6 sm:text-3xl">Walkie Talkies Management App </h1>
             <h2 className="text-lg font-general mt-6 sm:text-2xl">  In a world where seamless communication is paramount, <br /> our customizable mobile application emerged as a game-changer.</h2>
-            <p className="mt-4 text-gray-600 font-general-light text-sm sm:text-base">Introducing the MOTORBO 2-way radios management app, a groundbreaking solution <br /> that revolutionized how our client, a prominent organization in the logitic sector, managed their radio systems</p>
+            <p className="mt-4 text-gray-600 font-general-light text-sm sm:text-base">A groundbreaking solution that revolutionized how our client, a prominent organization in the logitic sector, managed their radio systems</p>
         </div>
             <div className="flex">
             <div className="w-screen mt-8 mx-4">
@@ -63,53 +64,50 @@ export function Project2() {
                             title={<h1 className="font-general-bold text-sm sm:text-base lg:text-lg xl:text-xl">Overview</h1>}
                             isOpen={openAccordion === 1}
                             onClick={() => handleOpen(1)}
-                            body={<p className="text-xs sm:text-sm lg:text-base xl:text-lg">Introducing the MOTORBO 2-way radios management app—a dynamic mobile application designed to empower users in effectively managing MOTORBO 2-way radios. These radios are essential devices that facilitate wireless communication over short distances, playing a pivotal role in various industries such as logistics , construction, security or hospitality 
+                            body={<p className="text-xs sm:text-sm lg:text-base xl:text-lg">Introducing the Walkie Talkies Management App— a dynamic mobile application designed to empower users in effectively managing  2-way radios. These radios are essential devices that facilitate wireless communication over short distances, playing a pivotal role in various industries such as logistics , construction, security or hospitality 
                             <div>
-                                    <span class="font-bold">Key Features:</span> 
-                                    <li><span class="font-bold">Effortless Radio Management: </span> Our app simplifies the complex task of managing MOTORBO 2-way radios, offering users an intuitive interface for efficient control.</li>
-                                    <li><span class="font-bold">Over-the-Air Updates: </span>Stay up-to-date with ease. Users can download and install new software versions directly through the app, eliminating the need for complex computer connections.</li>
+                                    <span class="font-bold mt-2">Key Features:</span> 
+                                    <li><span class="font-bold mt-2">Effortless Radio Management: </span> Our app simplifies the complex task of managing Walkie Talkies, offering an intuitive interface for efficient control.</li>
+                                    <li><span class="font-bold mt-2">Over-the-Air Updates: </span>Stay up-to-date with ease. Users can install new software versions directly through the app, eliminating the need for complex computer connections.</li>
                                     </div>
 
                                 <div>
-                                    <span class="font-bold mt-2">A Tailored Solution:</span> This app stands as a testament to innovation and adaptability, as it was crafted as a customizable service for a major client.</div>
+                                    <span class="font-bold mt-2">A Tailored Solution:</span> This app stands as a testament to innovation and adaptability, crafted as a customizable service for a major client.</div>
                                     <div>
-                                    <span class="font-bold mt-2">Target Market:</span> Our primary audience comprises businesses and organizations that rely on seamless communication to coordinate operations and engage with their workforce in real-time.</div>
+                                    <span class="font-bold mt-2">Target Market:</span> It comprises businesses that rely on seamless communication to coordinate operations.</div>
                                     </p>}
                         />
                         <AccordionItem
-                             title={<h1 className="font-general-bold text-sm sm:text-base lg:text-lg xl:text-xl">How it works?</h1>}
+                             title={<h1 className="font-general-bold text-sm sm:text-base lg:text-lg xl:text-xl">Problem</h1>}
                           
                             isOpen={openAccordion === 2}
                             onClick={() => handleOpen(2)}
                             body={<p className="text-xs sm:text-sm lg:text-base xl:text-lg">In the fast-paced world of modern business, effective communication is the lifeblood of success. Now imagine the bigger Logistic company in the world and how useful this for them would be
                             <div>
-                                    <span class="font-bold">Managing the usage of MOTORBO 2-way radios: </span> can be difficult and time-consuming for both the users and the administrators
-                                    <li>Users need to manually configure their radios according to their preferences and needs, such as setting up channels, volume, alerts, and encryption.</li>
+                                    <span class="font-bold mt-2">Managing the usage of radios: </span> can be time-consuming for both the users and the administrators
                                     <li>Administrators need to monitor and control the usage of radios across different departments, locations, and workers, such as assigning radios, limiting usage, retrieving logs, blocking radios, and sending messages</li>
-                                    <li>Both users and administrators need to update their radios regularly to ensure optimal performance and security, which <span class="font-bold">requires connecting them to a computer</span> and following a <span class="font-bold">complex process.</span></li>
+                                    <li>Radios needs to be updated regularly to ensure optimal performance and security, which <span class="font-bold">requires connecting them to a computer</span> and following a <span class="font-bold">complex process.</span></li>
                                     </div>
 
                                 <div className="mt-2">
                                      The existing solutions or alternatives are either too costly, too complicated, or too limited.</div>
                                     <div className="mt-2">
-                                    Using other communication devices or platforms, such as smartphones. These devices are <span class="font-bold">more expensive, less durable, less reliable, and less secure </span>than MOTORBO 2-way radios. They also <span class="font-bold">require internet access or cellular network coverage,</span> which may not be available in some areas or situations.</div>
+                                    Using other devices, such as smartphones, is not an option. These devices are <span class="font-bold">more expensive, less durable, less reliable, and less secure </span>than MOTORBO 2-way radios. They also <span class="font-bold">require internet access or cellular network coverage,</span> which may not be available in some areas or situations.</div>
                                     </p>}/>
                         <AccordionItem
                             title={<h1 className="font-general-bold text-sm sm:text-base lg:text-lg xl:text-xl">Solution</h1>}
                             
                             isOpen={openAccordion === 3}
                             onClick={() => handleOpen(3)}
-                            body={<p className="text-xs sm:text-sm lg:text-base xl:text-lg">The solution is an app that allows users to manage the usage of MOTORBO 2-way radios in a simple and convenient way. <br />The app has the following features:
+                            body={<p className="text-xs sm:text-sm lg:text-base xl:text-lg">The solution is an app that allows users to manage the usage of the radios in a simple and convenient way. <br />The app has the following features:
                             <div className="mt-2">
-                            <li><span class="font-bold">Linking radios to workers via PIN:</span> Users can easily pair their radios with their mobile phones by entering a unique PIN code. Making sure user kept their <span class="font-bold">personal settings</span> and radios are at the same time always <span class="font-bold">related to a worker</span></li>
-                            <li><span class="font-bold">Limiting usage of radio:</span> Administrators can set limits on how long or how often users can use their radios. This helps them optimize the battery life and bandwidth of the radios, as well as <span class="font-bold">prevent misuse </span> of the devices.</li>
-                            <li><span class="font-bold">Retrieving logs for messages:</span> Administrators can view and download logs of all the messages sent and received by users on their radios.</li>
-                            <li><span class="font-bold">Limiting usage per department (and sections, location):</span> Administrators can assign radios to different departments, sections, or locations within their organization. This helps them organize and manage their radio fleet more efficiently and effectively.</li>
-                            <li><span class="font-bold">Blocking radios if leaving the building:</span> Administrators can enable a geofencing feature that automatically blocks radios from working if they leave a predefined area. This helps them prevent theft or loss of the devices, as well as protect sensitive information from unauthorized access.</li>
-                            <li><span class="font-bold">Sending general alerts and messages:</span> Administrators can send general alerts and messages to all or selected users on their radios. This helps them communicate important information or instructions quickly and easily</li>
-                            <li><span class="font-bold">Creating dedicated channels via software:</span> Users can create dedicated channels on their radios via the app. This allows them to communicate with specific groups or individuals without interfering with other channels or users.</li>
-                            <div className="mt-4">The value proposition or competitive advantage of the product is that it provides a comprehensive and customizable solution for managing MOTORBO 2-way radios using mobile phones.</div>
-                            </div></p>}
+                            <li className="mt-2"><span class="font-bold">Linking radios to workers via PIN:</span> Users can easily be linked to a radio by entering a unique PIN code. Radios are at the same time always <span class="font-bold">related to an user</span></li>
+                            <li className="mt-2"><span class="font-bold">Retrieving logs for messages:</span> Administrators can view and download logs of all the messages sent and received by users on their radios.</li>
+                            <li className="mt-2"><span class="font-bold">Limiting usage per department (or location):</span> Administrators can assign radios to different departments or locations within their organization. This helps them organize and manage their radio fleet more efficiently.</li>
+                            <li className="mt-2"><span class="font-bold">Blocking radios if leaving the area:</span> Administrators can enable a geofencing feature that automatically blocks radios from working if they leave a predefined area. This helps them prevent theft or loss of the device.</li>
+                            <li className="mt-2"><span class="font-bold">Sending general alerts and messages:</span> Administrators can send general alerts and messages to all or selected users on their radios.</li>
+                            <li repeater is a device that amplifies and converts the app orders to radio signals><span class="font-bold">Creating dedicated channels via laptop:</span> Users can create dedicated channels on their radios via the app. This adds easiness to the whole management of the radios</li>
+                               </div></p>}
                         ></AccordionItem>
                         <AccordionItem
     title={<h1 className="font-general-bold text-sm sm:text-base lg:text-lg xl:text-xl">How it works?</h1>}
@@ -118,24 +116,23 @@ export function Project2() {
     body={
         <> <div className="text-xs sm:text-sm lg:text-base xl:text-lg">
             <p>The product works as follows:</p>
-            <div>
-                1. The laptop contains the app and connects to a repeater via a cable.
+            <div className="mt-2">
+                1. The laptop contains the app and connects to a repeater via a cable. (The repeater amplifies and converts the app orders to radio signals)
+            </div>
+            <div className="mt-2">
+                2. The app allows the administrator to access and modify the global settings and preferences e, such as limits, logs, assignments, blocks, and messages. The app sends these settings to the repeater, which then sto the repends them eater, which then sends them to the radios.
             </div>
             <div>
-                2. The repeater is a device that amplifies and converts the app orders to radio signals and sends them to the radios.
+                3. The app allows the administrator to send updates over the air to the radios via the app, which are downloaded by the laptop and then sent to the repeater and then installed by the radios.
             </div>
             <div>
-                3. The radios are devices that enable wireless communication over short distances using radio waves.
+                4. The app allows the administrator to enable geofencing features on the radios via the app, which are activated and deactivated by the GPS location of the radios.
             </div>
-            <div>
-                4. The app allows the administrator to access and modify the global settings and preferences on their phone, such as limits, logs, assignments, blocks, and messages. The app sends these settings to the laptop, which then sends them to the repeater, which then sends them to the radios.
-            </div>
-            <div>
-                5. The app allows the administrator to send updates over the air to the radios via the app, which are downloaded by the laptop and then sent to the repeater and then installed by the radios.
-            </div>
-            <div>
-                6. The app allows the administrator to enable geofencing features on the radios via the app, which are activated and deactivated by the GPS location of the radios.
-            </div>
+            
+                                    <div className="flex flex-col-1 items-center mt-4">
+                                            <img src={SchemaRadio} alt="BigBox" className="h-auto justify-center my-2 sm:mx-auto" />
+                                        
+                                        </div>
             </div>
         </>
     }
@@ -149,7 +146,7 @@ export function Project2() {
                             onClick={() => handleOpen(5)}
                             body={<><div className="bg-gray-100 p-4 ">
                                 <h2 className="text-base sm:text-lg lg:text-xl font-bold">My Role in the Product</h2>
-                                <p className="text-xs sm:text-sm lg:text-base xl:text-lg mt-2"> My role was the primary contact between the development team and the engineers working at the company that we were building the product for. I was responsible for gathering feedback, going on site and speaking to people to understand how everything was working and challenges or get logs from repeater.. </p>
+                                <p className="text-xs sm:text-sm lg:text-base xl:text-lg mt-2"> Primary contact between the development team and the diferent stakeholders at the company that we were building the product for. Responsible for defining requirements, gathering feedback, doing the set up and onboarding on site, and solving technical problems by using techniques such as getting the logs from repeater. </p>
                             </div><div className="text-xs sm:text-sm lg:text-base xl:text-lg mt-2">
                             <li>Key role in defining the requirements, specifications, and features of the product, based on the needs and preferences of the client and the users. I communicated these to the development team and ensured that they were aligned with the project goals and scope.</li>
                             <li>Testing, debugging, and troubleshooting the product, both on the app and on the radios. I reported any issues or bugs to the development team and helped them resolve them as soon as possible.</li>
@@ -191,7 +188,7 @@ export function Project2() {
                                     </div>
 
                                     <div className="mt-2">
-                                        We then started developing the product, using app development tools such as Android Studio and cloud-based services such as Firebase. We followed an iterative and incremental approach, where we developed, tested, debugged, and improved the product in <span className="font-bold">small batches</span>. We also deployed the product every two weeks
+                                        We then started developing the product. We followed an iterative and incremental approach, where we developed, tested, debugged, and improved the product in <span className="font-bold">small batches</span>. We also deployed the product every two weeks to get early feedback.
                                     </div>
 
                                     <div className="mt-2">

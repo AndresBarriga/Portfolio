@@ -54,9 +54,9 @@ export function Project3() {
 
     return (
         <>  <div className="text-center mb-8 mx-10">
-            <h1 className="text-xl font-general-bold mt-6 sm:text-3xl">Reliable Internet Connection on a Box. </h1>
-            <h2 className="text-lg font-general mt-6 sm:text-2xl">In the fast-paced digital age, a reliable internet connection is essential for businesses and <br />organizations. However, there are challenging environments, such as construction sites and remote warehouses, where traditional network connectivity often fails</h2>
-            <p className="mt-4 text-gray-600 font-general-light text-sm sm:text-base"> This is where our groundbreaking product, known under the codename "Reliable Internet Connection on a Box," steps in to bridge the gap.</p>
+            <h1 className="text-xl font-general-bold mt-6 sm:text-3xl">Pumma Connect. </h1>
+            <h2 className="text-lg font-general mt-6 sm:text-2xl">Dedicated Server & Reliable Internet Connection. Empowering Uninterrupted Connectivity in Any Environment</h2>
+            <p className="mt-4 text-gray-600 font-general-light text-sm sm:text-base">Unleash Uninterrupted Performance and Security, Anywhere, Anytime! Harness the power of Multipath TCP technology, merging multiple LTE/5G circuits for lightning-fast, rock-solid internet connectivity. Two options: 'The Big One' - supercharged with a dedicated server and backup system, or 'The Small One' - ultra-portable yet powerful.</p>
         </div>
             <div className="flex ">
             <div className="w-screen mt-8 mx-4">
@@ -65,13 +65,12 @@ export function Project3() {
                             title={<h1 className="font-general-bold text-sm sm:text-base lg:text-lg xl:text-xl">Overview</h1>}
                             isOpen={openAccordion === 1}
                             onClick={() => handleOpen(1)}
-                            body={<p className="text-xs sm:text-sm lg:text-base xl:text-lg">Introducing  “Reliable Internet Connection on a Box” (RICB), it is a product that provides internet connection in places where it is not available or reliable due to the environment, such as construction sites or warehouses.<div>
-                                    <span class="font-bold">Key Features:</span> 
-                                    <li><span class="font-bold">Two options: </span>
-                                     <div class="ml-8" ><li>The big version consists of two servers (normal and backup) that have their own hosting, and each server has up to 10 sim cards from different providers (and modems) that are combined into one signal. The big version also has 5G capabilities.</li>
-                                     <li>The small version consists of one server that has up to 4 sim cards from different providers (and modems) that are combined into one signal. The small version does not have 5G capabilities. Both versions use antennas and antenna cables to get the internet connection from the cell towers, and create an internal closed and safe connection for every device connected to the server.</li></div></li>
-                                    <li><span class="font-bold">Over-the-Air Updates: </span>Stay up-to-date with ease. Users can download and install new software versions directly through the app, eliminating the need for complex computer connections.</li>
-                                    </div>
+                            body={<p className="text-xs sm:text-sm lg:text-base xl:text-lg">Introducing Pumma Connect , it is a product that provides a dedicated server and fast and available internet in environments where other providers are not able to do it, these challenging environments could be from construction sites to remote warehouses.<div>
+                                    <span class="font-bold mt-2">Key Features:</span> 
+                                    <li><span class="font-bold mt-2">Two options: </span>
+                                     <div class="ml-8 mt-2" ><li>The big version consists of two dedicated servers (normal and backup) that have their own hosting, and each server has up to 10 sim cards from different providers (and modems) that are combined into one signal. The big version also has <span className="font-bold">5G capabilities</span>.</li>
+                                     <li>The small version consists of one server that has up to 4 sim cards from different providers (and modems) that are combined into one signal. Both versions use antennas and antenna cables to get the internet connection from the cell towers, and create an internal closed and safe connection for every device connected to the server.</li></div></li>
+                                   </div>
 
                                 <div>
                                     <span class="font-bold mt-2">Hardware and software:</span> Product include both, the solution that was developed as an experiment for a large client that provides construction and logistics services. The product is intended to be used within a place such as the server room of a big warehouse, where mobile network does not work, or in a portable version for temporary places, such as a construction site office</div>
@@ -92,13 +91,11 @@ export function Project3() {
                             <div className="mt-2 text-xs sm:text-sm lg:text-base xl:text-lg">
                             <li>The environment may block or interfere with the mobile network coverage, such as metal structures, concrete walls, underground tunnels, etc. This may result in weak or no signal for devices that rely on mobile network, such as smartphones, tablets, laptops, etc</li>
                             <li>The environment may also require high performance and reliability for internet connection, such as high speed, low latency, high bandwidth, etc. This may result in low quality or availability of internet connection for devices that rely on mobile network, especially if there are many users or devices competing for the same signal.</li>
-                            <li>the need of closed networks for companies that work with confidential information is the risk of data leakage or breach due to unauthorized access or exposure.companies that work with confidential information need to have closed networks that can protect their data from external or internal threats, such as hackers, competitors, or malicious insiders.</li>
+                            <li>The need of closed networks for companies that work with confidential information is the risk of data leakage or breach due to unauthorized access or exposure.companies that work with confidential information need to have closed networks that can protect their data from external or internal threats, such as hackers, competitors, or malicious insiders.</li>
                             </div>
                             <div className="bg-gray-100 p-4 text-xs sm:text-sm lg:text-base xl:text-lg">
-                                <p className="mt-2"> The existing solutions or alternatives are either too costly, too complicated, or too limited. Some of them are: </p>
-                            
-                           <li>Using fixed-line internet connection, such as cable, fiber optic, DSL, etc. However, these types of internet connection are not available or feasible in some places or situations. They also require installation and maintenance of infrastructure and equipment, which may increase the cost and complexity of the project.</li>
-                            <li>Using satellite internet connection</li>   
+                                <p className="mt-2"> The existing solutions or alternatives are either too costly, too complicated, or too limited.  </p>
+                        
                             </div>      
                             </>
                             }/>
@@ -107,13 +104,14 @@ export function Project3() {
                             
                             isOpen={openAccordion === 3}
                             onClick={() => handleOpen(3)}
-                            body={<p className="text-xs sm:text-sm lg:text-base xl:text-lg">Our solution involves two distinct products: <br /> a robust server setup designed for permanent installations and a portable version tailored for temporary needs.
+                            body={<p className="text-xs sm:text-sm lg:text-base xl:text-lg">Our solution involves two distinct products: <br /> A robust server setup designed for permanent installations and a portable version tailored for temporary needs.
                             <div className="mt-2">
                             <li><span class="font-bold">The main server setup</span>  combines the strengths of multiple internet sources through advanced antenna technology. With up to 10 sim cards from different providers, our product intelligently aggregates signals, ensuring both performance and redundancy.</li>
                             For locations like warehouse server rooms, where mobile networks often struggle to penetrate, we strategically position antennas on the building's roof to capture strong signals. The entire system is housed in racks, reminiscent of those used at concerts and music events, offering a compact yet powerful solution.
                             <li>On the other hand,<span class="font-bold"> our portable version,</span> owered by a Raspberry Pi, addresses the connectivity challenges faced in metal-based construction site offices. The product places antennas outside the office containers to capture signals from the cell towers, and connects them to a small box that is powered by a Raspberry Pi. The small box then amplifies the signal and connects it to a Wi-Fi device that creates an internal closed and safe connection for every device connected to the server. This solution is cost-effective and highly reliable.</li>
                            <li><span class="font-bold">Our product's value proposition is simple yet vital:</span> a guaranteed internet connection in places where it cannot afford to fail. By providing a private and secure working environment, we empower businesses to operate efficiently without the fear of network disruptions, ensuring productivity and minimizing losses.</li>
                            <div class="mt-4 font-bold"> Key features </div>
+                           <li>Dedicated server</li>
                            <li>Aggregation of multiple internet sources</li>
                            <li>Redundancy for uninterrupted connectivity</li>
                            <li>5G capabilities (main server setup)</li>
@@ -133,10 +131,10 @@ export function Project3() {
                                     <div className="w-1/2 pr-4"> <h2 className="text-sm sm:text-base lg:lg xl:text-xl font-bold">Main Server Setup (Permanent Solution):</h2>
                                        
                                         <div className="mt-4">
-                                            <span class="font-bold ">Multiple Internet Sources:</span> Our main server setup begins with two servers: a primary and a backup. Each server is equipped with up to 10 SIM cards from different providers, along with modems. This diversity of internet sources is crucial for achieving high performance and redundancy.  </div>
+                                            <span class="font-bold ">Multiple Internet Sources:</span> Each box is equipped with up to 10 SIM cards from different providers, along with 4G and 5G modems. This diversity of internet sources is crucial for achieving high performance and redundancy.  </div>
 
                                         <div className="mt-2">
-                                            <span class="font-bold">Signal Aggregation:</span>The product excels in aggregating the signals from these diverse sources into one unified, high-speed internet connection. This aggregation process combines the strengths of different providers, maximizing network performance. </div>
+                                            <span class="font-bold">Signal Aggregation:</span>The product excels in aggregating the signals from these diverse sources into one unified, high-speed internet connection. This aggregation process combines the strengths of different providers, <span className="font-bold"> maximizing network performance and reliability. </span></div>
                                         <div className="mt-2">
                                             <span class="font-bold">5G Capability:</span> For locations with 5G coverage, our product leverages this advanced technology, ensuring blazing-fast internet speeds where available.</div>
                                         <div className="mt-2">
@@ -198,9 +196,9 @@ export function Project3() {
                             isOpen={openAccordion === 5}
                             onClick={() => handleOpen(5)}
                             body={<><div className="bg-gray-100 p-4">
-                                <p className="mt-2 text-xs sm:text-sm lg:text-base xl:text-lg"> As the Product Manager for the "Reliable Internet Connection on a Box" project, I assumed a central role in orchestrating its development, from conceptualization to successful implementation. </p>
+                                <p className="mt-2 text-xs sm:text-sm lg:text-base xl:text-lg"> As the Product Manager for the "Pumma Connect" project, I assumed a central role in orchestrating its development, from conceptualization to successful implementation. </p>
                             </div><div className="text-xs sm:text-sm lg:text-base xl:text-lg mt-2">
-                            <li>My role was managing the product, from sitting with a designer guy to get the requirements, talk to clients, order the pieces, ensure the product was built, talk to providers to get materials, go with engineer to site to make the installation, etc.</li>
+                            <li>My role was managing the product, defining requirements and bulding a draft with a designer, talk to clients, order the pieces, organise prototype buildunig, go with engineer to site to make the installation, etc.</li>
                             <li>I was responsible for overseeing the entire product development process, from ideation to delivery. I coordinated and communicated with different stakeholders, such as the development team, the client, the users, the suppliers, etc. I also ensured that the product met the quality standards and expectations of the client and the users.</li>
                             <li>I also contributed to the design, testing, and troubleshooting of the product, both on the software and hardware aspects.I worked with the engineer to test and debug the product on different devices and platforms, using tools such as network analyzers. I also helped them resolve any issues or challenges that arose during the product development process.</li>
                              My responsibilities encompassed a wide range of tasks and activities crucial to the project's success:
@@ -300,7 +298,7 @@ export function Project3() {
                         />
 
                         <AccordionItem
-                             title={<h1 className="font-general-bold text-sm sm:text-base lg:text-lg xl:text-xl">Tech & Processes</h1>}
+                             title={<h1 className="font-general-bold text-sm sm:text-base lg:text-lg xl:text-xl">Results</h1>}
                            
                             isOpen={openAccordion === 9}
                             onClick={() => handleOpen(9)}

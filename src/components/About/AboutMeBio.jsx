@@ -27,6 +27,7 @@ const AboutMeBio = () => {
 		</a>
 			</div>
 			</div>
+				
 
 			<div className="font-general-regular w-full sm:w-3/4 text-left">
 				{aboutMe.map((bio) => (

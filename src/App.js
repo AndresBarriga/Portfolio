@@ -11,7 +11,7 @@ import About from "./pages/About";
 import  { DefaultAccordion } from "./components/Projects/Project1/Project1";
 import  { Project2 } from "./components/Projects/Project2/Project2";
 import { Project3 } from "./components/Projects/Project3/Project3"
-import Book from './pages/Bookshelf';
+import MyRole from './components/MyRole/MyRole';
 
 function App() {
   return (
@@ -26,7 +26,8 @@ function App() {
         <Route path="/projects/project1" element={<DefaultAccordion />} />
         <Route path="/projects/project2" element={<Project2 />} />
         <Route path="/projects/project3" element={<Project3 />} />
-        <Route path="/book" element={<Book />} />
+        <Route path="/myRole" element={<MyRole />} />
+        
       </Routes>
       <AppFooter />
     </div>

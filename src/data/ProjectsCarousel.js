@@ -4,7 +4,7 @@ const projectsCarousel = [
         key:1,
         title:"Telemedicine Platform - Heart insuficciency monitoring",
         description:"Solution to connect healthcare stakeholders and provide remote telemonitoring to patients with chronic diseases through the analysis of vital data from the comfort of their homes. ",
-        person:"Remote Healthcare - Software / Platform + Mobile Phone App ",
+        person:"Remote Healthcare - Software / Web Platform + Mobile Phone App ",
         img:"https://i.ibb.co/887vM4C/medical-banner-with-doctor-working-laptop.jpg",
         company:"Role: Product Manager",
         link:"/projects/project1"
@@ -12,8 +12,8 @@ const projectsCarousel = [
   {
         id:2,
         key:2,
-        title:"Realiable Internet Connection on a Box",
-        description:"Ensure your Server Availability and Privacy ALWAYS, ANYWHERE. With Multipath TCP technology, we combine multiple LTE/5G circuits, creating a fast and robust internet connection, delivering consistent performance Two versions to suit your needs The Big One, faster and equipped with a server and backup system. The Small One more portable and fast enough .",
+        title:"Pumma Connect",
+        description:"Unleash Uninterrupted Performance and Security, Anywhere, Anytime! Harness the power of Multipath TCP technology, merging multiple LTE/5G circuits for lightning-fast, rock-solid internet connectivity. Two options: 'The Big One' - supercharged with a dedicated server and backup system, or 'The Small One' - ultra-portable yet powerful.",
         person:"Telecommunications - Mainly Hardware",
         img:"https://i.ibb.co/VVNdqVy/Box.png",
         company:"Role: Product Manager",
@@ -22,8 +22,8 @@ const projectsCarousel = [
     {
         id:3,
         key:3,
-        title:"Customized IoT Two-Way Radio Management Software.",
-        description:"Developing a customized Application to control Mototrbo 2-way radio in warehouse with +400 users, Features such a a real-time statistics, User group & area limitations and Over The Air Updates",
+        title:"Walkie Talkie Management Software.",
+        description:"Software to manage Walkie Talkies usage from a laptop. Features such as  Over The Air Updates, real-time statistics, deparments & area groups (channels, limitations, stats...)",
         person:"Telecommunications - Software/ Laptop App connected to repeater and 2-way radios",
         img:"https://i.ibb.co/9qNxcym/futuristic-smart-city-with-5g-global-network-technology.jpg",
         company:"Role: Product Manager",
