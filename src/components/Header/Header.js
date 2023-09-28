@@ -77,13 +77,13 @@ const AppHeader = () => {
 				>
 					Projects
 				</Link>
-				<Link
+				{/* <Link
 					to="/about"
 					className="block text-left text-lg text-primary-dark hover:text-secondary-dark   sm:mx-4 mb-2 sm:py-2 border-t-2 pt-3 sm:pt-2 sm:border-t-0 border-primary-light "
 					aria-label="About Me"
 				>
 					About Me
-				</Link>
+				</Link> */}
 				<Link
 					to="/contact"
 					className="block text-left text-lg text-primary-dark  hover:text-secondary-dark   sm:mx-4 mb-2 sm:py-2 border-t-2 pt-3 sm:pt-2 sm:border-t-0 border-primary-light "
@@ -116,13 +116,13 @@ const AppHeader = () => {
 				>
 					Projects
 				</Link>
-				<Link
+				{/* <Link
 					to="/about"
 					className="block text-left text-lg text-primary-dark hover:text-secondary-dark   sm:mx-4 mb-2 sm:py-2"
 					aria-label="About Me"
 				>
 					About Me
-				</Link>
+				</Link> */}
 				<Link
 					to="/contact"
 					className="block text-left text-lg text-primary-dark  hover:text-secondary-dark   sm:mx-4 mb-2 sm:py-2"

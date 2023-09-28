@@ -33,7 +33,7 @@ const AppBanner = () => {
                         duration: 0.9,
                         delay: 0.2,
                     }}
-                    className="mx-7 font-general-medium mt-4 text-base md:text-lg lg:text-1xl xl:text-2xl text-center sm:text-left leading-normal text-gray-500"
+                    className="mx-7 font-general-medium mt-4 text-base md:text-lg lg:text-xl xl:text-2xl text-center sm:text-left leading-normal text-gray-500"
                 >
                     a <span className='text-indigo-500 text-general-bold'>Product Manager</span> with a passion for turning ideas into successful products. <span className='text-indigo-500 text-bold'>Explore my journey</span> in product development and innovation.
                 </motion.p>

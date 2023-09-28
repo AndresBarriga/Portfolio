@@ -51,8 +51,7 @@ export function MyRole() {
     return (
         <>  <div className="text-center mb-8">
             <h1 className="text-xl font-general-bold mt-6 sm:text-3xl">My Role Within The Products </h1>
-            <h2 className="text-lg font-general mt-6 sm:text-2xl">As a Product Manager my role it is about defining requirements, being in communication with the team and stakeholders to gather feedback and improve the product</h2>
-            <p className="mt-4 text-gray-600 font-general-light text-sm sm:text-base">In this section you will able to get an overview of the role that I played in the different products</p>
+              <p className="mt-4 text-gray-600 font-general-light text-sm sm:text-base">In this section you will able to get an overview of the role that I played in the different products</p>
         </div>
             <div className="flex ">
                 <div className="w-screen mt-8 mx-4">
