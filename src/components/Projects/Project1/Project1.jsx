@@ -141,45 +141,41 @@ export function DefaultAccordion() {
                             onClick={() => handleOpen(6)}
                             body={<><div className="bg-gray-100 p-4">
                                 <h2 className="text-xl font-bold">My Role in the Product</h2>
-                                <p className="text-xs sm:text-sm lg:text-base xl:text-lg mt"> As the Product Manager, I assumed a multifaceted role that encompassed both <span class="font-bold">strategic leadership and hands-on involvement</span> in the development process. At the core of my responsibilities was the shaping of team dynamics, the definition of sprint requirements, and the establishment of workflows critical to the project's success. This role required me to foster collaboration, ensure effective communication, and nurture an agile, adaptive work environment. From defining sprint requirements to meticulously crafting the "Definition of Done," I played an integral role in guiding the project's iterative development process. Additionally, I was deeply involved in defining workflows, including logistics and testing processes, to streamline our operations and enhance project efficiency. </p>
+                                <p className="text-xs sm:text-sm lg:text-base xl:text-lg mt"> My role included both <span class="font-bold">strategic leadership and hands-on involvement</span> in the development process. At the core of my responsibilities was the shaping of team dynamics, the definition of sprint requirements, and the establishment of workflows critical to the project's success. This role required me to foster collaboration, ensure effective communication, and nurture an agile, adaptive work environment. From defining sprint requirements to meticulously crafting the "Definition of Done," I played an integral role in guiding the project's iterative development process. Additionally, I was deeply involved in defining workflows, including logistics and testing processes, to streamline our operations and enhance project efficiency. </p>
                             </div>
                             <div className="flex mt-4 text-xs sm:text-sm lg:text-base xl:text-lg mt-2">
                                     <div className="w-1/2 pr-4"> <h2 className="text-xl font-bold">Web Platform</h2>
                                         <p className="mt-2">The development of our web-based platform marked a significant milestone in our telemedical solution. As the Product Manager, I played a central role in <span class="font-bold"> shaping the platform's evolution </span> from inception to its readiness for launch. Here are the key aspects of my contributions: </p>
                                         <div className="mt-4">
-                                            <span class="font-bold ">Product Development:</span> My role involved providing strategic oversight throughout the platform's development lifecycle. I ensured that our platform's features aligned seamlessly with the needs of healthcare providers and adhered to our overarching project objectives  </div>
+                                            <span class="font-bold ">Product Development:</span> Strategic oversight throughout the platform's development lifecycle. I ensured that our platform's features aligned seamlessly with user and business needs  </div>
 
                                         <div className="mt-2">
-                                            <span class="font-bold">Compliance and Regulation:</span> Navigating complex legal requirements was a critical aspect of my role. I collaborated closely with legal experts to ensure that our platform complied with healthcare regulations and data protection standards. </div>
+                                            <span class="font-bold">Compliance and Regulation:</span> Navigating complex legal requirements was critical. I collaborated with legal experts to ensure that our platform complied with healthcare regulations and data protection standards. </div>
                                         <div className="mt-2">
-                                            <span class="font-bold">Feedback Integration:</span> Active engagement with medical professionals and stakeholders was a hallmark of this phase. Through onboarding sessions, workshops, and participation in sprint reviews, I actively gathered feedback and ensured its integration into the platform's development. This iterative process allowed us to refine the platform based on real-world insights.</div>
+                                            <span class="font-bold">Feedback Integration:</span> Active engagement with medical professionals and stakeholders. Through onboarding sessions, workshops, and participation in sprint reviews, I  gathered feedback and ensured its integration into the platform's development. This iterative process allowed us to refine the platform based on real-world insights.</div>
                                         <div className="mt-2">
-                                            <span class="font-bold">UX Design:</span> I played a role in shaping the platform's user experience (UX) design decisions, focusing on creating a seamless and efficient workflow for users           <div>
+                                            <span class="font-bold">UX Design:</span> Shaping the platform's user experience (UX) design decisions, focusing on creating a seamless and efficient workflow for users           <div>
                                             </div>
                                             <div className="mt-2">
-                                                <span class="font-bold">User Training and Onboarding:</span> To facilitate the platform's adoption, I was responsible for creating training materials and conducting onboarding sessions for healthcare providers.  </div>
-                                            <div className="mt-2">
-                                                <span class="font-bold">Project Milestones: </span> Several notable milestones marked our journey toward launching the web platform. These milestones included successful beta testing, achieving regulatory approvals, and the platform's integration into the healthcare ecosystem </div>
-                                        </div>
+                                                <span class="font-bold">User Training and Onboarding:</span> I was responsible for creating training materials and conducting onboarding sessions for healthcare providers.  </div>
+                                            </div>
                                     </div>
                                     <div className="w-1/2 pl-4">
                                         <h2 className="text-xl font-bold">Mobile App</h2>
                                         <div>
-                                            <p className="mt-2"> The mobile phone app, developed in collaboration with an external company, represents a key component of our telemedical platform. My role was pivotal in ensuring the successful development and seamless integration of this mobile application with external medical devices. Throughout the development process, I played an active role in working alongside the external team to bring this innovative app to fruition.
+                                            <p className="mt-2"> The App was developed in collaboration with an external company. My role was ensuring the successful development and seamless integration of the app with external medical devices.I played an active role in working with the external team to bring this app to fruition.
                                             </p>
                                             <div className="mt-4">
                                                 <span class="font-bold ">Scope of Work:</span> I initiated the project by creating a comprehensive scope of work, defining clear objectives, deliverables, and milestones.
                                             </div>
                                             <div className="mt-2">
-                                                <span class="font-bold">Technical Liaison:</span>Serving as a crucial link between our internal team and external collaborators, I engaged in technical discussions and negotiations. This role required me to effectively communicate complex technical requirements and ensure alignment with our product vision.
+                                                <span class="font-bold">Technical Liaison:</span> Serving as a link between our internal team and externalss. It required me to effectively communicate complex technical requirements and ensure alignment with our product vision.
                                             </div>
                                             <div className="mt-2">
-                                                <span class="font-bold">External Partnerships: </span>Meticulously, I defined and documented the technical requirements, leaving no room for ambiguity and ensuring the app's seamless functionality.                     </div>
-                                            <div className="mt-2">
-                                                <span class="font-bold">Requirements Definition: </span>Collaboration with external device providers was integral to our project's success. I actively managed these partnerships, obtaining essential documentation and logs to facilitate seamless device integration.
+                                                <span class="font-bold">Technical Requirements Definition: </span>Collaboration with external device providers was a must to our project's success. I  managed these partnerships, obtaining documentation and logs to facilitate the devices integration.
                                             </div>
                                             <div className="mt-2">
-                                                <span class="font-bold">Testing and Feedback: </span>Rigorous testing was integral to our development process. I actively tested the mobile app, identified improvements, and provided feedback to the external team. Additionally, I ensured seamless integration with our platform application, ensuring a cohesive user experience.
+                                                <span class="font-bold">Testing and Feedback: </span> I actively tested the mobile app, identified improvements, and provided feedback to the external team. Additionally, I ensured seamless integration with our platform application, ensuring a cohesive user experience.
                                             </div>
                                         </div>
                                     </div>
@@ -280,23 +276,23 @@ export function DefaultAccordion() {
                                                 <span className="font-bold">Frontend Development:</span> The frontend was crafted using technologies like JavaScript and React, providing a seamless user interface for both patients and healthcare providers.
                                             </div>
                                             <div className="mt-2">
-                                                <span className="font-bold">Database Management:</span> We employed PostgreSQL for efficient data storage and management.
+                                                <span className="font-bold">Database Management:</span> We employed PostgreSQL.
                                             </div>
                                             <div className="mt-2">
-                                                <span className="font-bold">UX Design:</span> I played a role in shaping the platform's user experience (UX) design decisions, focusing on creating a seamless and efficient workflow for users.
+                                                <span className="font-bold">UX Design:</span> I played a role in shaping the platform's user experience (UX) design decisions, focusing on creating an efficient workflow for users.
                                             </div>
                                             <div className="mt-2">
-                                                <span className="font-bold">API Integration:</span> To enable smooth communication between various components, we utilized APIs for data exchange.
+                                                <span className="font-bold">API Integration:</span> To enable smooth communication between various components, we utilized REST APIs for data exchange.
                                             </div>
                                         </div>
                                         <div className="w-1/2 pl-4">
                                             <h2 className="text-xl font-bold">Development Processes</h2>
                                             <div>
                                                 <div className="mt-4">
-                                                    <span className="font-bold">Agile Methodology - Scrum:</span> We followed the Agile methodology with Scrum at its core. This framework facilitated iterative development, sprint planning, and continuous improvement, ensuring our project remained adaptable and aligned with evolving requirements.
+                                                    <span className="font-bold">Agile Methodology - Scrum:</span> We followed the Agile methodology with Scrum at its core.
                                                 </div>
                                                 <div className="mt-2">
-                                                    <span className="font-bold">Continuous Integration/Continuous Deployment (CI/CD):</span> CI/CD pipelines were implemented to automate the testing and deployment processes, ensuring efficient and error-free updates.
+                                                    <span className="font-bold">Continuous Integration/Continuous Deployment (CI/CD):</span> CI/CD pipelines were implemented to automate the testing and the correct deployment process of different microservices.
                                                 </div>
                                                 <div className="mt-2">
                                                     <span className="font-bold">Data Security Measures:</span> To protect patient data, we implemented encryption, access controls, and strict data handling protocols, adhering to the highest data security standards.

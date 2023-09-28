@@ -55,7 +55,7 @@ export function Project3() {
     return (
         <>  <div className="text-center mb-8 mx-10">
             <h1 className="text-xl font-general-bold mt-6 sm:text-3xl">Pumma Connect. </h1>
-            <h2 className="text-lg font-general mt-6 sm:text-2xl">Dedicated Server & Reliable Internet Connection. Empowering Uninterrupted Connectivity in Any Environment</h2>
+            <h2 className="text-lg font-general mt-6 sm:text-2xl">Dedicated Server & Reliable Internet Connection.</h2>
             <p className="mt-4 text-gray-600 font-general-light text-sm sm:text-base">Unleash Uninterrupted Performance and Security, Anywhere, Anytime! Harness the power of Multipath TCP technology, merging multiple LTE/5G circuits for lightning-fast, rock-solid internet connectivity. Two options: 'The Big One' - supercharged with a dedicated server and backup system, or 'The Small One' - ultra-portable yet powerful.</p>
         </div>
             <div className="flex ">
@@ -65,16 +65,17 @@ export function Project3() {
                             title={<h1 className="font-general-bold text-sm sm:text-base lg:text-lg xl:text-xl">Overview</h1>}
                             isOpen={openAccordion === 1}
                             onClick={() => handleOpen(1)}
-                            body={<p className="text-xs sm:text-sm lg:text-base xl:text-lg">Introducing Pumma Connect , it is a product that provides a dedicated server and fast and available internet in environments where other providers are not able to do it, these challenging environments could be from construction sites to remote warehouses.<div>
-                                    <span class="font-bold mt-2">Key Features:</span> 
-                                    <li><span class="font-bold mt-2">Two options: </span>
-                                     <div class="ml-8 mt-2" ><li>The big version consists of two dedicated servers (normal and backup) that have their own hosting, and each server has up to 10 sim cards from different providers (and modems) that are combined into one signal. The big version also has <span className="font-bold">5G capabilities</span>.</li>
-                                     <li>The small version consists of one server that has up to 4 sim cards from different providers (and modems) that are combined into one signal. Both versions use antennas and antenna cables to get the internet connection from the cell towers, and create an internal closed and safe connection for every device connected to the server.</li></div></li>
+                            body={<p className="text-xs sm:text-sm lg:text-base xl:text-lg">It is a product that provides a dedicated server and fast and available internet in environments where other providers are not able to do it, these challenging environments could be from construction sites to remote warehouses.<div>
+                                   
+                                    <span class="font-bold mt-2">Two options: </span>
+                                     <div class="ml-8 mt-2" > <li>The Big: two dedicated servers (normal and backup) with their own hosting, the box has 10 sim cards from different providers that are combined into one signal, it also has <span className="font-bold">5G capabilities</span>.</li>
+                                     <li>The Small: One server that has up to 6 sim cards combined into one signal.</li>
+                                     Both versions use antennas and antenna cables to get the internet connection from the cell towers, and create an internal closed and safe connection for every device connected to the server.
+                                     </div>
                                    </div>
 
                                 <div>
-                                    <span class="font-bold mt-2">Hardware and software:</span> Product include both, the solution that was developed as an experiment for a large client that provides construction and logistics services. The product is intended to be used within a place such as the server room of a big warehouse, where mobile network does not work, or in a portable version for temporary places, such as a construction site office</div>
-                                    <div>
+                                    
                                     <span class="font-bold mt-2">Target Market:</span> is mainly businesses and organizations that need to have internet connection in places where it is not available or reliable, such as construction, logistics, mining, agriculture, etc.</div>
                                     </p>}
                         />
@@ -86,17 +87,14 @@ export function Project3() {
                             body={<>
                             <div className="bg-gray-100 p-4 text-xs sm:text-sm lg:text-base xl:text-lg">
                                 <h2 className="text-xl font-bold">The Challenge</h2>
-                                <p className="mt-2"> The challenge was clear: how do we ensure a stable and secure internet connection in places where it's traditionally hard to come by? Whether it's a bustling construction site or the heart of a massive warehouse, our mission was to provide a dependable solution that keeps businesses connected and minimizes losses due to network downtime. </p>
+                                <p className="mt-2"> How do we ensure a stable and secure internet connection in places where it's traditionally hard to come by? Our mission was to provide an independent solution that keeps businesses connected and minimizes losses due to network downtime. </p>
                             </div>
                             <div className="mt-2 text-xs sm:text-sm lg:text-base xl:text-lg">
-                            <li>The environment may block or interfere with the mobile network coverage, such as metal structures, concrete walls, underground tunnels, etc. This may result in weak or no signal for devices that rely on mobile network, such as smartphones, tablets, laptops, etc</li>
-                            <li>The environment may also require high performance and reliability for internet connection, such as high speed, low latency, high bandwidth, etc. This may result in low quality or availability of internet connection for devices that rely on mobile network, especially if there are many users or devices competing for the same signal.</li>
-                            <li>The need of closed networks for companies that work with confidential information is the risk of data leakage or breach due to unauthorized access or exposure.companies that work with confidential information need to have closed networks that can protect their data from external or internal threats, such as hackers, competitors, or malicious insiders.</li>
+                            <li>Certain environments may block or interfere with the mobile network coverage, such as metal structures, concrete walls, underground tunnels, etc.</li>
+                            <li>Environment may also require high performance and reliability for internet connection (high speed, low latency, high bandwidth, etc). Result in low quality or availability of internet connection for devices that rely on mobile networks.</li>
+                            <li>Need of secure networks for companies that work with confidential information is the risk of data leakage or breach due to unauthorized access or exposure.</li>
                             </div>
-                            <div className="bg-gray-100 p-4 text-xs sm:text-sm lg:text-base xl:text-lg">
-                                <p className="mt-2"> The existing solutions or alternatives are either too costly, too complicated, or too limited.  </p>
-                        
-                            </div>      
+     
                             </>
                             }/>
                         <AccordionItem
@@ -104,12 +102,13 @@ export function Project3() {
                             
                             isOpen={openAccordion === 3}
                             onClick={() => handleOpen(3)}
-                            body={<p className="text-xs sm:text-sm lg:text-base xl:text-lg">Our solution involves two distinct products: <br /> A robust server setup designed for permanent installations and a portable version tailored for temporary needs.
+                            body={<p className="text-xs sm:text-sm lg:text-base xl:text-lg"> <span class="font-bold">Our product's value proposition is simple yet vital:</span> a guaranteed internet connection in places where it cannot afford to fail. By providing a private and secure working environment, we empower businesses to operate efficiently without the fear of network disruptions, ensuring productivity and minimizing losses.
+                          
                             <div className="mt-2">
-                            <li><span class="font-bold">The main server setup</span>  combines the strengths of multiple internet sources through advanced antenna technology. With up to 10 sim cards from different providers, our product intelligently aggregates signals, ensuring both performance and redundancy.</li>
-                            For locations like warehouse server rooms, where mobile networks often struggle to penetrate, we strategically position antennas on the building's roof to capture strong signals. The entire system is housed in racks, reminiscent of those used at concerts and music events, offering a compact yet powerful solution.
-                            <li>On the other hand,<span class="font-bold"> our portable version,</span> owered by a Raspberry Pi, addresses the connectivity challenges faced in metal-based construction site offices. The product places antennas outside the office containers to capture signals from the cell towers, and connects them to a small box that is powered by a Raspberry Pi. The small box then amplifies the signal and connects it to a Wi-Fi device that creates an internal closed and safe connection for every device connected to the server. This solution is cost-effective and highly reliable.</li>
-                           <li><span class="font-bold">Our product's value proposition is simple yet vital:</span> a guaranteed internet connection in places where it cannot afford to fail. By providing a private and secure working environment, we empower businesses to operate efficiently without the fear of network disruptions, ensuring productivity and minimizing losses.</li>
+                            <li><span class="font-bold">The Big</span>  combines multiple internet sources through advanced antenna technology. With up to 10 sim cards from different providers, our product intelligently aggregates signals, ensuring both performance and redundancy.</li>
+                            Specially suited for locations like warehouses or server rooms, where mobile networks often struggle to penetrate, we strategically position antennas on the building's roof to capture strong signals. The entire system is housed in portable racks.
+                            <li><span class="font-bold"> Our small and portable version,</span> owered by a Raspberry Pi, amplifies the signal and connects it to a Wi-Fi device that creates an internal closed and safe connection. This solution is cost-effective and highly reliable.</li>
+                            Specially suited for i.e metal-based construction site offices. The product places antennas outside the office containers to capture signals from the cell towers, and connects them to a small box that is powered by a Raspberry Pi. 
                            <div class="mt-4 font-bold"> Key features </div>
                            <li>Dedicated server</li>
                            <li>Aggregation of multiple internet sources</li>
@@ -169,20 +168,20 @@ export function Project3() {
                                     <div className="flex flex-col sm:flex-row items-center mt-4">
                                         <div className="flex flex-col items-center">
                                             <p className="font-general-bold font-sm">Big Box Squema</p>
-                                            <img src={BigBox} alt="BigBox" className="h-auto my-2" />
+                                            <img src={BigBox} alt="BigBox" className="w-3/5 my-2" />
                                         </div>
                                         <div className="flex flex-col items-center ">
                                             <p className="font-general-bold font-sm">Small Box Squema</p>
-                                            <img src={SmallBox} alt="Small Box" className="h-auto my-2" />
+                                            <img src={SmallBox} alt="Small Box" className="w-3/5 my-2" />
                                         </div>
                                     </div>
                                 </div>
                                 <div className="flex flex-col items-center sm:hidden">
                                     
                                         <p className=" font-general-bold font-sm"> Bix Box Squema</p>
-                                        <img src={BigBox} alt="BigBox" className=" h-auto my-2 " />
+                                        <img src={BigBox} alt="BigBox" className=" w-2/3 my-2 " />
                                         <p className=" font-general-bold font-sm"> Small Box Squema</p>
-                                        <img src={SmallBox} alt="Small Box" className="h-auto  my-2" />
+                                        <img src={SmallBox} alt="Small Box" className="w-2/3  my-2" />
                                     
                                 </div>
                             </>
@@ -198,9 +197,6 @@ export function Project3() {
                             body={<><div className="bg-gray-100 p-4">
                                 <p className="mt-2 text-xs sm:text-sm lg:text-base xl:text-lg"> As the Product Manager for the "Pumma Connect" project, I assumed a central role in orchestrating its development, from conceptualization to successful implementation. </p>
                             </div><div className="text-xs sm:text-sm lg:text-base xl:text-lg mt-2">
-                            <li>My role was managing the product, defining requirements and bulding a draft with a designer, talk to clients, order the pieces, organise prototype buildunig, go with engineer to site to make the installation, etc.</li>
-                            <li>I was responsible for overseeing the entire product development process, from ideation to delivery. I coordinated and communicated with different stakeholders, such as the development team, the client, the users, the suppliers, etc. I also ensured that the product met the quality standards and expectations of the client and the users.</li>
-                            <li>I also contributed to the design, testing, and troubleshooting of the product, both on the software and hardware aspects.I worked with the engineer to test and debug the product on different devices and platforms, using tools such as network analyzers. I also helped them resolve any issues or challenges that arose during the product development process.</li>
                              My responsibilities encompassed a wide range of tasks and activities crucial to the project's success:
                              <li>Requirement Gathering</li>
                              <li>Client Engagement</li>
@@ -208,6 +204,7 @@ export function Project3() {
                              <li>Project Oversight</li>
                              <li>On-Site Installations</li>
                              <li>Performance Measurement</li>
+                             <li>Testing and troubleshooting</li>
                              <li>Feedback Integration and Customization</li>
                             
                             </div>
@@ -236,7 +233,8 @@ export function Project3() {
                                          To validate our design, we conducted extensive testing of the connectivity solution. We experimented with different modem configurations and antenna setups to optimize performance.
                                         </li>
                                         <li> <span class="font-bold">Hardware Development: </span>
-                                         With a clear design in place, we proceeded to develop the hardware components required for the big box prototype. This included sourcing and integrating the necessary hardware elements.
+                                         With a clear des
+                                         ign in place, we proceeded to develop the hardware components required for the big box prototype. This included sourcing and integrating the necessary hardware elements.
                                         </li>
                                         <li> <span class="font-bold">Deployment: </span>
                                          The first big box prototype was deployed in selected test environments to assess its performance and gather real-world data.
