@@ -22,7 +22,7 @@ function App() {
         {/* Add other routes here */}
         <Route path="/projects" element={<ProjectsPage />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/about" element={<About />} />
+        {/* <Route path="/about" element={<About />} /> */}
         <Route path="/projects/project1" element={<DefaultAccordion />} />
         <Route path="/projects/project2" element={<Project2 />} />
         <Route path="/projects/project3" element={<Project3 />} />

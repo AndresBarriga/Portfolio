@@ -33,9 +33,9 @@ const AppBanner = () => {
                         duration: 0.9,
                         delay: 0.2,
                     }}
-                    className="mx-7 font-general-medium mt-4 text-base md:text-lg lg:text-1xl xl:text-2xl text-center sm:text-left leading-normal text-gray-500"
+                    className="mx-7 font-general-medium mt-4 text-base md:text-lg lg:text-xl xl:text-2xl text-center sm:text-left leading-normal text-gray-500"
                 >
-                    a <span className='text-indigo-500 text-general-bold'>Product Manager</span> with a passion for turning ideas into successful products. <span className='text-indigo-500 text-bold'>Explore my journey</span> in product development and innovation.
+                    a <span className='text-indigo-500 text-general-bold'>Product Manager. </span> <br />I build products that solve<span className='text-indigo-500 text-bold'> real-world problems</span> and that  <span className='text-indigo-500 text-bold'>users love.</span>
                 </motion.p>
                 <motion.div
                     initial={{ opacity: 0 }}
@@ -48,8 +48,8 @@ const AppBanner = () => {
                     className="flex justify-center sm:block"
                 >
                     <a
-                        download="Andres-Resume.pdf"
-                        href="/files/Andres-Resume.pdf"
+                        download="AndresBarriga-Resume.pdf"
+                        href="/files/Andre"
                         className="mx-7 font-general-medium flex justify-center items-center w-36 sm:w-48 mt-12 mb-6 sm:mb-0 text-lg border border-indigo-200 py-2.5 sm:py-3 shadow-lg rounded-lg bg-indigo-50 focus:ring-1 focus:ring-indigo-900 hover:bg-indigo-500 text-gray-500 hover:text-white duration-500"
                         aria-label="Download Resume"
                     >

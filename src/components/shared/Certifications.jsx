@@ -4,7 +4,7 @@ import React from 'react';
 
 const Certification = (props) => {
   return (
-    <div >
+    <div className="flex-1 min-w-200" >
       {/* Card */}
       
         <img
@@ -19,7 +19,7 @@ const Certification = (props) => {
             </h3>
           </a>
 
-          <p className="text-sm font-secondary-light mt-2 line-clamp-6 text-gray-500 sm:text-base  ">
+          <p className="text-sm font-secondary-light mt-2 line-clamp-6 text-gray-500 sm:text-base hidden sm:block ">
             {props.description}
           </p>
           <a

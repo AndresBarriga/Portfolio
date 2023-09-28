@@ -77,13 +77,13 @@ const AppHeader = () => {
 				>
 					Projects
 				</Link>
-				<Link
+				{/* <Link
 					to="/about"
 					className="block text-left text-lg text-primary-dark hover:text-secondary-dark   sm:mx-4 mb-2 sm:py-2 border-t-2 pt-3 sm:pt-2 sm:border-t-0 border-primary-light "
 					aria-label="About Me"
 				>
 					About Me
-				</Link>
+				</Link> */}
 				<Link
 					to="/contact"
 					className="block text-left text-lg text-primary-dark  hover:text-secondary-dark   sm:mx-4 mb-2 sm:py-2 border-t-2 pt-3 sm:pt-2 sm:border-t-0 border-primary-light "
@@ -116,13 +116,13 @@ const AppHeader = () => {
 				>
 					Projects
 				</Link>
-				<Link
+				{/* <Link
 					to="/about"
 					className="block text-left text-lg text-primary-dark hover:text-secondary-dark   sm:mx-4 mb-2 sm:py-2"
 					aria-label="About Me"
 				>
 					About Me
-				</Link>
+				</Link> */}
 				<Link
 					to="/contact"
 					className="block text-left text-lg text-primary-dark  hover:text-secondary-dark   sm:mx-4 mb-2 sm:py-2"
@@ -136,7 +136,7 @@ const AppHeader = () => {
 				{/* Header right section buttons */}
 
 				<div className="hidden sm:flex justify-end items-center md:flex-row ml-auto">
-						<Link to="/contact">
+						<Link to="https://calendly.com/andresbarriga/30min">
 							<span
 								className="text-md font-general-medium bg-indigo-500 hover:bg-indigo-600 text-white shadow-sm rounded-md px-5 py-2.5 duration-300 "
 								aria-label="Hire Me Button"

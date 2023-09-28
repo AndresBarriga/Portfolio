@@ -72,9 +72,11 @@ export function Project2() {
                                     </div>
 
                                 <div>
-                                    <span class="font-bold mt-2">A Tailored Solution:</span> This app stands as a testament to innovation and adaptability, crafted as a customizable service for a major client.</div>
-                                    <div>
-                                    <span class="font-bold mt-2">Target Market:</span> It comprises businesses that rely on seamless communication to coordinate operations.</div>
+                                   <li> <span class="font-bold mt-2">A Tailored Solution:</span> This app stands as a testament to innovation and adaptability, crafted as a customizable service for a major client.</li>
+                                    
+                                   <li> <span class="font-bold mt-2">Target Market:</span> It comprises businesses that rely on seamless communication to coordinate operations.</li>
+                                    
+                                    </div>
                                     </p>}
                         />
                         <AccordionItem
@@ -82,18 +84,16 @@ export function Project2() {
                           
                             isOpen={openAccordion === 2}
                             onClick={() => handleOpen(2)}
-                            body={<p className="text-xs sm:text-sm lg:text-base xl:text-lg">In the fast-paced world of modern business, effective communication is the lifeblood of success. Now imagine the bigger Logistic company in the world and how useful this for them would be
+                            body={<p className="text-xs sm:text-sm lg:text-base xl:text-lg"> <div className="bg-gray-100 p-4">Effective communication is the lifeblood of success. Imagine the biggest world logistic company and how smooth communication needs to be.</div>
                             <div>
-                                    <span class="font-bold mt-2">Managing the usage of radios: </span> can be time-consuming for both the users and the administrators
+                                    <span class=" mt-4">Managing Walkie Talkies </span> can be very time-consuming for both the users and the administrators. 
                                     <li>Administrators need to monitor and control the usage of radios across different departments, locations, and workers, such as assigning radios, limiting usage, retrieving logs, blocking radios, and sending messages</li>
                                     <li>Radios needs to be updated regularly to ensure optimal performance and security, which <span class="font-bold">requires connecting them to a computer</span> and following a <span class="font-bold">complex process.</span></li>
                                     </div>
 
                                 <div className="mt-2">
                                      The existing solutions or alternatives are either too costly, too complicated, or too limited.</div>
-                                    <div className="mt-2">
-                                    Using other devices, such as smartphones, is not an option. These devices are <span class="font-bold">more expensive, less durable, less reliable, and less secure </span>than MOTORBO 2-way radios. They also <span class="font-bold">require internet access or cellular network coverage,</span> which may not be available in some areas or situations.</div>
-                                    </p>}/>
+                                     </p>}/>
                         <AccordionItem
                             title={<h1 className="font-general-bold text-sm sm:text-base lg:text-lg xl:text-xl">Solution</h1>}
                             
@@ -120,10 +120,10 @@ export function Project2() {
                 1. The laptop contains the app and connects to a repeater via a cable. (The repeater amplifies and converts the app orders to radio signals)
             </div>
             <div className="mt-2">
-                2. The app allows the administrator to access and modify the global settings and preferences e, such as limits, logs, assignments, blocks, and messages. The app sends these settings to the repeater, which then sto the repends them eater, which then sends them to the radios.
+                2. The app allows the admin to access and modify the settings and preferences. The app sends these settings to the repeater, which then sto the repends them eater, which then sends them to the radios.
             </div>
             <div>
-                3. The app allows the administrator to send updates over the air to the radios via the app, which are downloaded by the laptop and then sent to the repeater and then installed by the radios.
+                3. The app allows the administrator to send updates over the air to the radios via the app. Downloaded in the laptop , transmited to the repeater and then sent (as radio signals) and installed in the radios.
             </div>
             <div>
                 4. The app allows the administrator to enable geofencing features on the radios via the app, which are activated and deactivated by the GPS location of the radios.
@@ -146,18 +146,13 @@ export function Project2() {
                             onClick={() => handleOpen(5)}
                             body={<><div className="bg-gray-100 p-4 ">
                                 <h2 className="text-base sm:text-lg lg:text-xl font-bold">My Role in the Product</h2>
-                                <p className="text-xs sm:text-sm lg:text-base xl:text-lg mt-2"> Primary contact between the development team and the diferent stakeholders at the company that we were building the product for. Responsible for defining requirements, gathering feedback, doing the set up and onboarding on site, and solving technical problems by using techniques such as getting the logs from repeater. </p>
+                                <p className="text-xs sm:text-sm lg:text-base xl:text-lg mt-2"> Contact between the development team and the stakeholders (engineers, managers) at the company that we were building the product for. Responsible for defining requirements, gathering feedback, doing the set up, onboarding, and solving technical problems onsite. </p>
                             </div><div className="text-xs sm:text-sm lg:text-base xl:text-lg mt-2">
-                            <li>Key role in defining the requirements, specifications, and features of the product, based on the needs and preferences of the client and the users. I communicated these to the development team and ensured that they were aligned with the project goals and scope.</li>
-                            <li>Testing, debugging, and troubleshooting the product, both on the app and on the radios. I reported any issues or bugs to the development team and helped them resolve them as soon as possible.</li>
-                            <li>Contributed to the documentation, presentation, and delivery of the product, both internally and externally. I prepared user manuals, training materials, and demo videos for the product. I also conducted training sessions and workshops for the client and the users on how to use the product effectively and efficiently.</li>
-                            <li>Ongoing support and maintenance for the product, after it was launched and deployed. I monitored its performance, usage, and feedback, and suggested improvements or enhancements to the development team.</li>
-                            <div className="text-xs sm:text-sm lg:text-base xl:text-lg mt-4">Some of the skills and tools that I used or learned during the project were:
-                            
-                            <li>Communication skills: I used various communication channels and methods, phone calls, meetings, reports, presentations, etc., to communicate effectively with different stakeholders. I also used clear, concise, and polite language to convey information, feedback, instructions, etc.</li>
-                            <li>Technical skills: I used various technical tools and platforms, such as MOTORBO 2-way radios, repeaters, laptops, mobile phones, Bluetooth, Wi-Fi, etc., to work with the product and its components. I also used various software applications and systems, such as app development tools, Product Management tools (Confluence, Jira) , testing tools , documentation tools , presentation tools , etc., to create, test, debug, document, present, and deliver the product.</li>
-                            <li>Problem-solving skills: I used various problem-solving techniques and strategies, such as brainstorming, research, analysis, testing, debugging, troubleshooting, etc., to solve any issues or challenges that arose during the product development process.</li>
-                            </div>
+                            <li>Requirements, specifications, and features definition, based on users input. Put these into a Product Backlog and managed Sprints.</li>
+                            <li>Testing, debugging, and troubleshooting the product. I reported any issues or bugs to the development team and helped them resolve them as soon as possible.</li>
+                            <li>Documentation, presentation, and delivery of the product. I prepared user manuals, training materials, and demo videos for the product. I also conducted training sessions onsite.</li>
+                            <li>Ongoing support and maintenance for the product, after it was launched. Monitored its performance and usage, gathered feedback and introduced it into the development cycle.</li>
+                        
                             </div>
                                     
                                     
@@ -176,27 +171,27 @@ export function Project2() {
                                     </p>
 
                                     <div className="mt-2">
-                                        <span class="font-bold">The product was based on agile principles and practices.</span>  We used a Scrum framework to organize our work into sprints, which were two-week periods of time where we planned, executed, reviewed, and delivered a set of features or tasks. We used a Kanban board to visualize our workflow, track our progress, and manage our prioritie
+                                        <span class="font-bold">Product Development with an Agile Approach.</span>  We used a Scrum framework to organize our work into 2 weeks sprints. We used a Kanban board to visualize our workflow, track our progress, and manage our priorities
                                     </div>
 
                                     <div className="mt-2">
-                                        <span class="font-bold">Timeline of the building process:</span> We started the project in February 2021, after we detected the pain point in our clients while trying to manage the radios. We conducted a market research and a user research to validate the problem and identify the needs and preferences of the potential users. .
+                                        <span class="font-bold">Timeline:</span> We started the project in February 2021, first we detected the pain point in our clients , then wec conducted user research to validate the problem and identify the needs of our users.
                                     </div>
 
                                     <div className="mt-2">
-                                        <span class="font-bold">We defined the requirements, specifications, and features of the product,</span> based on the research findings and the client’s feedback. We also created a prototype and a mockup of the product, using tools such as Figma and Adobe XD, to demonstrate the functionality and design of the product.
+                                        <span class="font-bold">Requirements, specifications, and features : </span> based on the research findings. First we created a prototype, using tools such as Figma, and presented it to the users.
                                     </div>
 
                                     <div className="mt-2">
-                                        We then started developing the product. We followed an iterative and incremental approach, where we developed, tested, debugged, and improved the product in <span className="font-bold">small batches</span>. We also deployed the product every two weeks to get early feedback.
+                                    <span class="font-bold">Developing the product.</span>  We followed an iterative and incremental approach, where we developed consistently and improved the product in <span className="font-bold">small batches</span> to get early feedback and recude waste.
                                     </div>
 
                                     <div className="mt-2">
-                                        <span class="font-bold">We then gathered feedback from the client and the users</span> , using tools such as SurveyMonkey. We also went on site and spoke to people to understand how everything was working and challenges or get logs from repeater. We used this feedback to make changes or enhancements to the product according to their needs.
+                                        <span class="font-bold">Gathering Feedback</span> , using tools such as SurveyMonkey and visits to the client on-site.
                                     </div>
 
                                     <div className="mt-2">
-                                        <span class="font-bold">We then finalized and launched the product in October 2021</span> , after we completed all the features and tasks that were agreed upon with the client. We also prepared user manuals, training materials, and demo videos for the product. We also conducted training sessions and workshops for the client and the users
+                                        <span class="font-bold">Finished and launched the product in October 2021</span> , after we completed all the features agreed upon with the client. We prepared user manuals and conducted training sessions with the users
                                     </div>
                                     </div>
                                 </>
@@ -213,12 +208,12 @@ export function Project2() {
 
 
                                 <div className="mt-4">
-                                    <span class="font-bold">Ensuring compatibility and interoperability between different devices and platforms:</span> different devices and platforms have different specifications, standards, and protocols that may not work well together.</div>
+                                    <span class="font-bold">Compatibility and interoperability:</span> different devices and platforms have different specifications, standards, and protocols that may not work well together.</div>
                                 <div className="mt-2">
-                                    <span class="font-bold">Ensuring reliability and stability of radio signals in different environments: </span>was a challenge because radio signals may be affected by various factors, such as distance, interference, noise, weather, etc., that may reduce their quality or availability. For example, radio signals may are weak or distorted if the radios are too far from the repeater, or if there are other radio devices or electromagnetic sources nearby (what typically happens in our clients environment).</div>
+                                    <span class="font-bold">Reliability and stability of radio signals in different environments: </span> radio signals may be affected by various factors, such as distance, interference, noise, weather, etc., that may reduce their quality or availability. For example, radio signals may are weak or distorted if the radios are too far from the repeater, or if there are electromagnetic sources nearby (what typically happens in our clients environment).</div>
 
                                 <div className="mt-2">
-                                    <span class="font-bold">Ensuring user-friendliness and usability of the product for different users and scenarios.:</span> some users prefer a simple interface and functionalities, while others may prefer a complex and customizable interface. Some scenarios required a quick and easy access to the product features, while others required a detailed and thorough explanation of the product features.</div>
+                                    <span class="font-bold">User-friendliness and usability of the product:</span> Some scenarios required a quick and easy access to the product features, while others required a detailed and thorough explanation of the product features.</div>
                                 <div className="mt-2">
                                     <span class="font-bold">Some of the ways that I overcame these challenges were:</span></div>
                                 <div className="mt-2">
@@ -233,7 +228,7 @@ export function Project2() {
                         />
 
                         <AccordionItem
-                             title={<h1 className="font-general-bold text-sm sm:text-base lg:text-lg xl:text-xl">Tech & Processes</h1>}
+                             title={<h1 className="font-general-bold text-sm sm:text-base lg:text-lg xl:text-xl">Results</h1>}
                            
                             isOpen={openAccordion === 9}
                             onClick={() => handleOpen(9)}

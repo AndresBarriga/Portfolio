@@ -11,8 +11,8 @@ function Skills(props) {
             <span className="inline-block rounded-lg bg-indigo-50 p-4">
                <img className= "aspect-square h-6 w-auto sm:h-10 sm:w-auto md:h-12 md:h-auto text-white "src={props.img} alt="Image"></img> 
             </span>
-            <h2 className="font-general-bold text-base md:text-xl lg:3xl">{props.title}</h2>
-            <p className="font-general-light text-sm sm:mt-1 sm:block sm:text-base sm:text-gray-600" style={{ wordWrap: 'break-word', whiteSpace: 'normal' }}>{props.description}</p>
+            <h2 className="font-general-bold text-base md:text-lg">{props.title}</h2>
+            <p className="font-general-light text-xs sm:mt-1 sm:block sm:text-sm sm:text-gray-600" style={{ wordWrap: 'break-word', whiteSpace: 'normal' }}>{props.description}</p>
             
         </a>
           </div>
