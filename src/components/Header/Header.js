@@ -136,7 +136,7 @@ const AppHeader = () => {
 				{/* Header right section buttons */}
 
 				<div className="hidden sm:flex justify-end items-center md:flex-row ml-auto">
-						<Link to="/contact">
+						<Link to="https://calendly.com/andresbarriga/30min">
 							<span
 								className="text-md font-general-medium bg-indigo-500 hover:bg-indigo-600 text-white shadow-sm rounded-md px-5 py-2.5 duration-300 "
 								aria-label="Hire Me Button"

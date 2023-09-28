@@ -15,8 +15,12 @@ function createProjectCard(projectsShortCardData) {
       description={projectsShortCardData.description}
       feature1title={projectsShortCardData.feature1title}
       feature1subtitle={projectsShortCardData.feature1subtitle}
+      feature1subtitle2={projectsShortCardData.feature1subtitle2}
+      feature1subtitle3={projectsShortCardData.feature1subtitle3}
       feature2title={projectsShortCardData.feature2title}
       feature2subtitle={projectsShortCardData.feature2subtitle}
+      feature2subtitle2={projectsShortCardData.feature2subtitle2}
+      feature2subtitle3={projectsShortCardData.feature2subtitle3}
       link={projectsShortCardData.link}
     />
   );
@@ -43,7 +47,7 @@ const Projects = () => {
           <img
             src="https://i.ibb.co/887vM4C/medical-banner-with-doctor-working-laptop.jpg"
             alt=""
-            className="h-60 w-auto my-7  "
+            className="h-60 w-auto"
           />
           {createProjectCard(project1)}
         </div>

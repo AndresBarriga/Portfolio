@@ -1,13 +1,15 @@
 export const aboutMeData = [
 	{
 		id: 1,
-		bio: "Based in Berlin and originally from Madrid, I made the exciting move to Berlin three years ago, where I've been on an inspiring journey of professional growth.",
+		bio: "I'm driven to create products that make a difference, so that I became passionate about customer-centric design and using data to make informed decisions and reduce waste. ",
 	},
 	{
 		id: 3,
-		bio: "My career aspiration is to continue making a meaningful impact by creating products that solve real-world problems and improve the lives of users. I thrive on collaboration, embracing new technologies, and pushing the boundaries of what's possible in the world of product management. ",
+		bio: "I believe that by using this approach we can build products that truly make a difference and positve impact on the world. For example, in my current role I lead the development of a Telemedicine App that is helping thousend of patients to monitor their vital data signs from the comfort of their homes. ",
 	},
 	{
 		id: 4,
-		bio: "This portfolio is a reflection of my journey, showcasing the projects I've been a part of and the challenges I've overcome. Join me as we explore the fascinating intersection of technology, innovation, and product management."},
+		bio: "I am always looking for new challenges and opportunities to learn and grow. I am also a team player and I thrive on collaborating with others to build successful products."},
+		{id: 5,
+		bio: "Join me as we explore the fascinating intersection of technology, innovation, and product management."}
 ];

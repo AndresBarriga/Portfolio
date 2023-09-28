@@ -4,8 +4,8 @@ import CounterItem from './CounterItem';
 const AboutCounter = () => {
 	useCountUp({ ref: 'experienceCounter', end: 4, duration: 2 });
 	useCountUp({ ref: 'githubStarsCounter', end: 67, duration: 2 });
-	useCountUp({ ref: 'feedbackCounter', end: 92, duration: 2 });
-	useCountUp({ ref: 'projectsCounter', end: 87, duration: 2 });
+	useCountUp({ ref: 'feedbackCounter', end: 142, duration: 2 });
+	useCountUp({ ref: 'projectsCounter', end: 89, duration: 2 });
 
 	return (
 		
@@ -24,13 +24,13 @@ const AboutCounter = () => {
 				/>
 
 				<CounterItem
-					title="Positive feedback"
+					title="Features Launched"
 					counter={<span id="feedbackCounter" />}
-					measurement="%"
+					measurement="+"
 				/>
 
 				<CounterItem
-					title="Projects completed"
+					title="Customer Satisfaction Score"
 					counter={<span id="projectsCounter" />}
 					measurement="%"
 				/>

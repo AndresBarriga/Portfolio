@@ -22,6 +22,8 @@ function ProjectShortCard(props) {
                     <div className="ml-4 mt-2">
                         <h4 className="text-sm font-seconday-light sm:text-base">{props.feature1title}</h4>
                         <p className="mt-2 text-xs font-seconday-light text-gray-500 sm:text-sm">{props.feature1subtitle}</p>
+                        <p className="mt-2 text-xs font-seconday-light text-gray-500 sm:text-sm">{props.feature1subtitle2}</p>
+                        <p className="mt-2 text-xs font-seconday-light text-gray-500 sm:text-sm">{props.feature1subtitle3}</p>
                     </div>
 
                 </div>
@@ -36,6 +38,8 @@ function ProjectShortCard(props) {
                     <div className="ml-4 mt-2">
                         <h4 className="text-sm font-seconday-light  sm:text-base">{props.feature2title}</h4>
                         <p className="mt-2 text-xs font-seconday-light text-gray-500 sm:text-sm">{props.feature2subtitle}</p>
+                        <p className="mt-2 text-xs font-seconday-light text-gray-500 sm:text-sm">{props.feature2subtitle2}</p>
+                        <p className="mt-2 text-xs font-seconday-light text-gray-500 sm:text-sm">{props.feature2subtitle3}</p>
                     </div>
                 </div>
 
