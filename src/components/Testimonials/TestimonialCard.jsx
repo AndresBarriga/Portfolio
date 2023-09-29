@@ -20,6 +20,7 @@ const TestimonialCard = () => {
     const card1 = testimonialsData.find((testimonial) => testimonial.id === 1);
     const card2 = testimonialsData.find((testimonial) => testimonial.id === 2);
     const card3 = testimonialsData.find((testimonial) => testimonial.id === 3);
+    const card4 = testimonialsData.find((testimonial) => testimonial.id === 4);
   
     return (
       <div id="keen-slider" className="keen-slider flex overflow-hidden relative select-none touch-callout-none tap-highlight-transparent min-h-full w-full">
@@ -39,6 +40,11 @@ const TestimonialCard = () => {
         <div className="keen-slider__slide relative overflow-hidden w-full min-h-full">
           <blockquote className="flex h-full flex-col justify-between bg-white p-6 shadow-sm sm:p-8 lg:p-12">
             {createTestimonialCard(card3)}
+          </blockquote>
+          </div>
+          <div className="keen-slider__slide relative overflow-hidden w-full min-h-full">
+          <blockquote className="flex h-full flex-col justify-between bg-white p-6 shadow-sm sm:p-8 lg:p-12">
+            {createTestimonialCard(card4)}
           </blockquote>
         </div>
 
