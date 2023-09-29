@@ -1,16 +1,18 @@
 export const aboutMeData = [
 	{
 		id: 1,
-		bio: "I am passionate about customer-centric design and use data to make informed decisions, driven by my desire to create impactful products and reduce waste. ",
+		bio: "I'm driven to create products that make a difference, so that I became passionate about customer-centric design and using data to make informed decisions and reduce waste. ",
 	},
 	{
 		id: 3,
-		bio: "By adopting this approach, we can craft products that genuinely make a positive impact on the world. In my current role, I spearheaded the development of a Telemedicine App that enables thousands of patients to monitor their vital signs from home.
- ",
+		bio: "I believe that by using this approach we can build products that truly make a difference and positve impact on the world. For example, in my current role I lead the development of a Telemedicine App that is helping thousend of patients to monitor their vital data signs from the comfort of their homes. ",
 	},
 	{
 		id: 4,
-		bio: "I constantly seek new challenges and learning opportunities. I excel in team settings and love collaborating to develop successful products."},
-		{id: 5,
-		bio: "Join me as we explore the fascinating intersection of technology, innovation, and product management."}
+		bio: "I am always looking for new challenges and opportunities to learn and grow. I am also a team player and I thrive on collaborating with others to build successful products.",
+	},
+	{
+		id: 5,
+		bio: "Join me as we explore the fascinating intersection of technology, innovation, and product management.", 
+	},
 ];
