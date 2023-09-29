@@ -14,7 +14,7 @@ const Certification = (props) => {
 
         <div className="p-4">
           <a href="#">
-            <h3 className="text-base font-secondary-bold text-gray-900 sm:text-xl md:text-2xl">
+            <h3 className=" font-secondary-bold text-base text-gray-900 sm:text-xl md:text-2xl">
               {props.title}
             </h3>
           </a>
