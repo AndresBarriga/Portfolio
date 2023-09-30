@@ -14,7 +14,7 @@ const AboutCounter = () => {
 				<CounterItem
 					title="Years of experience"
 					counter={<span id="experienceCounter" />}
-					measurement=""
+					measurement="+"
 				/>
 
 				<CounterItem
