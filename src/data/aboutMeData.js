@@ -1,15 +1,31 @@
 export const aboutMeData = [
 	{
 		id: 1,
-		bio: "I'm driven to create products that make a difference, so that I became passionate about customer-centric design and using data to make informed decisions and reduce waste. ",
+		bio: (
+			<p>
+				I am passionate about customer-centric design and use data to make informed decisions, driven by my desire to create <span className='text-indigo-400 text-general-bold'>impactful products </span> and <span className='text-indigo-400 text-general-bold'>reduce waste.</span> 
+			</p>
+		)
+	},
+	{
+		id: 2,
+		bio: (
+			<p>By adopting this approach, we can craft products that genuinely make a <span className='text-indigo-400 text-general-bold'> positive impact on the world</span>. In my current role, I spearheaded the development of a Telemedicine App that enables thousands of patients to monitor their vital signs from home.
+			</p>
+		)
 	},
 	{
 		id: 3,
-		bio: "I believe that by using this approach we can build products that truly make a difference and positve impact on the world. For example, in my current role I lead the development of a Telemedicine App that is helping thousend of patients to monitor their vital data signs from the comfort of their homes. ",
+		bio: (
+			<p> I am always looking for new challenges and opportunities to <span className='text-indigo-400 text-general-bold'>learn and grow.</span> I am also a team player and I thrive on collaborating with others to build successful products.
+			</p>
+		)
 	},
 	{
 		id: 4,
-		bio: "I am always looking for new challenges and opportunities to learn and grow. I am also a team player and I thrive on collaborating with others to build successful products."},
-		{id: 5,
-		bio: "Join me as we explore the fascinating intersection of technology, innovation, and product management."}
+		bio: (
+			<p>Join me as we explore the fascinating intersection of <span className='text-indigo-400 text-general-bold'>technology, innovation, and product management.</span>
+			</p>
+		)
+	}
 ];

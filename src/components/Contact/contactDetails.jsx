@@ -3,7 +3,7 @@ import { FiPhone, FiMapPin, FiMail } from 'react-icons/fi';
 const contacts = [
 	{
 		id: 1,
-		name: 'Hiddenseer Str. 8, Berlin, 10437, Germany',
+		name: 'Berlin, 10437, Germany',
 		icon: <FiMapPin />,
 	},
 	{

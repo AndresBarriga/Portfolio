@@ -34,8 +34,16 @@ const testimonialsData = [
         person:"Andreea Stefan",
         img:"https://i.ibb.co/MnbTdtF/Andreea.jpg",
         company:" Contracts Coordination Manager at MikiTravel",
+    }  ,
+    {
+        id:5,
+        key:5,
+        title:"Enriching collaboration, valuable insights",
+        description:"Collaborating with Andres has been incredibly cool and insightful. His ability to provide valuable insights has made our project shine. Working with him is a pleasure, and his collaborative spirit elevates every discussion. If you have the chance to work with Andres, don't miss it – it's an opportunity you'll truly appreciate!",
+        person:"Maria Hernández",
+        img:"https://i.ibb.co/zRVR4CW/mariaa.jpg",
+        company:" Marketing Manager at Collato",
     }  
 ]
 
 export default testimonialsData;
-

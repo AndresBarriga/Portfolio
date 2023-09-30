@@ -21,6 +21,7 @@ const TestimonialCard = () => {
     const card2 = testimonialsData.find((testimonial) => testimonial.id === 2);
     const card3 = testimonialsData.find((testimonial) => testimonial.id === 3);
     const card4 = testimonialsData.find((testimonial) => testimonial.id === 4);
+    const card5 = testimonialsData.find((testimonial) => testimonial.id === 5);
   
     return (
       <div id="keen-slider" className="keen-slider flex overflow-hidden relative select-none touch-callout-none tap-highlight-transparent min-h-full w-full">
@@ -47,6 +48,8 @@ const TestimonialCard = () => {
             {createTestimonialCard(card4)}
           </blockquote>
         </div>
+        
+        
 
         
         

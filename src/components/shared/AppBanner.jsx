@@ -23,7 +23,7 @@ const AppBanner = () => {
                     }}
                     className="font-general-semibold text-2xl mx-7 lg:text-3xl xl:text-4xl text-center sm:text-left text-ternary-dark "
                 >
-                    Hi, I am <span className='text-indigo-500 text-general-bold'> Andrés </span>
+                     Let's shape <span className='text-indigo-500 text-general-bold'>tomorrow's</span> solutions <span className='text-indigo-500 text-general-bold'> today </span>
                 </motion.h1>
                 <motion.p
                     initial={{ opacity: 0 }}
@@ -35,7 +35,7 @@ const AppBanner = () => {
                     }}
                     className="mx-7 font-general-medium mt-4 text-base md:text-lg lg:text-xl xl:text-2xl text-center sm:text-left leading-normal text-gray-500"
                 >
-                    a <span className='text-indigo-500 text-general-bold'>Product Manager. </span> <br />I build products that solve<span className='text-indigo-500 text-bold'> real-world problems</span> and that  <span className='text-indigo-500 text-bold'>users love.</span>
+                    I am <span className='text-indigo-500 text-general-bold'> Andrés </span> a <span className='text-indigo-500 text-general-bold'>Product Manager. </span> I build products that solve<span className='text-indigo-500 text-bold'> real-world problems</span> and that  <span className='text-indigo-500 text-bold'>users love.</span>
                 </motion.p>
                 <motion.div
                     initial={{ opacity: 0 }}
