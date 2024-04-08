@@ -78,21 +78,30 @@ const ProjectsPage = () => {
 				animate={{ opacity: 1, delay: 1 }}
 				exit={{ opacity: 0 }}
 			>
-        		<div className="text-center mb-8"> 
-                    <h1 className="text-2xl font-general-bold sm:text-3xl  md:text-4xl">My Role along different Products</h1>
-                    <p className="mt-4 text-base text-gray-500 font-general-light sm:text-lg md:text-xl">See the impact and the Role I played in different products</p>
-					<a
-                        href="/myRole"
-                        className="font-general-medium flex flex-col justify-center mt-4 items-center mx-auto w-36 sm:w-48 mt-12 mb-6 sm:mb-0 text-lg border border-indigo-200 py-2.5 sm:py-3 shadow-lg rounded-lg bg-indigo-50 focus:ring-1 focus:ring-indigo-900 hover:bg-indigo-500 text-gray-500 hover:text-white duration-500"
-                        aria-label="See Projectss"
-                    >
-                        
-                        <span className="text-sm sm:text-lg font-general-medium duration-100">
-                            Discover More
-                        </span>
-
-                    </a>
-                </div>
+        	<div className="text-center mb-8"> 
+    <h1 className="text-2xl font-general-bold sm:text-3xl md:text-4xl">My Role along different Products</h1>
+    <p className="mt-4 text-base text-gray-500 font-general-light sm:text-lg md:text-xl">See the impact and the Role I played in different products</p>
+    <div className="flex justify-center space-x-4"> {/* Add this div */}
+        <a
+            href="/myRole"
+            className="font-general-medium flex flex-col justify-center mt-4 items-center w-36 sm:w-48 mt-12 mb-6 sm:mb-0 text-lg border border-indigo-200 py-2.5 sm:py-3 shadow-lg rounded-lg bg-indigo-50 focus:ring-1 focus:ring-indigo-900 hover:bg-indigo-500 text-gray-500 hover:text-white duration-500"
+            aria-label="See Projectss"
+        >
+            <span className="text-sm sm:text-lg font-general-medium duration-100">
+                Product Projects
+            </span>
+        </a>
+        <a
+            href="/projects/project4"
+            className="font-general-medium flex flex-col justify-center mt-4 items-center w-36 sm:w-48 mt-12 mb-6 sm:mb-0 text-lg border border-indigo-200 py-2.5 sm:py-3 shadow-lg rounded-lg bg-indigo-50 focus:ring-1 focus:ring-indigo-900 hover:bg-indigo-500 text-gray-500 hover:text-white duration-500"
+            aria-label="See Projectss"
+        >
+            <span className="text-sm sm:text-lg font-general-medium duration-100">
+                Development Projects
+            </span>
+        </a>
+    </div> {/* Close the div */}
+</div>
 
         <div className="mx-10 bg-gray-50 m-gray-50">
 				<AboutCounter />

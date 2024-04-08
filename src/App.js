@@ -11,7 +11,9 @@ import About from "./pages/About";
 import  { DefaultAccordion } from "./components/Projects/Project1/Project1";
 import  { Project2 } from "./components/Projects/Project2/Project2";
 import { Project3 } from "./components/Projects/Project3/Project3"
+import Project4 from './components/Projects/Project 4/Project4';
 import MyRole from './components/MyRole/MyRole';
+import DocumentationPage from './components/Projects/Project 4/apiDoc';
 
 function App() {
   return (
@@ -26,8 +28,9 @@ function App() {
         <Route path="/projects/project1" element={<DefaultAccordion />} />
         <Route path="/projects/project2" element={<Project2 />} />
         <Route path="/projects/project3" element={<Project3 />} />
+        <Route path="/projects/project4" element={<Project4 />} />
         <Route path="/myRole" element={<MyRole />} />
-        
+        <Route path="/projects/Endpoints"  element = {<DocumentationPage />} />
       </Routes>
       <AppFooter />
     </div>

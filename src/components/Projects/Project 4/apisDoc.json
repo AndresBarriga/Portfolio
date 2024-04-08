@@ -1,0 +1,3237 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "BE APIs for Climbing Clun Project",
+        "version": "1.0.0",
+        "description": "This documentation show the APIs used by the FE to interact with the web application"
+    },
+    "servers": [
+        {
+            "url": "http://localhost:3000",
+            "description": "Development server"
+        }
+    ],
+    "paths": {
+        "/auth/google": {
+            "get": {
+                "tags": [
+                    "Users"
+                ],
+                "summary": "Authenticate with Google",
+                "description": "Redirects to Google's OAuth page for authentication.",
+                "responses": {
+                    "302": {
+                        "description": "Redirect to Google's OAuth page."
+                    }
+                }
+            }
+        },
+        "/auth/google/callback": {
+            "get": {
+                "tags": [
+                    "Users"
+                ],
+                "summary": "Google OAuth Callback",
+                "description": "Handles the callback from Google's OAuth service after authentication.",
+                "responses": {
+                    "302": {
+                        "description": "Redirect to the frontend's dashboard page with the token as a query parameter."
+                    },
+                    "401": {
+                        "description": "Unauthorized. The user is not authenticated."
+                    }
+                }
+            }
+        },
+        "/auth/verify": {
+            "get": {
+                "tags": [
+                    "Auth"
+                ],
+                "summary": "Verify JWT Token",
+                "description": "Verifies the JWT token provided in the Authorization header. If the token is valid, the user is authenticated; otherwise, an error is returned.",
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "example": "Bearer your-jwt-token"
+                        },
+                        "description": "JWT token to be verified."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "User authenticated successfully."
+                    },
+                    "401": {
+                        "description": "Unauthorized. The user is not authenticated."
+                    },
+                    "403": {
+                        "description": "Forbidden. The token is invalid or expired."
+                    }
+                }
+            }
+        },
+        "/auth/login": {
+            "post": {
+                "tags": [
+                    "Auth"
+                ],
+                "summary": "User Login",
+                "description": "Authenticates a user by comparing the provided email and password with the stored user data and assign token to session.",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "form": {
+                                        "type": "object",
+                                        "properties": {
+                                            "email": {
+                                                "type": "string",
+                                                "example": "user@example.com"
+                                            },
+                                            "password": {
+                                                "type": "string",
+                                                "example": "userpassword"
+                                            }
+                                        },
+                                        "required": [
+                                            "email",
+                                            "password"
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "User authenticated successfully.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Authorized"
+                                        },
+                                        "token": {
+                                            "type": "string",
+                                            "example": "your-jwt-token"
+                                        },
+                                        "initial_preferences": {
+                                            "type": "object",
+                                            "example": {
+                                                "preference1": "value1",
+                                                "preference2": "value2"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "400": {
+                            "description": "Invalid email or password."
+                        },
+                        "500": {
+                            "description": "Login Failed - error."
+                        }
+                    }
+                }
+            }
+        },
+        "/logout": {
+            "delete": {
+                "tags": [
+                    "Auth"
+                ],
+                "summary": "User Logout",
+                "description": "Logs out a user by deleting their session from the database.",
+                "responses": {
+                    "200": {
+                        "description": "User logged out successfully.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "Logged Out"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "No valid session ID found."
+                    },
+                    "500": {
+                        "description": "Log Out Failed - database error."
+                    }
+                }
+            }
+        },
+        "/api/create-password/check-token": {
+            "get": {
+                "tags": [
+                    "Pass"
+                ],
+                "summary": "Check Token Validity",
+                "description": "To change the pass a token us assigned, this checks if the provided token is valid and associated with a user.",
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "example": "Bearer your-token"
+                        },
+                        "description": "Token to be checked."
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Token is valid."
+                    },
+                    "401": {
+                        "description": "Invalid or expired token."
+                    },
+                    "500": {
+                        "description": "Failed to find user."
+                    }
+                }
+            }
+        },
+        "/api/reset-password": {
+            "post": {
+                "tags": [
+                    "Pass"
+                ],
+                "summary": "Reset Password",
+                "description": "Resets the user's password using a valid recovery token.",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "password": {
+                                        "type": "string",
+                                        "example": "newpassword"
+                                    }
+                                },
+                                "required": [
+                                    "password",
+                                    "token"
+                                ]
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Password updated successfully."
+                    },
+                    "401": {
+                        "description": "Invalid or expired token."
+                    },
+                    "500": {
+                        "description": "Failed to update password."
+                    }
+                }
+            }
+        },
+        "/api/create-password/new-password": {
+            "post": {
+                "tags": [
+                    "Pass"
+                ],
+                "summary": "Set New Password",
+                "description": "Sets a new password for the user using a valid token.",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "password": {
+                                        "type": "string",
+                                        "example": "newpassword"
+                                    }
+                                },
+                                "required": [
+                                    "password",
+                                    "token"
+                                ]
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Password updated successfully."
+                    },
+                    "401": {
+                        "description": "Invalid or expired token."
+                    },
+                    "500": {
+                        "description": "Failed to update password."
+                    }
+                }
+            }
+        },
+        "/api/reset-password/recover-password-email": {
+            "post": {
+                "tags": [
+                    "Pass"
+                ],
+                "summary": "Initiate Password Recovery",
+                "description": "Initiates the password recovery process for a user by sending them an email with a recovery token.",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "form": {
+                                        "type": "object",
+                                        "properties": {
+                                            "email": {
+                                                "type": "string",
+                                                "example": "user@example.com"
+                                            }
+                                        },
+                                        "required": [
+                                            "email"
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Password recovery email sent successfully."
+                    },
+                    "409": {
+                        "description": "Email not found."
+                    },
+                    "500": {
+                        "description": "Database error during email check or failed to send email."
+                    }
+                }
+            }
+        },
+        "/api/verify-recaptcha": {
+            "post": {
+                "tags": [
+                    "Auth"
+                ],
+                "summary": "Verify reCAPTCHA Token",
+                "description": "Verifies a reCAPTCHA token sent by the client to ensure the request is not from a bot.",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "recaptchaToken": {
+                                        "type": "string",
+                                        "example": "your-recaptcha-token"
+                                    }
+                                },
+                                "required": [
+                                    "recaptchaToken"
+                                ]
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "reCAPTCHA token verified successfully."
+                    },
+                    "400": {
+                        "description": "Invalid reCAPTCHA response."
+                    },
+                    "500": {
+                        "description": "An error occurred during the verification process."
+                    }
+                }
+            }
+        },
+        "/api/registration": {
+            "post": {
+                "tags": [
+                    "Registration"
+                ],
+                "summary": "User Registration",
+                "description": "Registers a new user by checking if the email already exists, generating a unique token, inserting the new user into the database, and sending an email to the user.",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "form": {
+                                        "type": "object",
+                                        "properties": {
+                                            "email": {
+                                                "type": "string",
+                                                "example": "user@example.com"
+                                            },
+                                            "firstName": {
+                                                "type": "string",
+                                                "example": "John"
+                                            },
+                                            "lastName": {
+                                                "type": "string",
+                                                "example": "Doe"
+                                            }
+                                        },
+                                        "required": [
+                                            "email",
+                                            "firstName",
+                                            "lastName"
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "User registered successfully."
+                    },
+                    "409": {
+                        "description": "Email already registered."
+                    },
+                    "500": {
+                        "description": "Database error during email check or failed to send email."
+                    }
+                }
+            }
+        },
+    
+    "/api/create-request": {
+        "post": {
+            "tags": [
+                "Requests"
+            ],
+            "summary": "Create a new climbing request",
+            "description": "Creates a new climbing request with the provided details, additionally create notifications for users who have the specified route as favourite.",
+            "parameters": [
+                {
+                    "name": "userId",
+                    "in": "query",
+                    "required": true,
+                    "schema": {
+                        "type": "string",
+                        "example": "UserId 540"
+                    },
+                    "description": "The id of the User creating the request."
+                }
+            ],"requestBody": {
+                "required": true,
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "timestamp": {
+                                    "type": "string",
+                                    "format": "date-time",
+                                    "example": "2023-04-01T10:00:00Z"
+                                },
+                                "expiration_date": {
+                                    "type": "string",
+                                    "format": "date-time",
+                                    "example": "2023-04-07T10:00:00Z"
+                                },
+                                "area": {
+                                    "type": "string",
+                                    "example": "Area Name"
+                                },
+                                "region": {
+                                    "type": "string",
+                                    "example": "Region Name"
+                                },
+                                "areaChecked": {
+                                    "type": "boolean",
+                                    "example": true
+                                },
+                                "selectedRoutes": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object",
+                                        "properties": {
+                                            "name": {
+                                                "type": "string",
+                                                "example": "Route Name"
+                                            },
+                                            "route_style": {
+                                                "type": "string",
+                                                "example": "Route Style"
+                                            }
+                                        },
+                                        "required": [
+                                            "name",
+                                            "route_style"
+                                        ]
+                                    }
+                                },
+                                "route": {
+                                    "type": "string",
+                                    "example": "Route Name"
+                                },
+                                "route_style": {
+                                    "type": "string",
+                                    "example": "Route Style"
+                                },
+                                "timeData": {
+                                    "type": "string",
+                                    "example": "Time Data"
+                                },
+                                "climbingStyle": {
+                                    "type": "string",
+                                    "example": "Climbing Style"
+                                },
+                                "material": {
+                                    "type": "string",
+                                    "example": "Material"
+                                },
+                                "neededMaterial": {
+                                    "type": "string",
+                                    "example": "Needed Material"
+                                },
+                                "message": {
+                                    "type": "string",
+                                    "example": "Message"
+                                }
+                            },
+                            "required": [
+                                "timestamp",
+                                "expiration_date",
+                                "area",
+                                "region",
+                                "areaChecked",
+                                "selectedRoutes",
+                                "route",
+                                "route_style",
+                                "timeData",
+                                "climbingStyle",
+                                "material",
+                                "neededMaterial",
+                                "message"
+                            ]
+                        }
+                    }
+                }
+            },
+            "responses": {
+                "200": {
+                    "description": "Climbing request created successfully.",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "string",
+                                "example": "User preferences saved successfully"
+                            }
+                        }
+                    }
+                },
+                "500": {
+                    "description": "Error saving user preferences."
+                }
+            }
+        }
+    },
+    "/api/create_request/user-notification-settings/{userId}": {
+        "get": {
+            "tags": [
+                "Notifications"
+            ],
+            "summary": "Get user notification settings",
+            "description": "Retrieves the notification settings for a specific user to understand if user needs to be notified.",
+            "parameters": [
+                {
+                    "name": "userId",
+                    "in": "path",
+                    "required": true,
+                    "schema": {
+                        "type": "string",
+                        "example": "123"
+                    },
+                    "description": "The ID of the user."
+                }
+            ],
+            "responses": {
+                "200": {
+                    "description": "User notification settings retrieved successfully.",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "favouritePlaces": {
+                                        "type": "boolean",
+                                        "example": true
+                                    },
+                                    "friendsRequest": {
+                                        "type": "boolean",
+                                        "example": true
+                                    },
+                                    "newLocation": {
+                                        "type": "boolean",
+                                        "example": true
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "404": {
+                    "description": "User not found."
+                },
+                "500": {
+                    "description": "Internal server error."
+                }
+            }
+        }
+    },
+    "/api/create_request/create-notification": {
+        "post": {
+            "tags": [
+                "Notifications"
+            ],
+            "summary": "Create a new notification",
+            "description": "Creates a new notification for a user who needs to be notified.",
+            "parameters": [
+                {
+                    "name": "userId",
+                    "in": "path",
+                    "required": true,
+                    "schema": {
+                        "type": "string",
+                        "example": "123"
+                    },
+                    "description": "The ID of the user."
+                }
+            ],"requestBody": {
+                "required": true,
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "userId": {
+                                    "type": "string",
+                                    "example": "123"
+                                },
+                                "request_uid": {
+                                    "type": "string",
+                                    "example": "456"
+                                },
+                                "routeName": {
+                                    "type": "string",
+                                    "example": "Route Name"
+                                }
+                            },
+                            "required": [
+                                "userId",
+                                "uid",
+                                "routeName"
+                            ]
+                        }
+                    }
+                }
+            },
+            "responses": {
+                "200": {
+                    "description": "Notification created successfully.",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "string",
+                                "example": "Notification created successfully."
+                            }
+                        }
+                    }
+                },
+                "500": {
+                    "description": "Error creating notification."
+                }
+            }
+        }
+    },
+    "/api/notification-settings": {
+        "get": {
+           "tags": [
+             "Notification Settings"
+           ],
+           "summary": "Fetch notification settings",
+           "description": "Retrieves the notification settings for the authenticated user.",
+           "responses": {
+             "200": {
+               "description": "Notification settings retrieved successfully.",
+               "content": {
+                 "application/json": {
+                   "schema": {
+                     "type": "object",
+                     "properties": {
+                       "favouritePlaces": {
+                        "type": "boolean"
+                       },
+                       "friendsRequest": {
+                        "type": "boolean"
+                       },
+                       "newLocation": {
+                        "type": "boolean"
+                       }
+                     }
+                   }
+                 }
+               }
+             },
+             "401": {
+               "description": "Unauthorized. Authentication token is missing or invalid."
+             },
+             "500": {
+               "description": "Internal server error."
+             }
+           },
+           "security": [
+             {
+               "BearerAuth": []
+             }
+           ]
+        }
+       },
+       "/api/notification-settings": {
+        "get": {
+           "tags": [
+             "Notification Settings"
+           ],
+           "summary": "Fetch notification settings",
+           "description": "Retrieves the notification settings for the authenticated user.",
+           "responses": {
+             "200": {
+               "description": "Notification settings retrieved successfully.",
+               "content": {
+                 "application/json": {
+                   "schema": {
+                     "type": "object",
+                     "properties": {
+                       "favouritePlaces": {
+                        "type": "boolean"
+                       },
+                       "friendsRequest": {
+                        "type": "boolean"
+                       },
+                       "newLocation": {
+                        "type": "boolean"
+                       }
+                     }
+                   }
+                 }
+               }
+             },
+             "401": {
+               "description": "Unauthorized. Authentication token is missing or invalid."
+             },
+             "500": {
+               "description": "Internal server error."
+             }
+           },
+           "security": [
+             {
+               "BearerAuth": []
+             }
+           ]
+        }
+       },
+       "/api/notification-settings": {
+        "put": {
+           "tags": [
+             "Notification Settings"
+           ],
+           "summary": "Update notification settings",
+           "description": "Updates the notification settings for the authenticated user.",
+           "requestBody": {
+             "required": true,
+             "content": {
+               "application/json": {
+                 "schema": {
+                   "type": "object",
+                   "properties": {
+                     "favouritePlaces": {
+                       "type": "boolean"
+                     },
+                     "friendsRequest": {
+                       "type": "boolean"
+                     },
+                     "newLocation": {
+                       "type": "boolean"
+                     }
+                   }
+                 }
+               }
+             }
+           },
+           "responses": {
+             "200": {
+               "description": "Notification settings updated successfully."
+             },
+             "401": {
+               "description": "Unauthorized. Authentication token is missing or invalid."
+             },
+             "500": {
+               "description": "Internal server error."
+             }
+           },
+           "security": [
+             {
+               "BearerAuth": []
+             }
+           ]
+        }
+       },
+       
+
+
+    "/api/get-all-requests/route-id-by-name": {
+        "get": {
+            "tags": [
+                "Requests"
+            ],
+            "summary": "Get route ID by name",
+            "description": "Retrieves the ID of a route based on its name.",
+            "parameters": [
+                {
+                    "name": "routeName",
+                    "in": "query",
+                    "required": true,
+                    "schema": {
+                        "type": "string",
+                        "example": "Route Name"
+                    },
+                    "description": "The name of the route."
+                }
+            ],
+            "responses": {
+           
+                            "200": {
+                                "description": "Route ID retrieved successfully.",
+                                "content": {
+                                    "application/json": {
+                                        "schema": {
+                                            "type": "object",
+                                            "properties": {
+                                                "id": {
+                                                    "type": "string",
+                                                    "example": "123"
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "404": {
+                                "description": "No route found with the provided name."
+                            },
+                            "500": {
+                                "description": "Internal server error."
+                            }
+                        }
+                    }
+                },
+                
+                    "/api/get-all-requests/otherUsers": {
+                        "get": {
+                            "tags": [
+                                "Requests"
+                            ],
+                            "summary": "Get all requests from other users",
+                            "description": "Retrieves all open requests from users other than the current user.",
+                            "responses": {
+                                "200": {
+                                    "description": "Requests retrieved successfully.",
+                                    "content": {
+                                        "application/json": {
+                                            "schema": {
+                                                "type": "array",
+                                                "items": {
+                                                    "type": "object",
+                                                    "description": "Details of each request."
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                "500": {
+                                    "description": "Error fetching open requests."
+                                }
+                            }
+                        }
+                    },
+                    "/api/get-all-requests/forSpecificPlace": {
+                        "get": {
+                            "tags": [
+                                "Requests"
+                            ],
+                            "summary": "Get all requests for a specific place",
+                            "description": "Retrieves all open requests for a specific place from users other than the current user.",
+                            "parameters": [
+                                {
+                                    "name": "routeName",
+                                    "in": "query",
+                                    "required": true,
+                                    "schema": {
+                                        "type": "string",
+                                        "example": "Route Name"
+                                    },
+                                    "description": "The name of the route."
+                                }
+                            ],
+                            "responses": {
+                                "200": {
+                                    "description": "Requests for the specific place retrieved successfully.",
+                                    "content": {
+                                        "application/json": {
+                                            "schema": {
+                                                "type": "array",
+                                                "items": {
+                                                    "type": "object",
+                                                    "description": "Details of each request."
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                "500": {
+                                    "description": "Error fetching requests."
+                                }
+                            }
+                        }
+                    },
+                    "/api/get-all-requests/forMultiplePlaces": {
+                        "get": {
+                            "tags": [
+                                "Requests"
+                            ],
+                            "summary": "Get all requests for multiple places",
+                            "description": "Retrieves all open requests for multiple places from users other than the current user.",
+                            "parameters": [
+                                {
+                                    "name": "routeNames",
+                                    "in": "query",
+                                    "required": true,
+                                    "schema": {
+                                        "type": "string",
+                                        "example": "Route Name 1,Route Name 2"
+                                    },
+                                    "description": "Comma-separated list of route names."
+                                }
+                            ],
+                            "responses": {
+                                "200": {
+                                    "description": "Requests for the multiple places retrieved successfully.",
+                                    "content": {
+                                        "application/json": {
+                                            "schema": {
+                                                "type": "object",
+                                                "additionalProperties": {
+                                                    "type": "boolean",
+                                                    "description": "Indicates if there are requests for the route."
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                "500": {
+                                    "description": "Error fetching requests."
+                                }
+                            }
+                        }
+                    },"/api/getActiveRequest/get-request": {
+                        "get": {
+                            "tags": [
+                                "Requests"
+                            ],
+                            "summary": "Get all requests for the current user",
+                            "description": "Retrieves all requests for the current user.",
+                            "responses": {
+                                "200": {
+                                    "description": "Requests retrieved successfully.",
+                                    "content": {
+                                        "application/json": {
+                                            "schema": {
+                                                "type": "array",
+                                                "items": {
+                                                    "type": "object",
+                                                    "description": "Details of each request."
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                "500": {
+                                    "description": "Database error."
+                                }
+                            }
+                        }
+                    },
+                    "/api/getActiveRequest/get-request/{uid}": {
+                        "get": {
+                            "tags": [
+                                "Requests"
+                            ],
+                            "summary": "Get a specific request by UID",
+                            "description": "Retrieves a specific request by its UID.",
+                            "parameters": [
+                                {
+                                    "name": "uid",
+                                    "in": "path",
+                                    "required": true,
+                                    "schema": {
+                                        "type": "string",
+                                        "example": "123"
+                                    },
+                                    "description": "The UID of the request."
+                                }
+                            ],
+                            "responses": {
+                                "200": {
+                                    "description": "Request retrieved successfully.",
+                                    "content": {
+                                        "application/json": {
+                                            "schema": {
+                                                "type": "object",
+                                                "description": "Details of the request."
+                                            }
+                                        }
+                                    }
+                                },
+                                "500": {
+                                    "description": "Database error."
+                                }
+                            }
+                        }
+                    },
+                    "api/requests/{request_id}": {
+                        "delete": {
+                            "tags": [
+                                "Requests"
+                            ],
+                          "summary": "Delete a request",
+                          "description": "Deletes a specific request by its ID. Only authenticated users can delete requests.",
+                          "parameters": [
+                            {
+                              "name": "request_id",
+                              "in": "path",
+                              "required": true,
+                              "description": "The ID of the request to delete",
+                              "schema": {
+                                "type": "string"
+                              }
+                            }
+                          ],
+                          "responses": {
+                            "200": {
+                              "description": "Request deleted successfully",
+                              "content": {
+                                "application/json": {
+                                  "schema": {
+                                   "type": "object",
+                                   "properties": {
+                                      "message": {
+                                        "type": "string",
+                                        "example": "Request deleted successfully"
+                                      }
+                                   }
+                                  }
+                                }
+                              }
+                            },
+                            "404": {
+                              "description": "Request not found",
+                              "content": {
+                                "application/json": {
+                                  "schema": {
+                                   "type": "object",
+                                   "properties": {
+                                      "error": {
+                                        "type": "string",
+                                        "example": "Request not found"
+                                      }
+                                   }
+                                  }
+                                }
+                              }
+                            },
+                            "500": {
+                              "description": "Internal server error",
+                              "content": {
+                                "application/json": {
+                                  "schema": {
+                                   "type": "object",
+                                   "properties": {
+                                      "error": {
+                                        "type": "string",
+                                        "example": "Database error"
+                                      }
+                                   }
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "security": [
+                            {
+                              "BearerAuth": []
+                            }
+                          ]
+                        }
+                    },
+                    "/api/show-profile": {
+                        "get": {
+                           "tags": [
+                             "User Profile"
+                           ],
+                           "summary": "Fetch user profile and preferences",
+                           "description": "Retrieves the authenticated user's profile information and preferences.",
+                           "parameters": [
+                            {
+                                "name": "userId",
+                                "in": "path",
+                                "required": true,
+                                "schema": {
+                                    "type": "string",
+                                    "example": "123"
+                                },
+                                "description": "The ID of the user."
+                            } ] , "responses": {
+                             "200": {
+                               "description": "User profile and preferences retrieved successfully.",
+                               "content": {
+                                 "application/json": {
+                                   "schema": {
+                                     "type": "object",
+                                     "properties": {
+                                       "user": {
+                                        "type": "object",
+                                        "properties": {
+                                           "name": {
+                                             "type": "string",
+                                             "example": "John"
+                                           },
+                                           "last_name": {
+                                             "type": "string",
+                                             "example": "Doe"
+                                           },
+                                           "profile_picture": {
+                                             "type": "string",
+                                             "example": "https://example.com/profile.jpg"
+                                           }
+                                        }
+                                       },
+                                       "preferences": {
+                                        "type": "object",
+                                        "description": "User's preferences."
+                                       }
+                                     }
+                                   }
+                                 }
+                               }
+                             },
+                             "401": {
+                               "description": "Unauthorized. Authentication token is missing or invalid."
+                             },
+                             "500": {
+                               "description": "Internal server error."
+                             }
+                           },
+                           "security": [
+                             {
+                               "BearerAuth": []
+                             }
+                           ]
+                        }
+                    },"/api/edit-profile": {
+                        "put": {
+                           "tags": [
+                             "User Profile"
+                           ],
+                           "summary": "Update user preferences",
+                           "description": "Updates the authenticated user's preferences.",
+                           "requestBody": {
+                             "required": true,
+                             "content": {
+                               "application/json": {
+                                 "schema": {
+                                   "type": "object",
+                                   "properties": {
+                                     "gender": {
+                                       "type": "string",
+                                       "example": "Male"
+                                     },
+                                     "birthday": {
+                                       "type": "string",
+                                       "format": "date",
+                                       "example": "1990-01-01"
+                                     },
+                                     "location": {
+                                       "type": "string",
+                                       "example": "New York"
+                                     },
+                                     "climbing_style": {
+                                       "type": "string",
+                                       "example": "Bouldering"
+                                     },
+                                     "preferred_belayer_device": {
+                                       "type": "string",
+                                       "example": "Climbing Shoes"
+                                     },
+                                     "type_of_climber": {
+                                       "type": "string",
+                                       "example": "Top-Rope"
+                                     },
+                                     "climbing_equipment": {
+                                       "type": "string",
+                                       "example": "Harness, Helmet"
+                                     },
+                                     "climbing_grades_boulder": {
+                                       "type": "string",
+                                       "example": "V0-V10"
+                                     },
+                                     "climbing_grades_climbing": {
+                                       "type": "string",
+                                       "example": "5.6-5.14"
+                                     },
+                                     "favorite_climbing_destinations": {
+                                       "type": "string",
+                                       "example": "Yosemite, El Capitan"
+                                     },
+                                     "route_preferences": {
+                                       "type": "string",
+                                       "example": "Sport, Trad"
+                                     },
+                                     "climbing_philosophy": {
+                                       "type": "string",
+                                       "example": "Climb for the joy of it"
+                                     },
+                                     "route_wish_list": {
+                                       "type": "string",
+                                       "example": "The Nose, El Capitan"
+                                     },
+                                     "bio": {
+                                       "type": "string",
+                                       "example": "Climber from New York"
+                                     }
+                                   },
+                                   "required": [
+                                     "gender",
+                                     "birthday",
+                                     "location",
+                                     "climbing_style",
+                                     "preferred_belayer_device",
+                                     "type_of_climber",
+                                     "climbing_equipment",
+                                     "climbing_grades_boulder",
+                                     "climbing_grades_climbing",
+                                     "favorite_climbing_destinations",
+                                     "route_preferences",
+                                     "climbing_philosophy",
+                                     "route_wish_list",
+                                     "bio"
+                                   ]
+                                 }
+                               }
+                             }
+                           },
+                           "responses": {
+                             "200": {
+                               "description": "User preferences updated successfully.",
+                               "content": {
+                                 "application/json": {
+                                   "schema": {
+                                     "type": "string",
+                                     "example": "User preferences updated successfully."
+                                   }
+                                 }
+                               }
+                             },
+                             "401": {
+                               "description": "Unauthorized. Authentication token is missing or invalid."
+                             },
+                             "500": {
+                               "description": "Internal server error."
+                             }
+                           },
+                           "security": [
+                             {
+                               "BearerAuth": []
+                             }
+                           ]
+                        }
+                       },
+                       "/api/edit-profile/profile-picture": {
+                        "put": {
+                           "tags": [
+                             "User Profile"
+                           ],
+                           "summary": "Update user profile picture",
+                           "description": "Updates the authenticated user's profile picture.",
+                           "requestBody": {
+                             "required": true,
+                             "content": {
+                               "multipart/form-data": {
+                                 "schema": {
+                                   "type": "object",
+                                   "properties": {
+                                     "file": {
+                                       "type": "string",
+                                       "format": "binary"
+                                     }
+                                   }
+                                 }
+                               }
+                             }
+                           },
+                           "responses": {
+                             "200": {
+                               "description": "User profile picture updated successfully.",
+                               "content": {
+                                 "application/json": {
+                                   "schema": {
+                                     "type": "object",
+                                     "properties": {
+                                       "profile_picture": {
+                                        "type": "string",
+                                        "example": "https://res.cloudinary.com/example/image/upload/v1617936559/profile_picture.jpg"
+                                       }
+                                     }
+                                   }
+                                 }
+                               }
+                             },
+                             "401": {
+                               "description": "Unauthorized. Authentication token is missing or invalid."
+                             },
+                             "500": {
+                               "description": "Internal server error."
+                             }
+                           },
+                           "security": [
+                             {
+                               "BearerAuth": []
+                             }
+                           ]
+                        }
+                       },
+                       "/api/show-other-profile/onlyProfile": {
+                        "get": {
+                           "tags": [
+                             "User Profile"
+                           ],
+                           "summary": "Fetch another user's profile",
+                           "description": "Retrieves the profile information of another user by their user ID.",
+                           "parameters": [
+                             {
+                               "name": "userId",
+                               "in": "query",
+                               "required": true,
+                               "description": "The ID of the user whose profile information is to be fetched",
+                               "schema": {
+                                 "type": "string"
+                               }
+                             }
+                           ],
+                           "responses": {
+                             "200": {
+                               "description": "User profile retrieved successfully.",
+                               "content": {
+                                 "application/json": {
+                                   "schema": {
+                                     "type": "object",
+                                     "properties": {
+                                       "user": {
+                                        "type": "object",
+                                        "properties": {
+                                           "user_id": {
+                                             "type": "string",
+                                             "example": "123"
+                                           },
+                                           "name": {
+                                             "type": "string",
+                                             "example": "John"
+                                           },
+                                           "last_name": {
+                                             "type": "string",
+                                             "example": "Doe"
+                                           },
+                                           "profile_picture": {
+                                             "type": "string",
+                                             "example": "https://example.com/profile.jpg"
+                                           }
+                                        }
+                                       }
+                                     }
+                                   }
+                                 }
+                               }
+                             },
+                             "401": {
+                               "description": "Unauthorized. Authentication token is missing or invalid."
+                             },
+                             "500": {
+                               "description": "Internal server error."
+                             }
+                           },
+                           "security": [
+                             {
+                               "BearerAuth": []
+                             }
+                           ]
+                        }
+                       },
+                       "/api/show-other-profile/profileAndPreferences": {
+                        "get": {
+                           "tags": [
+                             "User Profile"
+                           ],
+                           "summary": "Fetch another user's profile and preferences",
+                           "description": "Retrieves the profile information and preferences of another user by their user ID.",
+                           "parameters": [
+                             {
+                               "name": "userId",
+                               "in": "query",
+                               "required": true,
+                               "description": "The ID of the user whose profile information and preferences are to be fetched",
+                               "schema": {
+                                 "type": "string"
+                               }
+                             }
+                           ],
+                           "responses": {
+                             "200": {
+                               "description": "User profile and preferences retrieved successfully.",
+                               "content": {
+                                 "application/json": {
+                                   "schema": {
+                                     "type": "object",
+                                     "properties": {
+                                       "user": {
+                                        "type": "object",
+                                        "properties": {
+                                           "user_id": {
+                                             "type": "string",
+                                             "example": "123"
+                                           },
+                                           "name": {
+                                             "type": "string",
+                                             "example": "John"
+                                           },
+                                           "last_name": {
+                                             "type": "string",
+                                             "example": "Doe"
+                                           },
+                                           "profile_picture": {
+                                             "type": "string",
+                                             "example": "https://example.com/profile.jpg"
+                                           }
+                                        }
+                                       },
+                                       "preferences": {
+                                        "type": "object",
+                                        "description": "User's preferences."
+                                       }
+                                     }
+                                   }
+                                 }
+                               }
+                             },
+                             "401": {
+                               "description": "Unauthorized. Authentication token is missing or invalid."
+                             },
+                             "500": {
+                               "description": "Internal server error."
+                             }
+                           },
+                           "security": [
+                             {
+                               "BearerAuth": []
+                             }
+                           ]
+                        }
+                       },
+                       "/api/initial-user-preferences/profile-picture": {
+                        "post": {
+                           "tags": [
+                             "User Profile"
+                           ],
+                           "summary": "Upload user profile picture",
+                           "description": "Uploads the authenticated user's profile picture.",
+                           "requestBody": {
+                             "required": true,
+                             "content": {
+                               "multipart/form-data": {
+                                 "schema": {
+                                   "type": "object",
+                                   "properties": {
+                                     "file": {
+                                       "type": "string",
+                                       "format": "binary"
+                                     }
+                                   }
+                                 }
+                               }
+                             }
+                           },
+                           "responses": {
+                             "200": {
+                               "description": "Profile picture uploaded successfully.",
+                               "content": {
+                                 "application/json": {
+                                   "schema": {
+                                     "type": "string",
+                                     "example": "Profile picture uploaded successfully."
+                                   }
+                                 }
+                               }
+                             },
+                             "401": {
+                               "description": "Unauthorized. Authentication token is missing or invalid."
+                             },
+                             "500": {
+                               "description": "Internal server error."
+                             }
+                           },
+                           "security": [
+                             {
+                               "BearerAuth": []
+                             }
+                           ]
+                        }
+                       },
+                       "/api/locations": {
+                        "get": {
+                           "tags": [
+                             "Locations"
+                           ],
+                           "summary": "Fetch all countries",
+                           "description": "Retrieves a list of all countries.",
+                           "responses": {
+                             "200": {
+                               "description": "Countries retrieved successfully.",
+                               "content": {
+                                 "application/json": {
+                                   "schema": {
+                                     "type": "array",
+                                     "items": {
+                                       "type": "object"
+                                     }
+                                   }
+                                 }
+                               }
+                             },
+                             "500": {
+                               "description": "Internal server error."
+                             }
+                           }
+                        }
+                       },
+                       "/api/locations/{country}": {
+                        "get": {
+                           "tags": [
+                             "Locations"
+                           ],
+                           "summary": "Fetch regions by country",
+                           "description": "Retrieves a list of regions for the specified country.",
+                           "parameters": [
+                             {
+                               "name": "country",
+                               "in": "path",
+                               "required": true,
+                               "description": "The name of the country",
+                               "schema": {
+                                 "type": "string"
+                               }
+                             }
+                           ],
+                           "responses": {
+                             "200": {
+                               "description": "Regions retrieved successfully.",
+                               "content": {
+                                 "application/json": {
+                                   "schema": {
+                                     "type": "array",
+                                     "items": {
+                                       "type": "object"
+                                     }
+                                   }
+                                 }
+                               }
+                             },
+                             "500": {
+                               "description": "Internal server error."
+                             }
+                           }
+                        }
+                       },
+                       "/api/locations/{country}/{region}": {
+                        "get": {
+                           "tags": [
+                             "Locations"
+                           ],
+                           "summary": "Fetch areas by region",
+                           "description": "Retrieves a list of areas for the specified region.",
+                           "parameters": [
+                             {
+                               "name": "country",
+                               "in": "path",
+                               "required": true,
+                               "description": "The name of the country",
+                               "schema": {
+                                 "type": "string"
+                               }
+                             },
+                             {
+                               "name": "region",
+                               "in": "path",
+                               "required": true,
+                               "description": "The name of the region",
+                               "schema": {
+                                 "type": "string"
+                               }
+                             }
+                           ],
+                           "responses": {
+                             "200": {
+                               "description": "Areas retrieved successfully.",
+                               "content": {
+                                 "application/json": {
+                                   "schema": {
+                                     "type": "array",
+                                     "items": {
+                                       "type": "object"
+                                     }
+                                   }
+                                 }
+                               }
+                             },
+                             "500": {
+                               "description": "Internal server error."
+                             }
+                           }
+                        }
+                       },
+                       "/api/locations/{country}/{region}/{area}": {
+                        "get": {
+                           "tags": [
+                             "Locations"
+                           ],
+                           "summary": "Fetch routes by area",
+                           "description": "Retrieves a list of routes for the specified area.",
+                           "parameters": [
+                             {
+                               "name": "country",
+                               "in": "path",
+                               "required": true,
+                               "description": "The name of the country",
+                               "schema": {
+                                 "type": "string"
+                               }
+                             },
+                             {
+                               "name": "region",
+                               "in": "path",
+                               "required": true,
+                               "description": "The name of the region",
+                               "schema": {
+                                 "type": "string"
+                               }
+                             },
+                             {
+                               "name": "area",
+                               "in": "path",
+                               "required": true,
+                               "description": "The name of the area",
+                               "schema": {
+                                 "type": "string"
+                               }
+                             }
+                           ],
+                           "responses": {
+                             "200": {
+                               "description": "Routes retrieved successfully.",
+                               "content": {
+                                 "application/json": {
+                                   "schema": {
+                                     "type": "array",
+                                     "items": {
+                                       "type": "object"
+                                     }
+                                   }
+                                 }
+                               }
+                             },
+                             "500": {
+                               "description": "Internal server error."
+                             }
+                           }
+                        }
+                       },
+                       "/api/locations/{country}/{region}/{area}/{routeName}": {
+                        "get": {
+                           "tags": [
+                             "Locations"
+                           ],
+                           "summary": "Fetch route details by route name",
+                           "description": "Retrieves details for the specified route.",
+                           "parameters": [
+                             {
+                               "name": "country",
+                               "in": "path",
+                               "required": true,
+                               "description": "The name of the country",
+                               "schema": {
+                                 "type": "string"
+                               }
+                             },
+                             {
+                               "name": "region",
+                               "in": "path",
+                               "required": true,
+                               "description": "The name of the region",
+                               "schema": {
+                                 "type": "string"
+                               }
+                             },
+                             {
+                               "name": "area",
+                               "in": "path",
+                               "required": true,
+                               "description": "The name of the area",
+                               "schema": {
+                                 "type": "string"
+                               }
+                             },
+                             {
+                               "name": "routeName",
+                               "in": "path",
+                               "required": true,
+                               "description": "The name of the route",
+                               "schema": {
+                                 "type": "string"
+                               }
+                             }
+                           ],
+                           "responses": {
+                             "200": {
+                               "description": "Route details retrieved successfully.",
+                               "content": {
+                                 "application/json": {
+                                   "schema": {
+                                     "type": "object"
+                                   }
+                                 }
+                               }
+                             },
+                             "500": {
+                               "description": "Internal server error."
+                             }
+                           }
+                        }
+                       },
+                       "/api/locations/area-details/{area}": {
+                        "get": {
+                           "tags": [
+                             "Locations"
+                           ],
+                           "summary": "Fetch area details",
+                           "description": "Retrieves the region and country for the specified area.",
+                           "parameters": [
+                             {
+                               "name": "area",
+                               "in": "path",
+                               "required": true,
+                               "description": "The name of the area",
+                               "schema": {
+                                 "type": "string"
+                               }
+                             }
+                           ],
+                           "responses": {
+                             "200": {
+                               "description": "Area details retrieved successfully.",
+                               "content": {
+                                 "application/json": {
+                                   "schema": {
+                                     "type": "object",
+                                     "properties": {
+                                       "region": {
+                                        "type": "string",
+                                        "description": "The name of the region the area is located in."
+                                       },
+                                       "country": {
+                                        "type": "string",
+                                        "description": "The name of the country the area is located in."
+                                       }
+                                     }
+                                   }
+                                 }
+                               }
+                             },
+                             "500": {
+                               "description": "Internal server error."
+                             }
+                           }
+                        }
+                       },
+                       "/api/reviews": {
+                        "post": {
+                           "tags": [
+                             "Reviews"
+                           ],
+                           "summary": "Add review to route",
+                           "description": "Adds a review to a specific route for the authenticated user.",
+                           "requestBody": {
+                             "required": true,
+                             "content": {
+                               "application/json": {
+                                 "schema": {
+                                   "type": "object",
+                                   "properties": {
+                                     "route_id": {
+                                       "type": "string",
+                                       "example": "123"
+                                     },
+                                     "stars": {
+                                       "type": "integer",
+                                       "example": 5
+                                     },
+                                     "comment": {
+                                       "type": "string",
+                                       "example": "Great route!"
+                                     }
+                                   },
+                                   "required": [
+                                     "route_id",
+                                     "stars",
+                                     "comment"
+                                   ]
+                                 }
+                               }
+                             }
+                           },
+                           "responses": {
+                             "200": {
+                               "description": "Review added successfully.",
+                               "content": {
+                                 "application/json": {
+                                   "schema": {
+                                     "type": "object",
+                                     "properties": {
+                                       "message": {
+                                        "type": "string",
+                                        "example": "Review added successfully."
+                                       }
+                                     }
+                                   }
+                                 }
+                               }
+                             },
+                             "401": {
+                               "description": "Unauthorized. Authentication token is missing or invalid."
+                             },
+                             "500": {
+                               "description": "Internal server error."
+                             }
+                           },
+                           "security": [
+                             {
+                               "BearerAuth": []
+                             }
+                           ]
+                        }
+                       },
+                       "/api/reviews/{route_id}": {
+                        "get": {
+                           "tags": [
+                             "Reviews"
+                           ],
+                           "summary": "Fetch reviews for a route",
+                           "description": "Retrieves reviews for a specific route.",
+                           "parameters": [
+                             {
+                               "name": "route_id",
+                               "in": "path",
+                               "required": true,
+                               "description": "The ID of the route",
+                               "schema": {
+                                 "type": "string"
+                               }
+                             }
+                           ],
+                           "responses": {
+                             "200": {
+                               "description": "Reviews retrieved successfully.",
+                               "content": {
+                                 "application/json": {
+                                   "schema": {
+                                     "type": "array",
+                                     "items": {
+                                       "type": "object",
+                                       "properties": {
+                                        "route_id": {
+                                           "type": "string"
+                                        },
+                                        "user_id": {
+                                           "type": "string"
+                                        },
+                                        "stars": {
+                                           "type": "integer"
+                                        },
+                                        "comment": {
+                                           "type": "string"
+                                        },
+                                        "name": {
+                                           "type": "string"
+                                        },
+                                        "last_name": {
+                                           "type": "string"
+                                        },
+                                        "profile_picture": {
+                                           "type": "string"
+                                        }
+                                       }
+                                     }
+                                   }
+                                 }
+                               }
+                             },
+                             "401": {
+                               "description": "Unauthorized. Authentication token is missing or invalid."
+                             },
+                             "500": {
+                               "description": "Internal server error."
+                             }
+                           },
+                           "security": [
+                             {
+                               "BearerAuth": []
+                             }
+                           ]
+                        }
+                       },
+                       "/api/user-favourites": {
+                        "put": {
+                           "tags": [
+                             "User Favourites"
+                           ],
+                           "summary": "Update user favourites",
+                           "description": "Adds or removes a route from the authenticated user's favourites.",
+                           "requestBody": {
+                             "required": true,
+                             "content": {
+                               "application/json": {
+                                 "schema": {
+                                   "type": "object",
+                                   "properties": {
+                                     "route_id": {
+                                       "type": "string",
+                                       "example": "123"
+                                     }
+                                   },
+                                   "required": [
+                                     "route_id"
+                                   ]
+                                 }
+                               }
+                             }
+                           },
+                           "responses": {
+                             "200": {
+                               "description": "Favourite updated successfully.",
+                               "content": {
+                                 "application/json": {
+                                   "schema": {
+                                     "type": "object",
+                                     "properties": {
+                                       "message": {
+                                        "type": "string",
+                                        "example": "Favourite added successfully."
+                                       }
+                                     }
+                                   }
+                                 }
+                               }
+                             },
+                             "401": {
+                               "description": "Unauthorized. Authentication token is missing or invalid."
+                             },
+                             "500": {
+                               "description": "Internal server error."
+                             }
+                           },
+                           "security": [
+                             {
+                               "BearerAuth": []
+                             }
+                           ]
+                        }
+                       },
+
+                       "/api/user-favourites/route/{route_id}": {
+                        "get": {
+                           "tags": [
+                             "User Favourites"
+                           ],
+                           "summary": "Fetch route information",
+                           "description": "Retrieves information about a specific route by its ID.",
+                           "parameters": [
+                             {
+                               "name": "route_id",
+                               "in": "path",
+                               "required": true,
+                               "description": "The ID of the route",
+                               "schema": {
+                                 "type": "string"
+                               }
+                             }
+                           ],
+                           "responses": {
+                             "200": {
+                               "description": "Route information retrieved successfully.",
+                               "content": {
+                                 "application/json": {
+                                   "schema": {
+                                     "type": "object"
+                                   }
+                                 }
+                               }
+                             },
+                             "401": {
+                               "description": "Unauthorized. Authentication token is missing or invalid."
+                             },
+                             "500": {
+                               "description": "Internal server error."
+                             }
+                           },
+                           "security": [
+                             {
+                               "BearerAuth": []
+                             }
+                           ]
+                        }
+                       },
+                       "/api/get-available-locations/countries": {
+                        "get": {
+                           "tags": [
+                             "Locations"
+                           ],
+                           "summary": "Fetch all countries",
+                           "description": "Retrieves a list of all countries.",
+                           "responses": {
+                             "200": {
+                               "description": "Countries retrieved successfully.",
+                               "content": {
+                                 "application/json": {
+                                   "schema": {
+                                     "type": "object",
+                                     "properties": {
+                                       "preferences": {
+                                        "type": "array",
+                                        "items": {
+                                           "type": "object",
+                                           "properties": {
+                                             "name": {
+                                               "type": "string"
+                                             }
+                                           }
+                                        }
+                                       }
+                                     }
+                                   }
+                                 }
+                               }
+                             },
+                             "500": {
+                               "description": "Internal server error."
+                             }
+                           }
+                        }
+                       },
+                       "/api/get-available-locations/countries/regions": {
+                        "get": {
+                           "tags": [
+                             "Locations"
+                           ],
+                           "summary": "Fetch regions by country",
+                           "description": "Retrieves a list of regions for the specified country.",
+                           "parameters": [
+                             {
+                               "name": "country",
+                               "in": "query",
+                               "required": true,
+                               "description": "The name of the country",
+                               "schema": {
+                                 "type": "string"
+                               }
+                             }
+                           ],
+                           "responses": {
+                             "200": {
+                               "description": "Regions retrieved successfully.",
+                               "content": {
+                                 "application/json": {
+                                   "schema": {
+                                     "type": "object",
+                                     "properties": {
+                                       "preferences": {
+                                        "type": "array",
+                                        "items": {
+                                           "type": "object",
+                                           "properties": {
+                                             "name": {
+                                               "type": "string"
+                                             }
+                                           }
+                                        }
+                                       }
+                                     }
+                                   }
+                                 }
+                               }
+                             },
+                             "500": {
+                               "description": "Internal server error."
+                             }
+                           }
+                        }
+                       },
+                       "/api/get-available-locations/countries/regions/area": {
+                        "get": {
+                           "tags": [
+                             "Locations"
+                           ],
+                           "summary": "Fetch areas by region",
+                           "description": "Retrieves a list of areas for the specified region.",
+                           "parameters": [
+                             {
+                               "name": "region",
+                               "in": "query",
+                               "required": true,
+                               "description": "The name of the region",
+                               "schema": {
+                                 "type": "string"
+                               }
+                             }
+                           ],
+                           "responses": {
+                             "200": {
+                               "description": "Areas retrieved successfully.",
+                               "content": {
+                                 "application/json": {
+                                   "schema": {
+                                     "type": "object",
+                                     "properties": {
+                                       "preferences": {
+                                        "type": "array",
+                                        "items": {
+                                           "type": "object",
+                                           "properties": {
+                                             "name": {
+                                               "type": "string"
+                                             }
+                                           }
+                                        }
+                                       }
+                                     }
+                                   }
+                                 }
+                               }
+                             },
+                             "500": {
+                               "description": "Internal server error."
+                             }
+                           }
+                        }
+                       },
+                       "/api/get-available-locations/countries/regions/area/route": {
+                        "get": {
+                           "tags": [
+                             "Locations"
+                           ],
+                           "summary": "Fetch routes by area",
+                           "description": "Retrieves a list of routes for the specified area.",
+                           "parameters": [
+                             {
+                               "name": "area",
+                               "in": "query",
+                               "required": true,
+                               "description": "The name of the area",
+                               "schema": {
+                                 "type": "string"
+                               }
+                             }
+                           ],
+                           "responses": {
+                             "200": {
+                               "description": "Routes retrieved successfully.",
+                               "content": {
+                                 "application/json": {
+                                   "schema": {
+                                     "type": "object",
+                                     "properties": {
+                                       "preferences": {
+                                        "type": "array",
+                                        "items": {
+                                           "type": "object",
+                                           "properties": {
+                                             "name": {
+                                               "type": "string"
+                                             },
+                                             "route_style": {
+                                               "type": "string"
+                                             }
+                                           }
+                                        }
+                                       }
+                                     }
+                                   }
+                                 }
+                               }
+                             },
+                             "500": {
+                               "description": "Internal server error."
+                             }
+                           }
+                        }
+                       },
+                       "/api/get-user-location": {
+                        "get": {
+                           "tags": [
+                             "User Location"
+                           ],
+                           "summary": "Fetch user location",
+                           "description": "Retrieves the location of the authenticated user.",
+                           "responses": {
+                             "200": {
+                               "description": "User location retrieved successfully.",
+                               "content": {
+                                 "application/json": {
+                                   "schema": {
+                                     "type": "object",
+                                     "properties": {
+                                       "preferences": {
+                                        "type": "object",
+                                        "properties": {
+                                           "location": {
+                                             "type": "string"
+                                           }
+                                        }
+                                       }
+                                     }
+                                   }
+                                 }
+                               }
+                             },
+                             "401": {
+                               "description": "Unauthorized. Authentication token is missing or invalid."
+                             },
+                             "500": {
+                               "description": "Internal server error."
+                             }
+                           },
+                           "security": [
+                             {
+                               "BearerAuth": []
+                             }
+                           ]
+                        }
+                       },
+                       "/api/locations-map": {
+                        "get": {
+                           "tags": [
+                             "Locations Map"
+                           ],
+                           "summary": "Fetch all routes",
+                           "description": "Retrieves a list of all routes with their details.",
+                           "responses": {
+                             "200": {
+                               "description": "Routes retrieved successfully.",
+                               "content": {
+                                 "application/json": {
+                                   "schema": {
+                                     "type": "array",
+                                     "items": {
+                                       "type": "object",
+                                       "properties": {
+                                        "name": {
+                                           "type": "string"
+                                        },
+                                        "style": {
+                                           "type": "string"
+                                        },
+                                        "number_routes": {
+                                           "type": "integer"
+                                        },
+                                        "route_style": {
+                                           "type": "string"
+                                        },
+                                        "x_axis": {
+                                           "type": "number"
+                                        },
+                                        "y_axis": {
+                                           "type": "number"
+                                        }
+                                       }
+                                     }
+                                   }
+                                 }
+                               }
+                             },
+                             "500": {
+                               "description": "Internal server error."
+                             }
+                           }
+                        }
+                       },
+                       "/api/locations-map/{name}": {
+                        "get": {
+                           "tags": [
+                             "Locations Map"
+                           ],
+                           "summary": "Fetch route details by name",
+                           "description": "Retrieves details for a specific route by its name.",
+                           "parameters": [
+                             {
+                               "name": "name",
+                               "in": "path",
+                               "required": true,
+                               "description": "The name of the route",
+                               "schema": {
+                                 "type": "string"
+                               }
+                             }
+                           ],
+                           "responses": {
+                             "200": {
+                               "description": "Route details retrieved successfully.",
+                               "content": {
+                                 "application/json": {
+                                   "schema": {
+                                     "type": "object",
+                                     "properties": {
+                                       "area": {
+                                        "type": "string"
+                                       },
+                                       "regions": {
+                                        "type": "string"
+                                       },
+                                       "country": {
+                                        "type": "string"
+                                       }
+                                     }
+                                   }
+                                 }
+                               }
+                             },
+                             "404": {
+                               "description": "Route not found."
+                             },
+                             "500": {
+                               "description": "Internal server error."
+                             }
+                           }
+                        }
+                       },
+                       "/api/locations-map/coordinates/{region}": {
+                        "get": {
+                           "tags": [
+                             "Locations Map"
+                           ],
+                           "summary": "Fetch region coordinates",
+                           "description": "Retrieves the coordinates for a specific region by its name.",
+                           "parameters": [
+                             {
+                               "name": "region",
+                               "in": "path",
+                               "required": true,
+                               "description": "The name of the region",
+                               "schema": {
+                                 "type": "string"
+                               }
+                             }
+                           ],
+                           "responses": {
+                             "200": {
+                               "description": "Region coordinates retrieved successfully.",
+                               "content": {
+                                 "application/json": {
+                                   "schema": {
+                                     "type": "object",
+                                     "properties": {
+                                       "x_axis": {
+                                        "type": "number"
+                                       },
+                                       "y_axis": {
+                                        "type": "number"
+                                       }
+                                     }
+                                   }
+                                 }
+                               }
+                             },
+                             "404": {
+                               "description": "Region not found."
+                             },
+                             "500": {
+                               "description": "Internal server error."
+                             }
+                           }
+                        }
+                       },
+                       "/api/locations-map/coordinates/{area}": {
+                        "get": {
+                           "tags": [
+                             "Locations Map"
+                           ],
+                           "summary": "Fetch area coordinates",
+                           "description": "Retrieves the coordinates for a specific area by its name.",
+                           "parameters": [
+                             {
+                               "name": "area",
+                               "in": "path",
+                               "required": true,
+                               "description": "The name of the area",
+                               "schema": {
+                                 "type": "string"
+                               }
+                             }
+                           ],
+                           "responses": {
+                             "200": {
+                               "description": "Area coordinates retrieved successfully.",
+                               "content": {
+                                 "application/json": {
+                                   "schema": {
+                                     "type": "object",
+                                     "properties": {
+                                       "x_axis": {
+                                        "type": "number"
+                                       },
+                                       "y_axis": {
+                                        "type": "number"
+                                       }
+                                     }
+                                   }
+                                 }
+                               }
+                             },
+                             "404": {
+                               "description": "Area not found."
+                             },
+                             "500": {
+                               "description": "Internal server error."
+                             }
+                           }
+                        }
+                       }, 
+                       "/api/search-navigation/route-details/{route}": {
+                        "get": {
+                           "tags": [
+                             "Search Navigation"
+                           ],
+                           "summary": "Fetch route details",
+                           "description": "Retrieves details for a specific route by its name, including the area, region, and country it belongs to.",
+                           "parameters": [
+                             {
+                               "name": "route",
+                               "in": "path",
+                               "required": true,
+                               "description": "The name of the route",
+                               "schema": {
+                                 "type": "string"
+                               }
+                             }
+                           ],
+                           "responses": {
+                             "200": {
+                               "description": "Route details retrieved successfully.",
+                               "content": {
+                                 "application/json": {
+                                   "schema": {
+                                     "type": "object",
+                                     "properties": {
+                                       "route": {
+                                        "type": "string"
+                                       },
+                                       "area": {
+                                        "type": "string"
+                                       },
+                                       "region": {
+                                        "type": "string"
+                                       },
+                                       "country": {
+                                        "type": "string"
+                                       }
+                                     }
+                                   }
+                                 }
+                               }
+                             },
+                             "404": {
+                               "description": "No route found."
+                             },
+                             "500": {
+                               "description": "Internal server error."
+                             }
+                           }
+                        }
+                       },
+                       "/api/search-navigation/area-details/{area}": {
+                        "get": {
+                           "tags": [
+                             "Search Navigation"
+                           ],
+                           "summary": "Fetch area details",
+                           "description": "Retrieves the country and region for a specific area by its name.",
+                           "parameters": [
+                             {
+                               "name": "area",
+                               "in": "path",
+                               "required": true,
+                               "description": "The name of the area",
+                               "schema": {
+                                 "type": "string"
+                               }
+                             }
+                           ],
+                           "responses": {
+                             "200": {
+                               "description": "Area details retrieved successfully.",
+                               "content": {
+                                 "application/json": {
+                                   "schema": {
+                                     "type": "object",
+                                     "properties": {
+                                       "region": {
+                                        "type": "string"
+                                       },
+                                       "country": {
+                                        "type": "string"
+                                       }
+                                     }
+                                   }
+                                 }
+                               }
+                             },
+                             "500": {
+                               "description": "Internal server error."
+                             }
+                           }
+                        }
+                       },
+                       "/api/search-navigation/region-details/{region}": {
+                        "get": {
+                           "tags": [
+                             "Search Navigation"
+                           ],
+                           "summary": "Fetch region details",
+                           "description": "Retrieves the country for a specific region by its name.",
+                           "parameters": [
+                             {
+                               "name": "region",
+                               "in": "path",
+                               "required": true,
+                               "description": "The name of the region",
+                               "schema": {
+                                 "type": "string"
+                               }
+                             }
+                           ],
+                           "responses": {
+                             "200": {
+                               "description": "Region details retrieved successfully.",
+                               "content": {
+                                 "application/json": {
+                                   "schema": {
+                                     "type": "object",
+                                     "properties": {
+                                       "country": {
+                                        "type": "string"
+                                       }
+                                     }
+                                   }
+                                 }
+                               }
+                             },
+                             "500": {
+                               "description": "Internal server error."
+                             }
+                           }
+                        }
+                       },
+                       "/api/search-navigation/route-details/{route}": {
+                        "get": {
+                           "tags": [
+                             "Search Navigation"
+                           ],
+                           "summary": "Fetch route details",
+                           "description": "Retrieves details for a specific route by its name, including the area, region, and country it belongs to.",
+                           "parameters": [
+                             {
+                               "name": "route",
+                               "in": "path",
+                               "required": true,
+                               "description": "The name of the route",
+                               "schema": {
+                                 "type": "string"
+                               }
+                             }
+                           ],
+                           "responses": {
+                             "200": {
+                               "description": "Route details retrieved successfully.",
+                               "content": {
+                                 "application/json": {
+                                   "schema": {
+                                     "type": "object",
+                                     "properties": {
+                                       "route": {
+                                        "type": "string"
+                                       },
+                                       "area": {
+                                        "type": "string"
+                                       },
+                                       "region": {
+                                        "type": "string"
+                                       },
+                                       "country": {
+                                        "type": "string"
+                                       }
+                                     }
+                                   }
+                                 }
+                               }
+                             },
+                             "404": {
+                               "description": "No route found."
+                             },
+                             "500": {
+                               "description": "Internal server error."
+                             }
+                           }
+                        }
+                       },
+                       "/api/search-navigation/area-details/{area}": {
+                        "get": {
+                           "tags": [
+                             "Search Navigation"
+                           ],
+                           "summary": "Fetch area details",
+                           "description": "Retrieves the country and region for a specific area by its name.",
+                           "parameters": [
+                             {
+                               "name": "area",
+                               "in": "path",
+                               "required": true,
+                               "description": "The name of the area",
+                               "schema": {
+                                 "type": "string"
+                               }
+                             }
+                           ],
+                           "responses": {
+                             "200": {
+                               "description": "Area details retrieved successfully.",
+                               "content": {
+                                 "application/json": {
+                                   "schema": {
+                                     "type": "object",
+                                     "properties": {
+                                       "region": {
+                                        "type": "string"
+                                       },
+                                       "country": {
+                                        "type": "string"
+                                       }
+                                     }
+                                   }
+                                 }
+                               }
+                             },
+                             "500": {
+                               "description": "Internal server error."
+                             }
+                           }
+                        }
+                       },
+                       "/api/search-navigation/region-details/{region}": {
+                        "get": {
+                           "tags": [
+                             "Search Navigation"
+                           ],
+                           "summary": "Fetch region details",
+                           "description": "Retrieves the country for a specific region by its name.",
+                           "parameters": [
+                             {
+                               "name": "region",
+                               "in": "path",
+                               "required": true,
+                               "description": "The name of the region",
+                               "schema": {
+                                 "type": "string"
+                               }
+                             }
+                           ],
+                           "responses": {
+                             "200": {
+                               "description": "Region details retrieved successfully.",
+                               "content": {
+                                 "application/json": {
+                                   "schema": {
+                                     "type": "object",
+                                     "properties": {
+                                       "country": {
+                                        "type": "string"
+                                       }
+                                     }
+                                   }
+                                 }
+                               }
+                             },
+                             "500": {
+                               "description": "Internal server error."
+                             }
+                           }
+                        }
+                       },
+                       "/api/get-message/conversationsTable": {
+                        "get": {
+                           "tags": [
+                             "Messages"
+                           ],
+                           "summary": "Fetch conversations table",
+                           "description": "Retrieves all entries from the conversations table.",
+                           "responses": {
+                             "200": {
+                               "description": "Conversations table retrieved successfully.",
+                               "content": {
+                                 "application/json": {
+                                   "schema": {
+                                     "type": "object",
+                                     "properties": {
+                                       "userId": {
+                                        "type": "string"
+                                       },
+                                       "conversations": {
+                                        "type": "array",
+                                        "items": {
+                                           "type": "object"
+                                        }
+                                       }
+                                     }
+                                   }
+                                 }
+                               }
+                             },
+                             "401": {
+                               "description": "Unauthorized. Authentication token is missing or invalid."
+                             },
+                             "500": {
+                               "description": "Internal server error."
+                             }
+                           },
+                           "security": [
+                             {
+                               "BearerAuth": []
+                             }
+                           ]
+                        }
+                       },
+
+"/api/get-message/conversations": {
+ "get": {
+    "tags": [
+      "Messages"
+    ],
+    "summary": "Fetch conversations",
+    "description": "Retrieves conversations for the authenticated user, including messages and user details.",
+    "responses": {
+      "200": {
+        "description": "Conversations retrieved successfully.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "userId": {
+                 "type": "string"
+                },
+                "conversations": {
+                 "type": "array",
+                 "items": {
+                    "type": "object"
+                 }
+                }
+              }
+            }
+          }
+        }
+      },
+      "401": {
+        "description": "Unauthorized. Authentication token is missing or invalid."
+      },
+      "500": {
+        "description": "Internal server error."
+      }
+    },
+    "security": [
+      {
+        "BearerAuth": []
+      }
+    ]
+ }
+},
+"/api/get-message/{conversationId}/messages": {
+    "get": {
+       "tags": [
+         "Messages"
+       ],
+       "summary": "Fetch messages",
+       "description": "Retrieves messages for a specific conversation.",
+       "parameters": [
+         {
+           "name": "conversationId",
+           "in": "path",
+           "required": true,
+           "description": "The ID of the conversation",
+           "schema": {
+             "type": "string"
+           }
+         }
+       ],
+       "responses": {
+         "200": {
+           "description": "Messages retrieved successfully.",
+           "content": {
+             "application/json": {
+               "schema": {
+                 "type": "array",
+                 "items": {
+                   "type": "object"
+                 }
+               }
+             }
+           }
+         },
+         "500": {
+           "description": "Internal server error."
+         }
+       }
+    }
+   },
+   "/api/new-messages": {
+    "get": {
+       "tags": [
+         "Messages"
+       ],
+       "summary": "Fetch new messages count",
+       "description": "Retrieves the count of new messages for the authenticated user.",
+       "responses": {
+         "200": {
+           "description": "New messages count retrieved successfully.",
+           "content": {
+             "application/json": {
+               "schema": {
+                 "type": "object",
+                 "properties": {
+                   "newMessagesCount": {
+                    "type": "integer"
+                   }
+                 }
+               }
+             }
+           }
+         },
+         "401": {
+           "description": "Unauthorized. Authentication token is missing or invalid."
+         },
+         "500": {
+           "description": "Internal server error."
+         }
+       },
+       "security": [
+         {
+           "BearerAuth": []
+         }
+       ]
+    }
+   },
+   "/api/send-message/start": {
+    "post": {
+       "tags": [
+         "Messages"
+       ],
+       "summary": "Start new conversation",
+       "description": "Starts a new conversation between two users and sends an initial message.",
+       "requestBody": {
+         "required": true,
+         "content": {
+           "application/json": {
+             "schema": {
+               "type": "object",
+               "properties": {
+                 "receiver_id": {
+                   "type": "string"
+                 },
+                 "content": {
+                   "type": "string"
+                 },
+                 "request_id": {
+                   "type": "string"
+                 }
+               }
+             }
+           }
+         }
+       },
+       "responses": {
+         "200": {
+           "description": "Message sent successfully."
+         },
+         "401": {
+           "description": "Unauthorized. Authentication token is missing or invalid."
+         },
+         "500": {
+           "description": "Internal server error."
+         }
+       },
+       "security": [
+         {
+           "BearerAuth": []
+         }
+       ]
+    }
+   },
+   "/api/send-message/answer": {
+    "post": {
+       "tags": [
+         "Messages"
+       ],
+       "summary": "Answer message",
+       "description": "Sends a message in response to an existing conversation.",
+       "requestBody": {
+         "required": true,
+         "content": {
+           "application/json": {
+             "schema": {
+               "type": "object",
+               "properties": {
+                 "conversation_id": {
+                   "type": "string"
+                 },
+                 "receiver_id": {
+                   "type": "string"
+                 },
+                 "content": {
+                   "type": "string"
+                 },
+                 "request_uid": {
+                   "type": "string"
+                 }
+               }
+             }
+           }
+         }
+       },
+       "responses": {
+         "200": {
+           "description": "Message sent successfully."
+         },
+         "401": {
+           "description": "Unauthorized. Authentication token is missing or invalid."
+         },
+         "500": {
+           "description": "Internal server error."
+         }
+       },
+       "security": [
+         {
+           "BearerAuth": []
+         }
+       ]
+    }
+   },
+   "/api/send-message/noRequest": {
+    "post": {
+       "tags": [
+         "Messages"
+       ],
+       "summary": "Send message without request",
+       "description": "Sends a message without a request, potentially starting a new conversation if one does not already exist.",
+       "requestBody": {
+         "required": true,
+         "content": {
+           "application/json": {
+             "schema": {
+               "type": "object",
+               "properties": {
+                 "receiver_id": {
+                   "type": "string"
+                 },
+                 "content": {
+                   "type": "string"
+                 }
+               }
+             }
+           }
+         }
+       },
+       "responses": {
+         "200": {
+           "description": "Message sent successfully."
+         },
+         "401": {
+           "description": "Unauthorized. Authentication token is missing or invalid."
+         },
+         "500": {
+           "description": "Internal server error."
+         }
+       },
+       "security": [
+         {
+           "BearerAuth": []
+         }
+       ]
+    }
+   },
+   "/api/update-messages": {
+    "put": {
+       "tags": [
+         "Messages"
+       ],
+       "summary": "Update messages status",
+       "description": "Updates the status of messages to 'read' for a specific conversation and receiver.",
+       "requestBody": {
+         "required": true,
+         "content": {
+           "application/json": {
+             "schema": {
+               "type": "object",
+               "properties": {
+                 "conversation_id": {
+                   "type": "string"
+                 },
+                 "receiver_id": {
+                   "type": "string"
+                 }
+               }
+             }
+           }
+         }
+       },
+       "responses": {
+         "200": {
+           "description": "Messages updated successfully."
+         },
+         "401": {
+           "description": "Unauthorized. Authentication token is missing or invalid."
+         },
+         "500": {
+           "description": "Internal server error."
+         }
+       },
+       "security": [
+         {
+           "BearerAuth": []
+         }
+       ]
+    }
+   },
+   "/api/delete-conversation": {
+    "delete": {
+       "tags": [
+         "Messages"
+       ],
+       "summary": "Delete conversation",
+       "description": "Deletes a conversation for the authenticated user, marking it as deleted for the user.",
+       "requestBody": {
+         "required": true,
+         "content": {
+           "application/json": {
+             "schema": {
+               "type": "object",
+               "properties": {
+                 "conversation_id": {
+                   "type": "string"
+                 }
+               }
+             }
+           }
+         }
+       },
+       "responses": {
+         "200": {
+           "description": "Conversation deleted successfully."
+         },
+         "401": {
+           "description": "Unauthorized. Authentication token is missing or invalid."
+         },
+         "404": {
+           "description": "Conversation not found or user not part of the conversation."
+         },
+         "500": {
+           "description": "Internal server error."
+         }
+       },
+       "security": [
+         {
+           "BearerAuth": []
+         }
+       ]
+    }
+   },
+   "/api/get-notifications": {
+    "get": {
+       "tags": [
+         "Notifications"
+       ],
+       "summary": "Fetch unread notifications",
+       "description": "Retrieves all unread notifications for the authenticated user.",
+       "responses": {
+         "200": {
+           "description": "Unread notifications retrieved successfully.",
+           "content": {
+             "application/json": {
+               "schema": {
+                 "type": "array",
+                 "items": {
+                   "type": "object"
+                 }
+               }
+             }
+           }
+         },
+         "401": {
+           "description": "Unauthorized. Authentication token is missing or invalid."
+         },
+         "500": {
+           "description": "Internal server error."
+         }
+       },
+       "security": [
+         {
+           "BearerAuth": []
+         }
+       ]
+    }
+   },
+   "/api/notification-settings/read": {
+    "get": {
+       "tags": [
+         "Notification Settings"
+       ],
+       "summary": "Fetch notification settings",
+       "description": "Retrieves the notification settings for the authenticated user.",
+       "responses": {
+         "200": {
+           "description": "Notification settings retrieved successfully.",
+           "content": {
+             "application/json": {
+               "schema": {
+                 "type": "object",
+                 "properties": {
+                   "favouritePlaces": {
+                    "type": "boolean"
+                   },
+                   "friendsRequest": {
+                    "type": "boolean"
+                   },
+                   "newLocation": {
+                    "type": "boolean"
+                   }
+                 }
+               }
+             }
+           }
+         },
+         "401": {
+           "description": "Unauthorized. Authentication token is missing or invalid."
+         },
+         "500": {
+           "description": "Internal server error."
+         }
+       },
+       "security": [
+         {
+           "BearerAuth": []
+         }
+       ]
+    }
+   },
+   "/api/post-notification-read/{notification_id}": {
+    "put": {
+       "tags": [
+         "Notifications"
+       ],
+       "summary": "Mark notification as read",
+       "description": "Marks a specific notification as read for the authenticated user.",
+       "parameters": [
+         {
+           "name": "notification_id",
+           "in": "path",
+           "required": true,
+           "description": "The ID of the notification to mark as read",
+           "schema": {
+             "type": "string"
+           }
+         }
+       ],
+       "responses": {
+         "200": {
+           "description": "Notification marked as read successfully."
+         },
+         "401": {
+           "description": "Unauthorized. Authentication token is missing or invalid."
+         },
+         "500": {
+           "description": "Internal server error."
+         }
+       },
+       "security": [
+         {
+           "BearerAuth": []
+         }
+       ]
+    }
+   },
+
+        "components": {
+        "securitySchemes": {
+            "BearerAuth": {
+                "type": "http",
+                "scheme": "bearer",
+                "bearerFormat": "JWT"
+            }
+        }
+    }
+}
+}

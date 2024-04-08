@@ -215,3 +215,10 @@ font-family: 'Inter-Bold';
 		opacity: 0.5;
 	}
 }
+
+.object-cover {
+    object-fit: cover;
+}
+.object-contain {
+    object-fit: contain;
+}
