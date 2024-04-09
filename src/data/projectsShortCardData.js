@@ -2,6 +2,22 @@ const projectsShortCardData =[
     {
         id: 1,
         key: 1,
+        subtitle: "Sports / Social Media Platform",
+        title: "Climbing Club App",
+        description: "Web Platform to connect climbers along different world climbing locations- Developed entirely by myself",
+        feature1title:"Features:",
+        feature1subtitle:"• Account creations, password recovery, security ",
+        feature1subtitle2:"• Users messaging, requests processes",
+        feature1subtitle3:"• Map, calendar, favourites, reviews",
+        feature2title:"Benefits:",
+        feature2subtitle:"• Connect with people",
+        feature2subtitle2:"• Easily find climbing locations",
+        feature2subtitle3:"• Share climbing Material that you do not have",
+        link:"/projects/project4"
+    },
+    {
+        id: 2,
+        key: 2,
         subtitle: "HEALTHCARE - Software",
         title: "Sinnaptic Telemedical Solutions platform",
         description: "A comprehensive telemedical platform that enables doctors to monitor and manage patient health remotely.",
@@ -15,9 +31,9 @@ const projectsShortCardData =[
         feature2subtitle3:"• Reduced costs for both doctors and patients",
         link:"/projects/project1"
     },
-     {
-        id: 2,
-        key: 2,
+    {
+        id: 3,
+        key: 3,
         subtitle: "TELECOMMUNICATIONS - Software",
         title: "Walkie Talkie Management Software.",
         description: "Two-Way Radio Management Software.",
@@ -32,8 +48,8 @@ const projectsShortCardData =[
         link:"/projects/project2"
     },
     {
-        id: 3,
-        key: 3,
+        id: 4,
+        key: 4,
         subtitle: "TELECOMMUNICATIONS - Hardware",
         title: "Pumma Connect",
         description: "Dedicated server and reliable internet connection for uninterrupted connectivity in any environment",

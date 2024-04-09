@@ -21,6 +21,7 @@ const CarouselCard = () => {
     const card1 = projectsCarousel.find((projectsCarousel) => projectsCarousel.id === 1);
     const card2 = projectsCarousel.find((projectsCarousel) => projectsCarousel.id === 2);
     const card3 = projectsCarousel.find((projectsCarousel) => projectsCarousel.id === 3);
+    const card4 = projectsCarousel.find((projectsCarousel) => projectsCarousel.id === 4);
   
     return (
       <div id="keen-slider" className="keen-slider flex overflow-hidden relative select-none touch-callout-none tap-highlight-transparent min-h-full w-full">
@@ -40,6 +41,12 @@ const CarouselCard = () => {
         <div className="keen-slider__slide relative overflow-hidden w-full min-h-full">
           <blockquote className="flex flex-col h-full justify-between bg-white p-6 shadow-sm sm:p-8 lg:p-12">
             {createCarouselCard(card3)}
+          </blockquote>
+        </div>
+
+        <div className="keen-slider__slide relative overflow-hidden w-full min-h-full">
+          <blockquote className="flex flex-col h-full justify-between bg-white p-6 shadow-sm sm:p-8 lg:p-12">
+            {createCarouselCard(card4)}
           </blockquote>
         </div>
 

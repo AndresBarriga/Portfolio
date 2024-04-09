@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState} from "react";
 import {
     Accordion,
     AccordionHeader,
@@ -9,18 +9,7 @@ import { FaUser, FaMapMarkerAlt, FaComments, FaBell, FaHandshake, FaUserCircle }
 import DBSquema from "../../../images/DBSquema.png"
 import overview from "../../../images/overview.png"
 import PassSquema from "../../../images/PassCreation.drawio.png"
-import ProfileCreationVid from "../../../videos/Profile Creation.mov"
-import LocationThree from "../../../videos/Climbing Locations.mov"
-import LocationMap from "../../../videos/mapvideo.mov"
-import ClimbingRequestJoin from "../../../videos/climbingRequest.mov"
-import ClimbingRequestCreate from "../../../videos/createClimbing.mov"
-import ActiveRequestMgmt from "../../../videos/activerequestmanagement.mov"
 import MessagesDb from "../../../images/messagesDB.png"
-import Messages from "../../../videos/messages.mov"
-import Calendar from "../../../videos/calendar.mov"
-import Favs from "../../../videos/favourites.mov"
-
-import SwaggerUI from 'swagger-ui-react';
 import 'swagger-ui-react/swagger-ui.css';
 
 const CUSTOM_ANIMATION = {
@@ -83,15 +72,8 @@ function AccordionItem({ title, body, isOpen, onClick }) {
 export function Project4() {
      
     const [openAccordion, setOpenAccordion] = useState(0);
-
-
-
     const handleOpen = (value) => setOpenAccordion(openAccordion === value ? 0 : value);
     
-
-    const toggleAccordion = (index) => {
-       setOpenAccordion(openAccordion === index ? 0 : index);
-    };
 
     return (
         <>  <div className="text-center mb-8 mx-10">
@@ -119,6 +101,7 @@ export function Project4() {
                         className="font-general-bold text-center"
                     >
                         <div className="text-xl sm:text-2xl md:text-3xl lg:text-4xl">"Climbing Club" - Web Application</div>
+                        <div className="font-general-light text-xl">Developed entirely by myself</div>
                     </motion.h1>
                     <motion.p
                         initial={{ opacity: 0 }}
@@ -498,7 +481,7 @@ export function Project4() {
 
                                     </div>
                                     <div className="aspect-w-16 aspect-h-9">
-                                        <video src={ProfileCreationVid} controls loop className="w-full h-full object-contain">
+                                        <video src="https://res.cloudinary.com/de1yd9kjx/video/upload/v1712641003/tszpq9fokpof2wpbnyjc.mov" controls loop className="w-full h-full object-contain">
                                             Your browser does not support the video tag.
                                         </video>
                                     </div>
@@ -537,7 +520,7 @@ export function Project4() {
                                                         </ul>
                                                     </div>
                                                     <div className="aspect-w-16 aspect-h-9">
-                                                        <video src={LocationThree} controls loop className="w-full h-full object-contain">
+                                                        <video src="https://res.cloudinary.com/de1yd9kjx/video/upload/v1712641835/wauyq6baphpwvfmncqg4.mov" controls loop className="w-full h-full object-contain">
                                                             Your browser does not support the video tag.
                                                         </video>
                                                     </div>
@@ -558,7 +541,7 @@ export function Project4() {
                                                         </ul>
                                                     </div>
                                                     <div className="aspect-w-16 aspect-h-9">
-                                                        <video src={LocationMap} controls loop className="w-full h-full object-contain">
+                                                        <video src="https://res.cloudinary.com/de1yd9kjx/video/upload/v1712641926/vfwintdjitxbrx71e4h2.mov" controls loop className="w-full h-full object-contain">
                                                             Your browser does not support the video tag.
                                                         </video>
                                                     </div>
@@ -605,7 +588,7 @@ export function Project4() {
                                                         </ul>
                                                     </div>
                                                     <div className="aspect-w-16 aspect-h-9">
-                                                        <video src={ClimbingRequestCreate} controls loop className="w-full h-full object-contain">
+                                                        <video src="https://res.cloudinary.com/de1yd9kjx/video/upload/v1712641140/usthuvzn27onw7avaxxe.mov" controls loop className="w-full h-full object-contain">
                                                             Your browser does not support the video tag.
                                                         </video>
                                                     </div>
@@ -632,9 +615,10 @@ export function Project4() {
                                                         </ul>
                                                     </div>
                                                     <div className="aspect-w-16 aspect-h-9">
-                                                        <video src={ClimbingRequestJoin} controls loop className="w-full h-full object-contain">
+                                                        <video src="https://res.cloudinary.com/de1yd9kjx/video/upload/v1712641057/ep0obnvunlmfb6xqc2dd.mov" controls loop className="w-full h-full object-contain">
                                                             Your browser does not support the video tag.
                                                         </video>
+                                                        
                                                     </div>
                                                 </div>
                                             </NestedAccordion>
@@ -655,7 +639,7 @@ export function Project4() {
                                                         </ul>
                                                     </div>
                                                     <div className="aspect-w-16 aspect-h-9">
-                                                        <video src={ActiveRequestMgmt} controls loop className="w-full h-full object-contain">
+                                                        <video src="https://res.cloudinary.com/de1yd9kjx/video/upload/f_auto:video,q_auto/wpc3rypjhfzbk9kupbvj" controls loop className="w-full h-full object-contain">
                                                             Your browser does not support the video tag.
                                                         </video>
                                                     </div>
@@ -694,7 +678,7 @@ export function Project4() {
                                                     </ul>
                                                 </div>
                                                 <div className="aspect-w-16 aspect-h-9">
-                                                    <video src={Messages} controls loop className="w-full h-full object-contain">
+                                                    <video src="https://res.cloudinary.com/de1yd9kjx/video/upload/v1712641066/zsp9ycrtfmkpwjksfzdb.mov" controls loop className="w-full h-full object-contain">
                                                         Your browser does not support the video tag.
                                                     </video>
                                                 </div>
@@ -793,9 +777,9 @@ export function Project4() {
                                                              </ul>
                                                     </div>
                                                     <div className="aspect-w-16 aspect-h-9">
-                                                        <video src={Calendar} controls loop className="w-full h-full object-contain">
-                                                            Your browser does not support the video tag.
-                                                        </video>
+                                                    <video src="https://res.cloudinary.com/de1yd9kjx/video/upload/f_auto:video,q_auto/ffqxc40wobde3j7e1102" controls loop className="w-full h-full object-contain">
+    Your browser does not support the video tag.
+</video>
                                                     </div>
                                                 </div>
                                             </NestedAccordion>
@@ -810,7 +794,7 @@ export function Project4() {
                                                               </ul>
                                                     </div>
                                                     <div className="aspect-w-16 aspect-h-9">
-                                                        <video src={Favs} controls loop className="w-full h-full object-contain">
+                                                        <video src="https://res.cloudinary.com/de1yd9kjx/video/upload/v1712641065/i9lts9rixwy9denigcux.mov" controls loop className="w-full h-full object-contain">
                                                             Your browser does not support the video tag.
                                                         </video>
                                                     </div>

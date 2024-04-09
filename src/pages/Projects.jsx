@@ -1,9 +1,7 @@
 import React from "react";
 import ProjectShortCard from "../components/Projects/ProjectsShortCard";
 import projectsShortCardData from "../data/projectsShortCardData";
-import doctor from "../images/doctor.jpg";
 import box from "../images/Box.png";
-import radio from "../images/Teleco1.jpg";
 
 
 function createProjectCard(projectsShortCardData) {
@@ -30,6 +28,7 @@ const Projects = () => {
   const project1 = projectsShortCardData.find(project => project.id === 1);
   const project2 = projectsShortCardData.find(project => project.id === 2);
   const project3 = projectsShortCardData.find(project => project.id === 3);
+  const project4 = projectsShortCardData.find(project => project.id === 4);
 
   return (
     <section className="p-4 lg:p-8 ">
@@ -41,7 +40,16 @@ const Projects = () => {
         <span className='text-indigo-500 text-general-bold'>Join me along my journey </span> and discover some of the products that I have been working on
         </p>
       </div>
-
+      <div className="container mx-auto space-y-12">
+      <div className="flex flex-col overflow-hidden items-center rounded-md shadow-sm lg:flex-row">
+          <img
+            src="https://i.ibb.co/PDRWCRN/overview.png"
+            alt=""
+            className=" my-7 w-400"
+          />
+          {createProjectCard(project1)}
+        </div>
+        </div>
       <div className="container mx-auto space-y-12">
         <div className="flex flex-col overflow-hidden items-center rounded-md shadow-sm lg:flex-row">
           <img
@@ -49,22 +57,22 @@ const Projects = () => {
             alt=""
             className="h-60 w-auto"
           />
-          {createProjectCard(project1)}
+          {createProjectCard(project2)}
         </div>
         <div className=" justify-center items-center md:hidden">
         <img
-            src="https://i.ibb.co/9qNxcym/futuristic-smart-city-with-5g-global-network-technology.jpg"
+            src="https://i.ibb.co/887vM4C/medical-banner-with-doctor-working-laptop.jpg"
             alt=""
             className="h-60 w-auto "
           />
           </div>
         <div className="flex flex-col-rev items-center overflow-hidden rounded-md shadow-sm lg:flex-row">
           
-          {createProjectCard(project2)}
+          {createProjectCard(project4)}
           <div className="flex justify-center items-center h-60 ">
           <div className="hidden md:block">
           <img
-            src="https://i.ibb.co/9qNxcym/futuristic-smart-city-with-5g-global-network-technology.jpg"
+            src={box}
             alt=""
             className="w-auto my-7 sm:h-80 "
           />
@@ -74,12 +82,13 @@ const Projects = () => {
 
         <div className="flex flex-col overflow-hidden items-center rounded-md shadow-sm lg:flex-row">
           <img
-            src={box}
+            src="https://i.ibb.co/9qNxcym/futuristic-smart-city-with-5g-global-network-technology.jpg"
             alt=""
             className="h-80 my-7 w-600"
           />
           {createProjectCard(project3)}
         </div>
+
       </div>
     </section>
   );

@@ -1,4 +1,4 @@
-import profileImage from '../../images/profile.jpeg';
+import profileImage from '../../images/profile2.jpg';
 import { useContext } from 'react';
 import AboutMeContext from './AboutMeContext';
 import { FiArrowDownCircle } from 'react-icons/fi';

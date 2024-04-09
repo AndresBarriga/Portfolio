@@ -1,5 +1,17 @@
 const projectLongLData = [
     {
+        id:3 ,
+        key: 3,
+        industry: "Sports / Social Media",
+        title: "Web Platform to connect climbers along different world climbing locations",
+        description: "Web Application developed entirely by me to improve my coding skilss",
+        img: "https://i.ibb.co/PDRWCRN/overview.png",
+        title2: "Develpopment Project carried out with learning purposes",
+        feature1:"Connect with climbers, make climbing request, join existing climbing requests",
+        feature2: "Real climbing locations presented on a map format, write review, create request, mark them as favourite and get notifications",
+        link: "/projects/project4"
+    },
+    {
         id:4 ,
         key: 4,
         industry: "Telecommunications",
